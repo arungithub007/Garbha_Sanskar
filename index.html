@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#C79A3F" />
+  <meta name="theme-color" content="#1B1206" />
   <title>Garbha Jyothi — A Journey of Divine Motherhood</title>
   <meta name="description" content="Garbha Jyothi: nurturing divine motherhood through Garbh Sanskar rituals, meditation, Ayurvedic guidance and couple bonding." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=Noto+Serif+Kannada:wght@500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#FBF3E4;
-      --bg-deep:#F5E9D0;
+      --bg:#1B1206;
+      --bg-deep:#120C04;
       --gold-deep:#8A5A12;
-      --gold:#C79A3F;
-      --gold-light:#E7C878;
+      --gold:#D4AF37;
+      --gold-light:#F0D28A;
       --gold-shimmer:#FFF3D6;
-      --ink:#3B2E1C;
-      --muted:#7C6B4E;
-      --card:#FFFFFF;
-      --glass: rgba(255,255,255,0.75);
+      --ink:#F3E6C8;
+      --muted:#C9A96E;
+      --card:#2A1D0D;
+      --card-border:rgba(212,175,55,0.25);
+      --glass: rgba(255,215,130,0.06);
       --max-width:1100px;
     }
     *{box-sizing:border-box}
@@ -28,45 +29,87 @@
     body{
       margin:0;
       background:
-        radial-gradient(circle at 15% -10%, rgba(231,200,120,0.28), transparent 40%),
-        radial-gradient(circle at 100% 0%, rgba(199,154,63,0.16), transparent 45%),
+        radial-gradient(circle at 15% -10%, rgba(212,175,55,0.20), transparent 45%),
+        radial-gradient(circle at 100% 10%, rgba(212,175,55,0.14), transparent 50%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
       color:var(--ink);
       font-family:'Nunito Sans', -apple-system, "Segoe UI", Roboto, sans-serif;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.65;
+      position:relative;
     }
-    .container{max-width:var(--max-width);margin:0 auto;padding:24px;}
+    html[lang="kn"] body{ font-family:'Noto Sans Kannada','Nunito Sans',sans-serif; }
+    html[lang="kn"] .tagline, html[lang="kn"] h2, html[lang="kn"] .site-title{
+      font-family:'Noto Serif Kannada','Cormorant Garamond',serif;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px;position:relative;z-index:1;}
+
+    /* ---------- Ambient golden background decor ---------- */
+    .bg-decor{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+    .bg-flower{ position:absolute; opacity:0.55; filter:drop-shadow(0 0 6px rgba(212,175,55,0.25)); animation:flowerSway ease-in-out infinite; }
+    @keyframes flowerSway{
+      0%,100%{ transform:translateY(0) rotate(0deg); }
+      50%{ transform:translateY(-16px) rotate(6deg); }
+    }
+    .bg-flame{ position:absolute; bottom:3%; left:50%; transform:translateX(-50%); width:46px; }
+    .bg-flame-svg{ transform-origin:50% 100%; animation:flameFlicker 2.4s ease-in-out infinite; display:block; }
+    @keyframes flameFlicker{
+      0%,100%{ transform:scaleY(1) scaleX(1) rotate(0deg); }
+      25%{ transform:scaleY(1.05) scaleX(0.96) rotate(-1.5deg); }
+      50%{ transform:scaleY(0.96) scaleX(1.04) rotate(1deg); }
+      75%{ transform:scaleY(1.06) scaleX(0.97) rotate(-0.8deg); }
+    }
+    .bg-flame-glow{
+      position:absolute; inset:-30px; border-radius:50%;
+      background:radial-gradient(circle, rgba(212,175,55,0.35) 0%, transparent 70%);
+      filter:blur(8px); animation:jyothiGlow 3s ease-in-out infinite;
+    }
+    .bg-hands{ position:absolute; top:52%; right:-2%; width:190px; opacity:0.07; animation:handsPulse 6s ease-in-out infinite; }
+    @keyframes handsPulse{ 0%,100%{ opacity:0.055; transform:scale(1);} 50%{ opacity:0.09; transform:scale(1.03);} }
+    @media (max-width:900px){ .bg-decor{ display:none; } }
 
     header{
       position:sticky; top:0; z-index:50;
       display:flex;align-items:center;justify-content:space-between;padding:14px 24px;
-      background:rgba(251,243,228,0.82); backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(199,154,63,0.2);
+      background:rgba(27,18,6,0.82); backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(212,175,55,0.22);
       max-width:var(--max-width); margin:0 auto;
     }
     .brand{display:flex;align-items:center;gap:14px}
-    #logo{width:64px;height:64px;object-fit:contain;border-radius:12px;box-shadow:0 6px 18px rgba(138,90,18,0.18);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    #logo:hover{ transform: scale(1.08) rotate(-2deg); box-shadow: 0 10px 24px rgba(138,90,18,0.35); }
-    .site-title{font-family:'Cormorant Garamond', serif; font-weight:700; color:var(--gold-deep); letter-spacing:1.2px; font-size:1.15rem}
+    #logo{
+      width:64px;height:64px;object-fit:contain;border-radius:12px;
+      border:2px solid rgba(212,175,55,0.5);
+      box-shadow:0 0 18px rgba(212,175,55,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #logo:hover{ transform: scale(1.08) rotate(-2deg); box-shadow: 0 0 26px rgba(212,175,55,0.5); }
+    .site-title{font-family:'Cormorant Garamond', serif; font-weight:700; color:var(--gold-light); letter-spacing:1.2px; font-size:1.15rem}
+
+    .header-right{ display:flex; align-items:center; gap:22px; }
     nav a{
       position:relative; margin-left:20px;color:var(--muted);text-decoration:none;font-weight:600;
       padding-bottom:4px;
     }
     nav a::after{
       content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
-      background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));
+      background:linear-gradient(90deg,var(--gold),var(--gold-light));
       transition:width 0.3s ease;
     }
-    nav a:hover{color:var(--gold-deep)}
+    nav a:hover{color:var(--gold-light)}
     nav a:hover::after{width:100%}
+
+    .lang-switch{ display:flex; border:1px solid rgba(212,175,55,0.4); border-radius:999px; overflow:hidden; }
+    .lang-btn{
+      background:transparent; border:none; color:var(--muted); font-weight:700; font-size:0.82rem;
+      padding:6px 12px; cursor:pointer; transition:background 0.25s ease, color 0.25s ease;
+    }
+    .lang-btn.active{ background:linear-gradient(135deg,var(--gold-deep),var(--gold)); color:var(--bg); }
 
     .hero{
       position:relative; overflow:hidden;
       display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:44px 0 36px;
-      border-radius:16px;background:linear-gradient(180deg, rgba(199,154,63,0.08), rgba(199,154,63,0.02));
+      border-radius:16px;background:linear-gradient(180deg, rgba(212,175,55,0.10), rgba(212,175,55,0.02));
     }
     .hero-inner{display:flex;flex-direction:column;gap:14px;text-align:center;align-items:center;position:relative;z-index:2}
     .intro{color:var(--muted);max-width:65ch;margin:0 auto}
@@ -88,14 +131,16 @@
     .hero-logo-glow{ position:relative;width:170px;height:170px; display:flex;align-items:center;justify-content:center; }
     .hero-logo-glow::before{
       content:"";position:absolute;inset:-26px;
-      background:radial-gradient(circle, rgba(199,154,63,0.42) 0%, rgba(199,154,63,0.10) 55%, transparent 75%);
+      background:radial-gradient(circle, rgba(212,175,55,0.45) 0%, rgba(212,175,55,0.12) 55%, transparent 75%);
       border-radius:50%;filter:blur(6px);
       animation:jyothiGlow 4s ease-in-out infinite; z-index:0;
     }
     .hero-logo{
       position:relative;z-index:1;
       width:150px;height:150px;object-fit:cover;border-radius:18px;
-      box-shadow:0 20px 40px rgba(199,154,63,0.32), 0 8px 18px rgba(0,0,0,0.10);
+      border:3px solid rgba(212,175,55,0.55);
+      box-shadow:0 0 40px rgba(212,175,55,0.35), 0 0 80px rgba(212,175,55,0.15),
+        inset 0 2px 4px rgba(255,255,255,0.15), inset 0 -3px 8px rgba(0,0,0,0.35);
       transform-style:preserve-3d; transition:transform 0.15s ease-out;
       animation:heroFloat 6s ease-in-out infinite; will-change:transform;
     }
@@ -108,7 +153,7 @@
     .orbit{ position:absolute; inset:0; pointer-events:none; z-index:1; }
     .orbit span{
       position:absolute; width:5px;height:5px;border-radius:50%; top:50%; left:50%;
-      background:var(--gold-shimmer); box-shadow:0 0 8px 2px rgba(231,200,120,0.85);
+      background:var(--gold-shimmer); box-shadow:0 0 8px 2px rgba(240,210,138,0.85);
       animation:orbit 6s linear infinite;
     }
     .orbit span:nth-child(2){ animation-duration:8.5s; animation-direction:reverse; }
@@ -128,14 +173,15 @@
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
     .card{
       background:var(--card);padding:22px;border-radius:14px;
-      border:1px solid rgba(199,154,63,0.22);
-      box-shadow:0 8px 24px rgba(138,90,18,0.08);
+      border:1px solid var(--card-border);
+      box-shadow:0 8px 24px rgba(0,0,0,0.35);
       transition:transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position:relative; z-index:1;
     }
-    .card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px rgba(138,90,18,0.16); border-color:rgba(199,154,63,0.5); }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(0,0,0,0.5), 0 0 24px rgba(212,175,55,0.12); border-color:rgba(212,175,55,0.55); }
     h2{
       font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.55rem;
-      color:var(--gold-deep); position:relative; padding-bottom:10px; margin:0 0 14px 0;
+      color:var(--gold-light); position:relative; padding-bottom:10px; margin:0 0 14px 0;
     }
     h2::after{
       content:""; position:absolute; left:0; bottom:0; width:46px; height:3px;
@@ -144,19 +190,23 @@
     ul{margin:8px 0 0 18px;color:var(--muted)}
     .programs li{margin-bottom:8px}
     .benefits{display:flex;gap:12px;flex-wrap:wrap}
-    .benefit{flex:1 1 45%;background:var(--glass);padding:14px;border-radius:10px;border:1px solid rgba(199,154,63,0.18)}
-    footer{margin-top:28px;padding:22px 0;color:var(--muted);font-size:0.95rem;text-align:center;border-top:1px solid rgba(199,154,63,0.2)}
+    .benefit{flex:1 1 45%;background:var(--glass);padding:14px;border-radius:10px;border:1px solid rgba(212,175,55,0.18)}
+    .benefit strong{ color:var(--gold-light); }
+    footer{margin-top:28px;padding:22px 0;color:var(--muted);font-size:0.95rem;text-align:center;border-top:1px solid rgba(212,175,55,0.2)}
 
     form{display:flex;flex-direction:column;gap:10px}
-    input,textarea,button{ padding:11px;border-radius:10px;border:1px solid rgba(138,90,18,0.18);font-size:1rem;font-family:inherit; }
+    label{ color:var(--ink); }
+    input,textarea,button{ padding:11px;border-radius:10px;border:1px solid rgba(212,175,55,0.3);font-size:1rem;font-family:inherit; }
+    input,textarea{ background:rgba(255,255,255,0.04); color:var(--ink); }
+    input::placeholder,textarea::placeholder{ color:rgba(201,169,110,0.6); }
     input:focus,textarea:focus{ outline:2px solid var(--gold-light); outline-offset:1px; }
     button{
       position:relative; overflow:hidden;
       background:linear-gradient(135deg,var(--gold-deep),var(--gold));
-      color:#FFF7E6; border:none; cursor:pointer; font-weight:700;
+      color:var(--bg-deep); border:none; cursor:pointer; font-weight:800;
       transition:transform 0.25s ease, box-shadow 0.25s ease;
     }
-    button:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(138,90,18,0.3); }
+    button:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(212,175,55,0.35); }
     button::after{
       content:""; position:absolute; top:0; left:-75%; width:50%; height:100%;
       background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
@@ -168,7 +218,7 @@
     .essence-art{ position:relative; flex:0 0 260px; display:flex; justify-content:center; }
     .essence-glow{
       position:absolute; inset:-40px;
-      background:radial-gradient(circle, rgba(199,154,63,0.35) 0%, rgba(199,154,63,0.08) 55%, transparent 75%);
+      background:radial-gradient(circle, rgba(212,175,55,0.4) 0%, rgba(212,175,55,0.1) 55%, transparent 75%);
       border-radius:50%; filter:blur(10px); animation:jyothiGlow 5s ease-in-out infinite; z-index:0;
     }
     .essence-svg{ position:relative; z-index:1; width:230px; height:auto; }
@@ -177,7 +227,7 @@
     .essence-svg .rays{ transform-box:fill-box; transform-origin:50% 50%; animation:rayPulse 3.6s ease-in-out infinite; }
     @keyframes slowSpin{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
     @keyframes orbPulse{ 0%,100%{ opacity:0.85; transform:scale(1);} 50%{ opacity:1; transform:scale(1.06);} }
-    @keyframes rayPulse{ 0%,100%{ opacity:0.35;} 50%{ opacity:0.7;} }
+    @keyframes rayPulse{ 0%,100%{ opacity:0.4;} 50%{ opacity:0.8;} }
     .essence-text h2{ font-size:1.8rem; }
     .essence-text p{ color:var(--muted); max-width:56ch; }
     @media (max-width:900px){
@@ -186,7 +236,7 @@
     }
 
     .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
-    .photo-grid figure{margin:0;overflow:hidden;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .photo-grid figure{margin:0;overflow:hidden;border-radius:10px;border:1px solid rgba(212,175,55,0.3);box-shadow:0 6px 18px rgba(0,0,0,0.4)}
     .photo-grid img{width:100%;height:220px;object-fit:cover;display:block;transition:transform 0.3s ease}
     .photo-grid img:hover{transform:scale(1.04)}
     .photo-grid figcaption{padding:8px 4px;color:var(--muted);font-size:0.9rem;text-align:center}
@@ -196,7 +246,8 @@
 
     @media (prefers-reduced-motion: reduce){
       .hero-logo, .hero-logo-glow::before, .essence-glow, .essence-svg .rings,
-      .essence-svg .orb-pulse, .essence-svg .rays, #logo, .tagline, .hero-inner > *{
+      .essence-svg .orb-pulse, .essence-svg .rays, #logo, .tagline, .hero-inner > *,
+      .bg-flower, .bg-flame-svg, .bg-flame-glow, .bg-hands{
         animation:none !important; transition:none !important;
       }
       .hero-inner > *{ opacity:1 !important; transform:none !important; }
@@ -214,23 +265,89 @@
   </style>
 </head>
 <body>
+
+  <div class="bg-decor" aria-hidden="true">
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="flowerGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8A5A12"/>
+          <stop offset="100%" stop-color="#F0D28A"/>
+        </linearGradient>
+        <radialGradient id="flowerCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF3D6"/>
+          <stop offset="100%" stop-color="#D4AF37"/>
+        </radialGradient>
+        <linearGradient id="flameGold" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#8A5A12"/>
+          <stop offset="60%" stop-color="#D4AF37"/>
+          <stop offset="100%" stop-color="#FFF3D6"/>
+        </linearGradient>
+        <linearGradient id="flameCore" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#D4AF37"/>
+          <stop offset="100%" stop-color="#FFF9E8"/>
+        </linearGradient>
+        <linearGradient id="handsGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#D4AF37"/>
+          <stop offset="100%" stop-color="#F0D28A"/>
+        </linearGradient>
+        <symbol id="goldFlower" viewBox="0 0 100 100">
+          <g fill="url(#flowerGold)" fill-opacity="0.55" stroke="url(#flowerGold)" stroke-width="1">
+            <ellipse cx="50" cy="30" rx="12" ry="22"/>
+            <ellipse cx="50" cy="30" rx="12" ry="22" transform="rotate(60 50 50)"/>
+            <ellipse cx="50" cy="30" rx="12" ry="22" transform="rotate(120 50 50)"/>
+            <ellipse cx="50" cy="30" rx="12" ry="22" transform="rotate(180 50 50)"/>
+            <ellipse cx="50" cy="30" rx="12" ry="22" transform="rotate(240 50 50)"/>
+            <ellipse cx="50" cy="30" rx="12" ry="22" transform="rotate(300 50 50)"/>
+          </g>
+          <circle cx="50" cy="50" r="8" fill="url(#flowerCore)"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <svg class="bg-flower" style="top:8%; left:4%; width:56px; animation-duration:9s; animation-delay:0s;"><use href="#goldFlower"/></svg>
+    <svg class="bg-flower" style="top:20%; right:6%; width:42px; animation-duration:11s; animation-delay:1.5s;"><use href="#goldFlower"/></svg>
+    <svg class="bg-flower" style="bottom:16%; left:7%; width:48px; animation-duration:10s; animation-delay:3s;"><use href="#goldFlower"/></svg>
+    <svg class="bg-flower" style="bottom:24%; right:5%; width:60px; animation-duration:8.5s; animation-delay:2s;"><use href="#goldFlower"/></svg>
+
+    <div class="bg-flame">
+      <div class="bg-flame-glow"></div>
+      <svg class="bg-flame-svg" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,95 C10,85 5,60 15,40 C20,28 28,20 30,5 C32,20 40,28 45,40 C55,60 50,85 30,95 Z" fill="url(#flameGold)"/>
+        <path d="M30,85 C18,78 16,60 22,46 C25,38 29,32 30,22 C31,32 35,38 38,46 C44,60 42,78 30,85 Z" fill="url(#flameCore)"/>
+      </svg>
+    </div>
+
+    <svg class="bg-hands" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20,90 C20,50 60,30 100,30 C140,30 180,50 180,90 C180,120 150,130 100,130 C50,130 20,120 20,90 Z"
+        fill="none" stroke="url(#handsGold)" stroke-width="2"/>
+      <path d="M65,85 C65,65 82,52 100,52 C118,52 135,65 135,85 C135,102 118,108 100,108 C82,108 65,102 65,85 Z"
+        fill="none" stroke="url(#handsGold)" stroke-width="1.6" stroke-opacity="0.8"/>
+    </svg>
+  </div>
+
   <header>
     <div class="brand">
       <img id="logo" src="assets/logo.jpg" alt="Garbha Jyothi logo">
       <div>
         <div class="site-title">GARBHA JYOTHI</div>
-        <div style="font-size:0.9rem;color:var(--muted)">A Journey of Divine Motherhood</div>
+        <div style="font-size:0.9rem;color:var(--muted)" data-i18n="site_subtitle">A Journey of Divine Motherhood</div>
       </div>
     </div>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#essence">Essence</a>
-      <a href="#rituals">Rituals</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#programs">Programs</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-right">
+      <nav aria-label="Main navigation" data-i18n-aria="nav_aria">
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#essence" data-i18n="nav_essence">Essence</a>
+        <a href="#rituals" data-i18n="nav_rituals">Rituals</a>
+        <a href="#benefits" data-i18n="nav_benefits">Benefits</a>
+        <a href="#programs" data-i18n="nav_programs">Programs</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" data-lang="kn" onclick="setLang('kn')">ಕನ್ನಡ</button>
+      </div>
+    </div>
   </header>
 
   <div class="container">
@@ -248,8 +365,11 @@
               <div class="orbit" aria-hidden="true"><span></span><span></span><span></span></div>
             </div>
           </div>
-          <h1 id="hero-heading" class="tagline">A Journey of Divine Motherhood</h1>
-          <p class="intro">Welcome to <strong>Garbha Jyothi</strong>. We nurture divine motherhood by blending time-honored Garbh Sanskar rituals with gentle modern care — supporting the physical, emotional and spiritual well-being of both mother and father during pregnancy.</p>
+          <h1 id="hero-heading" class="tagline" data-i18n="hero_tagline">A Journey of Divine Motherhood</h1>
+          <p class="intro">
+            <span data-i18n="hero_intro_pre">Welcome to</span> <strong>Garbha Jyothi</strong>.
+            <span data-i18n="hero_intro_post">We nurture divine motherhood by blending time-honored Garbh Sanskar rituals with gentle modern care — supporting the physical, emotional and spiritual well-being of both mother and father during pregnancy.</span>
+          </p>
         </div>
       </section>
 
@@ -267,14 +387,14 @@
               </radialGradient>
               <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#8A5A12"/>
-                <stop offset="50%" stop-color="#C79A3F"/>
-                <stop offset="100%" stop-color="#E7C878"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#F0D28A"/>
               </linearGradient>
             </defs>
 
             <g class="rings">
-              <circle cx="200" cy="220" r="150" fill="none" stroke="url(#goldLine)" stroke-opacity="0.15" stroke-width="1"/>
-              <circle cx="200" cy="220" r="120" fill="none" stroke="url(#goldLine)" stroke-opacity="0.22" stroke-width="1"/>
+              <circle cx="200" cy="220" r="150" fill="none" stroke="url(#goldLine)" stroke-opacity="0.2" stroke-width="1"/>
+              <circle cx="200" cy="220" r="120" fill="none" stroke="url(#goldLine)" stroke-opacity="0.28" stroke-width="1"/>
             </g>
 
             <g class="rays" stroke="url(#goldLine)" stroke-width="1.4" stroke-linecap="round">
@@ -310,58 +430,61 @@
           </svg>
         </div>
         <div class="essence-text">
-          <h2 id="essence-heading">The Essence of Garbha Sanskar</h2>
-          <p>Every soul begins its journey cradled in light. <strong>Garbha Jyothi</strong> is built around this image — a mother's calm becoming her child's first teacher, her breath becoming the baby's first rhythm, her devotion becoming the baby's first blessing.</p>
+          <h2 id="essence-heading" data-i18n="essence_heading">The Essence of Garbha Sanskar</h2>
+          <p>
+            <span data-i18n="essence_pre">Every soul begins its journey cradled in light.</span> <strong>Garbha Jyothi</strong>
+            <span data-i18n="essence_post">is built around this image — a mother's calm becoming her child's first teacher, her breath becoming the baby's first rhythm, her devotion becoming the baby's first blessing.</span>
+          </p>
         </div>
       </section>
 
       <section id="about" class="grid reveal" aria-labelledby="about-heading" style="margin-top:22px">
         <div class="card">
-          <h2 id="about-heading">About Us</h2>
-          <p><strong>Mission</strong> — To revive and share the sacred practices of Garbh Sanskar for holistic pregnancy care.</p>
-          <p><strong>Philosophy</strong> — Combining Vedic rituals, meditation, music, and lifestyle guidance for the well-being of both mother and child.</p>
-          <p><strong>Values</strong> — Spirituality; wellness; family bonding; divine connection.</p>
+          <h2 id="about-heading" data-i18n="about_heading">About Us</h2>
+          <p><strong data-i18n="about_mission_label">Mission</strong> — <span data-i18n="about_mission_text">To revive and share the sacred practices of Garbh Sanskar for holistic pregnancy care.</span></p>
+          <p><strong data-i18n="about_philosophy_label">Philosophy</strong> — <span data-i18n="about_philosophy_text">Combining Vedic rituals, meditation, music, and lifestyle guidance for the well-being of both mother and child.</span></p>
+          <p><strong data-i18n="about_values_label">Values</strong> — <span data-i18n="about_values_text">Spirituality; wellness; family bonding; divine connection.</span></p>
         </div>
 
         <div class="card">
-          <h2>Quick Contact</h2>
-          <p style="color:var(--muted)">Phone: <strong>+91 XXXXXXXXXX</strong></p>
-          <p style="color:var(--muted)">Email: <strong>info@garbhajyothi.org</strong></p>
-          <p style="color:var(--muted)">Location: <strong>Bengaluru, Karnataka</strong></p>
+          <h2 data-i18n="quick_contact_heading">Quick Contact</h2>
+          <p style="color:var(--muted)"><span data-i18n="phone_label">Phone:</span> <strong>+91 XXXXXXXXXX</strong></p>
+          <p style="color:var(--muted)"><span data-i18n="email_label">Email:</span> <strong>info@garbhajyothi.org</strong></p>
+          <p style="color:var(--muted)"><span data-i18n="location_label">Location:</span> <strong data-i18n="location_value">Bengaluru, Karnataka</strong></p>
         </div>
       </section>
 
       <section id="rituals" class="reveal" style="margin-top:18px">
         <div class="card">
-          <h2>Garbh Sanskar Rituals</h2>
+          <h2 data-i18n="rituals_heading">Garbh Sanskar Rituals</h2>
           <ul>
-            <li><strong>Mantra Chanting</strong> — Calming vibrations for mother and baby.</li>
-            <li><strong>Meditation & Yoga</strong> — Gentle practices to reduce stress and improve health.</li>
-            <li><strong>Ayurvedic Diet Guidance</strong> — Balanced nutrition tailored for pregnancy.</li>
-            <li><strong>Positive Reading & Music</strong> — Enhancing emotional and spiritual growth.</li>
-            <li><strong>Bonding Rituals for Husband & Wife</strong> — Strengthening family connection during pregnancy.</li>
+            <li><strong data-i18n="ritual1_title">Mantra Chanting</strong> — <span data-i18n="ritual1_desc">Calming vibrations for mother and baby.</span></li>
+            <li><strong data-i18n="ritual2_title">Meditation &amp; Yoga</strong> — <span data-i18n="ritual2_desc">Gentle practices to reduce stress and improve health.</span></li>
+            <li><strong data-i18n="ritual3_title">Ayurvedic Diet Guidance</strong> — <span data-i18n="ritual3_desc">Balanced nutrition tailored for pregnancy.</span></li>
+            <li><strong data-i18n="ritual4_title">Positive Reading &amp; Music</strong> — <span data-i18n="ritual4_desc">Enhancing emotional and spiritual growth.</span></li>
+            <li><strong data-i18n="ritual5_title">Bonding Rituals for Husband &amp; Wife</strong> — <span data-i18n="ritual5_desc">Strengthening family connection during pregnancy.</span></li>
           </ul>
         </div>
       </section>
 
-      <section id="benefits" class="reveal" style="margin-top:18px">
+      <section id="benefits" class="reveal" style="margin-top:18px; position:relative;">
         <div class="card">
-          <h2>Benefits for Mother and Father</h2>
+          <h2 data-i18n="benefits_heading">Benefits for Mother and Father</h2>
           <div class="benefits" aria-hidden="false">
             <div class="benefit">
-              <strong>For the Mother</strong>
+              <strong data-i18n="benefits_mother_label">For the Mother</strong>
               <ul>
-                <li>Emotional stability and reduced stress</li>
-                <li>Improved physical health and immunity</li>
-                <li>Spiritual connection with the unborn child</li>
+                <li data-i18n="benefits_mother_li1">Emotional stability and reduced stress</li>
+                <li data-i18n="benefits_mother_li2">Improved physical health and immunity</li>
+                <li data-i18n="benefits_mother_li3">Spiritual connection with the unborn child</li>
               </ul>
             </div>
             <div class="benefit">
-              <strong>For the Father</strong>
+              <strong data-i18n="benefits_father_label">For the Father</strong>
               <ul>
-                <li>Active involvement in the pregnancy journey</li>
-                <li>Emotional bonding with wife and child</li>
-                <li>Guidance on supportive lifestyle and rituals</li>
+                <li data-i18n="benefits_father_li1">Active involvement in the pregnancy journey</li>
+                <li data-i18n="benefits_father_li2">Emotional bonding with wife and child</li>
+                <li data-i18n="benefits_father_li3">Guidance on supportive lifestyle and rituals</li>
               </ul>
             </div>
           </div>
@@ -370,19 +493,19 @@
 
       <section id="programs" class="reveal" style="margin-top:18px">
         <div class="card">
-          <h2>Programs & Workshops</h2>
+          <h2 data-i18n="programs_heading">Programs &amp; Workshops</h2>
           <ul class="programs">
-            <li><strong>Online sessions</strong> on Garbh Sanskar rituals and daily practices.</li>
-            <li><strong>Couple workshops</strong> for pregnancy bonding and shared rituals.</li>
-            <li><strong>Personalized guidance</strong> on diet, meditation, and lifestyle.</li>
+            <li><strong data-i18n="program1_title">Online sessions</strong> <span data-i18n="program1_desc">on Garbh Sanskar rituals and daily practices.</span></li>
+            <li><strong data-i18n="program2_title">Couple workshops</strong> <span data-i18n="program2_desc">for pregnancy bonding and shared rituals.</span></li>
+            <li><strong data-i18n="program3_title">Personalized guidance</strong> <span data-i18n="program3_desc">on diet, meditation, and lifestyle.</span></li>
           </ul>
         </div>
       </section>
 
       <section id="gallery" class="reveal" style="margin-top:18px">
         <div class="card">
-          <h2>Gallery</h2>
-          <p style="color:var(--muted)">Moments from our Garbh Sanskar sessions and community.</p>
+          <h2 data-i18n="gallery_heading">Gallery</h2>
+          <p style="color:var(--muted)" data-i18n="gallery_text">Moments from our Garbh Sanskar sessions and community.</p>
           <div class="photo-grid">
             <figure>
               <img src="assets/logo.jpg" alt="Garbha Jyothi session moment">
@@ -394,22 +517,22 @@
 
       <section id="contact" class="reveal" style="margin-top:18px">
         <div class="card" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Contact Us</h2>
-          <p style="color:var(--muted)">Use the form below to inquire about sessions and workshops.</p>
+          <h2 id="contact-heading" data-i18n="contact_heading">Contact Us</h2>
+          <p style="color:var(--muted)" data-i18n="contact_text">Use the form below to inquire about sessions and workshops.</p>
           <form id="contactForm" onsubmit="return handleSubmit(event)" novalidate>
             <label>
-              <span style="font-weight:700">Name</span>
-              <input type="text" name="name" id="name" required placeholder="Your full name">
+              <span style="font-weight:700" data-i18n="form_name_label">Name</span>
+              <input type="text" name="name" id="name" required data-i18n-placeholder="form_name_placeholder" placeholder="Your full name">
             </label>
             <label>
-              <span style="font-weight:700">Email</span>
+              <span style="font-weight:700" data-i18n="form_email_label">Email</span>
               <input type="email" name="email" id="email" required placeholder="you@example.com">
             </label>
             <label>
-              <span style="font-weight:700">Message</span>
-              <textarea name="message" id="message" rows="4" placeholder="Tell us about your needs"></textarea>
+              <span style="font-weight:700" data-i18n="form_message_label">Message</span>
+              <textarea name="message" id="message" rows="4" data-i18n-placeholder="form_message_placeholder" placeholder="Tell us about your needs"></textarea>
             </label>
-            <button type="submit">Send Inquiry</button>
+            <button type="submit" data-i18n="form_button">Send Inquiry</button>
             <div id="formMsg" style="color:var(--muted);font-size:0.95rem;margin-top:8px"></div>
           </form>
         </div>
@@ -417,23 +540,142 @@
     </main>
 
     <footer>
-      <div>© <strong>Garbha Jyothi</strong> — A Journey of Divine Motherhood</div>
+      <div data-i18n="footer_text">© <strong>Garbha Jyothi</strong> — A Journey of Divine Motherhood</div>
     </footer>
   </div>
 
   <script>
+    var translations = {
+      en: {
+        site_subtitle: "A Journey of Divine Motherhood",
+        nav_about: "About", nav_essence: "Essence", nav_rituals: "Rituals",
+        nav_benefits: "Benefits", nav_programs: "Programs", nav_gallery: "Gallery", nav_contact: "Contact",
+        hero_tagline: "A Journey of Divine Motherhood",
+        hero_intro_pre: "Welcome to",
+        hero_intro_post: "We nurture divine motherhood by blending time-honored Garbh Sanskar rituals with gentle modern care — supporting the physical, emotional and spiritual well-being of both mother and father during pregnancy.",
+        essence_heading: "The Essence of Garbha Sanskar",
+        essence_pre: "Every soul begins its journey cradled in light.",
+        essence_post: "is built around this image — a mother's calm becoming her child's first teacher, her breath becoming the baby's first rhythm, her devotion becoming the baby's first blessing.",
+        about_heading: "About Us",
+        about_mission_label: "Mission", about_mission_text: "To revive and share the sacred practices of Garbh Sanskar for holistic pregnancy care.",
+        about_philosophy_label: "Philosophy", about_philosophy_text: "Combining Vedic rituals, meditation, music, and lifestyle guidance for the well-being of both mother and child.",
+        about_values_label: "Values", about_values_text: "Spirituality; wellness; family bonding; divine connection.",
+        quick_contact_heading: "Quick Contact",
+        phone_label: "Phone:", email_label: "Email:", location_label: "Location:", location_value: "Bengaluru, Karnataka",
+        rituals_heading: "Garbh Sanskar Rituals",
+        ritual1_title: "Mantra Chanting", ritual1_desc: "Calming vibrations for mother and baby.",
+        ritual2_title: "Meditation & Yoga", ritual2_desc: "Gentle practices to reduce stress and improve health.",
+        ritual3_title: "Ayurvedic Diet Guidance", ritual3_desc: "Balanced nutrition tailored for pregnancy.",
+        ritual4_title: "Positive Reading & Music", ritual4_desc: "Enhancing emotional and spiritual growth.",
+        ritual5_title: "Bonding Rituals for Husband & Wife", ritual5_desc: "Strengthening family connection during pregnancy.",
+        benefits_heading: "Benefits for Mother and Father",
+        benefits_mother_label: "For the Mother",
+        benefits_mother_li1: "Emotional stability and reduced stress",
+        benefits_mother_li2: "Improved physical health and immunity",
+        benefits_mother_li3: "Spiritual connection with the unborn child",
+        benefits_father_label: "For the Father",
+        benefits_father_li1: "Active involvement in the pregnancy journey",
+        benefits_father_li2: "Emotional bonding with wife and child",
+        benefits_father_li3: "Guidance on supportive lifestyle and rituals",
+        programs_heading: "Programs & Workshops",
+        program1_title: "Online sessions", program1_desc: "on Garbh Sanskar rituals and daily practices.",
+        program2_title: "Couple workshops", program2_desc: "for pregnancy bonding and shared rituals.",
+        program3_title: "Personalized guidance", program3_desc: "on diet, meditation, and lifestyle.",
+        gallery_heading: "Gallery", gallery_text: "Moments from our Garbh Sanskar sessions and community.",
+        contact_heading: "Contact Us", contact_text: "Use the form below to inquire about sessions and workshops.",
+        form_name_label: "Name", form_name_placeholder: "Your full name",
+        form_email_label: "Email",
+        form_message_label: "Message", form_message_placeholder: "Tell us about your needs",
+        form_button: "Send Inquiry",
+        form_error: "Please provide your name and email.",
+        form_success: "Thank you — your inquiry has been received. We will contact you soon.",
+        footer_text: "© <strong>Garbha Jyothi</strong> — A Journey of Divine Motherhood",
+        nav_aria: "Main navigation"
+      },
+      kn: {
+        site_subtitle: "ದೈವಿಕ ಮಾತೃತ್ವದ ಪಯಣ",
+        nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_essence: "ಸಾರ", nav_rituals: "ಆಚರಣೆಗಳು",
+        nav_benefits: "ಪ್ರಯೋಜನಗಳು", nav_programs: "ಕಾರ್ಯಕ್ರಮಗಳು", nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕ",
+        hero_tagline: "ದೈವಿಕ ಮಾತೃತ್ವದ ಪಯಣ",
+        hero_intro_pre: "ಸ್ವಾಗತ",
+        hero_intro_post: "ಪುರಾತನ ಗರ್ಭ ಸಂಸ್ಕಾರ ಆಚರಣೆಗಳನ್ನು ಆಧುನಿಕ ಆರೈಕೆಯೊಂದಿಗೆ ಬೆಸೆಯುವ ಮೂಲಕ ನಾವು ದೈವಿಕ ಮಾತೃತ್ವವನ್ನು ಪೋಷಿಸುತ್ತೇವೆ — ಗರ್ಭಾವಸ್ಥೆಯಲ್ಲಿ ತಾಯಿ ಮತ್ತು ತಂದೆ ಇಬ್ಬರ ದೈಹಿಕ, ಭಾವನಾತ್ಮಕ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ಯೋಗಕ್ಷೇಮವನ್ನು ಬೆಂಬಲಿಸುತ್ತೇವೆ.",
+        essence_heading: "ಗರ್ಭ ಸಂಸ್ಕಾರದ ಸಾರ",
+        essence_pre: "ಪ್ರತಿ ಆತ್ಮವೂ ತನ್ನ ಪಯಣವನ್ನು ಬೆಳಕಿನ ಮಡಿಲಿನಲ್ಲಿ ಪ್ರಾರಂಭಿಸುತ್ತದೆ.",
+        essence_post: "ಈ ಭಾವನೆಯ ಸುತ್ತಲೇ ರೂಪುಗೊಂಡಿದೆ — ತಾಯಿಯ ಶಾಂತಿಯೇ ಮಗುವಿನ ಮೊದಲ ಗುರುವಾಗುತ್ತದೆ, ಅವಳ ಉಸಿರೇ ಮಗುವಿನ ಮೊದಲ ಲಯವಾಗುತ್ತದೆ, ಅವಳ ಭಕ್ತಿಯೇ ಮಗುವಿನ ಮೊದಲ ಆಶೀರ್ವಾದವಾಗುತ್ತದೆ.",
+        about_heading: "ನಮ್ಮ ಬಗ್ಗೆ",
+        about_mission_label: "ಧ್ಯೇಯ", about_mission_text: "ಸಮಗ್ರ ಗರ್ಭಾವಸ್ಥೆಯ ಆರೈಕೆಗಾಗಿ ಗರ್ಭ ಸಂಸ್ಕಾರದ ಪವಿತ್ರ ಆಚರಣೆಗಳನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸಿ ಹಂಚಿಕೊಳ್ಳುವುದು.",
+        about_philosophy_label: "ತತ್ವ", about_philosophy_text: "ತಾಯಿ ಮತ್ತು ಮಗುವಿನ ಯೋಗಕ್ಷೇಮಕ್ಕಾಗಿ ವೈದಿಕ ಆಚರಣೆಗಳು, ಧ್ಯಾನ, ಸಂಗೀತ ಮತ್ತು ಜೀವನಶೈಲಿ ಮಾರ್ಗದರ್ಶನವನ್ನು ಸಂಯೋಜಿಸುವುದು.",
+        about_values_label: "ಮೌಲ್ಯಗಳು", about_values_text: "ಆಧ್ಯಾತ್ಮಿಕತೆ; ಆರೋಗ್ಯ; ಕುಟುಂಬದ ಬಾಂಧವ್ಯ; ದೈವಿಕ ಸಂಪರ್ಕ.",
+        quick_contact_heading: "ತ್ವರಿತ ಸಂಪರ್ಕ",
+        phone_label: "ದೂರವಾಣಿ:", email_label: "ಇಮೇಲ್:", location_label: "ಸ್ಥಳ:", location_value: "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ",
+        rituals_heading: "ಗರ್ಭ ಸಂಸ್ಕಾರ ಆಚರಣೆಗಳು",
+        ritual1_title: "ಮಂತ್ರ ಪಠಣ", ritual1_desc: "ತಾಯಿ ಮತ್ತು ಮಗುವಿಗೆ ಶಾಂತಗೊಳಿಸುವ ಕಂಪನಗಳು.",
+        ritual2_title: "ಧ್ಯಾನ ಮತ್ತು ಯೋಗ", ritual2_desc: "ಒತ್ತಡ ಕಡಿಮೆ ಮಾಡಲು ಮತ್ತು ಆರೋಗ್ಯ ಸುಧಾರಿಸಲು ಸೌಮ್ಯ ಅಭ್ಯಾಸಗಳು.",
+        ritual3_title: "ಆಯುರ್ವೇದ ಆಹಾರ ಮಾರ್ಗದರ್ಶನ", ritual3_desc: "ಗರ್ಭಾವಸ್ಥೆಗೆ ಸೂಕ್ತವಾದ ಸಮತೋಲಿತ ಪೋಷಣೆ.",
+        ritual4_title: "ಸಕಾರಾತ್ಮಕ ಓದುವಿಕೆ ಮತ್ತು ಸಂಗೀತ", ritual4_desc: "ಭಾವನಾತ್ಮಕ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ಬೆಳವಣಿಗೆಯನ್ನು ಹೆಚ್ಚಿಸುವುದು.",
+        ritual5_title: "ಪತಿ-ಪತ್ನಿಯರ ಬಾಂಧವ್ಯ ಆಚರಣೆಗಳು", ritual5_desc: "ಗರ್ಭಾವಸ್ಥೆಯಲ್ಲಿ ಕುಟುಂಬದ ಬಂಧವನ್ನು ಬಲಪಡಿಸುವುದು.",
+        benefits_heading: "ತಾಯಿ ಮತ್ತು ತಂದೆಗೆ ಪ್ರಯೋಜನಗಳು",
+        benefits_mother_label: "ತಾಯಿಗೆ",
+        benefits_mother_li1: "ಭಾವನಾತ್ಮಕ ಸ್ಥಿರತೆ ಮತ್ತು ಕಡಿಮೆ ಒತ್ತಡ",
+        benefits_mother_li2: "ಸುಧಾರಿತ ದೈಹಿಕ ಆರೋಗ್ಯ ಮತ್ತು ರೋಗನಿರೋಧಕ ಶಕ್ತಿ",
+        benefits_mother_li3: "ಹುಟ್ಟಲಿರುವ ಮಗುವಿನೊಂದಿಗೆ ಆಧ್ಯಾತ್ಮಿಕ ಸಂಪರ್ಕ",
+        benefits_father_label: "ತಂದೆಗೆ",
+        benefits_father_li1: "ಗರ್ಭಾವಸ್ಥೆಯ ಪಯಣದಲ್ಲಿ ಸಕ್ರಿಯ ಪಾಲ್ಗೊಳ್ಳುವಿಕೆ",
+        benefits_father_li2: "ಪತ್ನಿ ಮತ್ತು ಮಗುವಿನೊಂದಿಗೆ ಭಾವನಾತ್ಮಕ ಬಾಂಧವ್ಯ",
+        benefits_father_li3: "ಬೆಂಬಲಿಸುವ ಜೀವನಶೈಲಿ ಮತ್ತು ಆಚರಣೆಗಳ ಬಗ್ಗೆ ಮಾರ್ಗದರ್ಶನ",
+        programs_heading: "ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಕಾರ್ಯಾಗಾರಗಳು",
+        program1_title: "ಆನ್‌ಲೈನ್ ಅಧಿವೇಶನಗಳು", program1_desc: "ಗರ್ಭ ಸಂಸ್ಕಾರ ಆಚರಣೆಗಳು ಮತ್ತು ದೈನಂದಿನ ಅಭ್ಯಾಸಗಳ ಕುರಿತು.",
+        program2_title: "ದಂಪತಿಗಳ ಕಾರ್ಯಾಗಾರಗಳು", program2_desc: "ಗರ್ಭಾವಸ್ಥೆಯ ಬಾಂಧವ್ಯ ಮತ್ತು ಹಂಚಿಕೆಯ ಆಚರಣೆಗಳಿಗಾಗಿ.",
+        program3_title: "ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಮಾರ್ಗದರ್ಶನ", program3_desc: "ಆಹಾರ, ಧ್ಯಾನ ಮತ್ತು ಜೀವನಶೈಲಿಯ ಬಗ್ಗೆ.",
+        gallery_heading: "ಗ್ಯಾಲರಿ", gallery_text: "ನಮ್ಮ ಗರ್ಭ ಸಂಸ್ಕಾರ ಅಧಿವೇಶನಗಳು ಮತ್ತು ಸಮುದಾಯದ ಕ್ಷಣಗಳು.",
+        contact_heading: "ಸಂಪರ್ಕಿಸಿ", contact_text: "ಅಧಿವೇಶನಗಳು ಮತ್ತು ಕಾರ್ಯಾಗಾರಗಳ ಬಗ್ಗೆ ವಿಚಾರಿಸಲು ಕೆಳಗಿನ ಫಾರ್ಮ್ ಬಳಸಿ.",
+        form_name_label: "ಹೆಸರು", form_name_placeholder: "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು",
+        form_email_label: "ಇಮೇಲ್",
+        form_message_label: "ಸಂದೇಶ", form_message_placeholder: "ನಿಮ್ಮ ಅಗತ್ಯಗಳ ಬಗ್ಗೆ ನಮಗೆ ತಿಳಿಸಿ",
+        form_button: "ವಿಚಾರಣೆ ಕಳುಹಿಸಿ",
+        form_error: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಇಮೇಲ್ ನೀಡಿ.",
+        form_success: "ಧನ್ಯವಾದಗಳು — ನಿಮ್ಮ ವಿಚಾರಣೆ ಸ್ವೀಕರಿಸಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.",
+        footer_text: "© <strong>ಗರ್ಭ ಜ್ಯೋತಿ</strong> — ದೈವಿಕ ಮಾತೃತ್ವದ ಪಯಣ",
+        nav_aria: "ಮುಖ್ಯ ಸಂಚರಣೆ"
+      }
+    };
+    var currentLang = 'en';
+
+    function setLang(lang){
+      currentLang = lang;
+      document.documentElement.setAttribute('lang', lang);
+      var dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key = el.getAttribute('data-i18n');
+        if(dict[key] !== undefined){
+          if(key === 'footer_text'){ el.innerHTML = dict[key]; }
+          else{ el.textContent = dict[key]; }
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+        var key = el.getAttribute('data-i18n-placeholder');
+        if(dict[key] !== undefined){ el.setAttribute('placeholder', dict[key]); }
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn){
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      var nav = document.querySelector('nav[aria-label]');
+      if(nav && dict.nav_aria){ nav.setAttribute('aria-label', dict.nav_aria); }
+    }
+
     function handleSubmit(e){
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const formMsg = document.getElementById('formMsg');
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var formMsg = document.getElementById('formMsg');
+      var dict = translations[currentLang];
       if(!name || !email){
-        formMsg.style.color = '#8A5A12';
-        formMsg.textContent = 'Please provide your name and email.';
+        formMsg.style.color = '#D4AF37';
+        formMsg.textContent = dict.form_error;
         return false;
       }
-      formMsg.style.color = 'green';
-      formMsg.textContent = 'Thank you — your inquiry has been received. We will contact you soon.';
+      formMsg.style.color = '#8FCB8F';
+      formMsg.textContent = dict.form_success;
       document.getElementById('contactForm').reset();
       return false;
     }
