@@ -80,7 +80,7 @@
     }
 
     /* Custom Cursor Light Tracker */
-    .cursor-light {
+    /* .cursor-light {
       position: fixed;
       width: 450px;
       height: 450px;
@@ -91,6 +91,55 @@
       z-index: 1;
       opacity: 0;
       transition: opacity 0.5s ease;
+    } */
+    .cursor-light {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, gold 0%, transparent 70%);
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    }
+    .cursor-light.active {
+      opacity: 1;
+    }
+    .cursor-light.active::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 45%, transparent 70%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .sparkle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: gold;
+    pointer-events: none;
+    opacity: 1;
+    animation: sparkleFade 0.4s forwards; /* faster fade */
+    mix-blend-mode: screen;
+    z-index: 9999;
+    }
+    @keyframes sparkleFade {
+      0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+     100% {
+        transform: scale(0.2) translateY(-10px);
+        opacity: 0;
+      }
     }
 
     /* Header */
@@ -1361,26 +1410,58 @@
       els.forEach(function(el) { io.observe(el); });
     })();
 
-    // Custom Cursor Glow effect listener
+    // // Custom Cursor Glow effect listener
+    // (function() {
+    //   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    //   if (reduce) return;
+    //   var glow = document.querySelector('.cursor-light');
+      
+    //   document.addEventListener('mousemove', function(e) {
+    //     if (glow) {
+    //       glow.style.opacity = '200';
+    //       glow.style.left = e.clientX + 'px';
+    //       glow.style.top = e.clientY + 'px';
+    //     }
+    //   });
+      
+    //   document.addEventListener('mouseleave', function() {
+    //     if (glow) {
+    //       glow.style.opacity = '200';
+    //     }
+    //   });
+    // })();
     (function() {
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-      var glow = document.querySelector('.cursor-light');
-      
-      document.addEventListener('mousemove', function(e) {
-        if (glow) {
-          glow.style.opacity = '200';
-          glow.style.left = e.clientX + 'px';
-          glow.style.top = e.clientY + 'px';
-        }
-      });
-      
-      document.addEventListener('mouseleave', function() {
-        if (glow) {
-          glow.style.opacity = '200';
-        }
-      });
-    })();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  var glow = document.querySelector('.cursor-light');
+
+  document.addEventListener('mousemove', function(e) {
+    if (glow) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+      glow.style.opacity = '1';
+    }
+
+    // Create sparkle
+    var sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = e.clientX + 'px';
+    sparkle.style.top = e.clientY + 'px';
+    document.body.appendChild(sparkle);
+
+    // Remove after animation
+    sparkle.addEventListener('animationend', function() {
+      sparkle.remove();
+    });
+  });
+
+  document.addEventListener('mouseleave', function() {
+    if (glow) {
+      glow.style.opacity = '0';
+    }
+  });
+})();
   </script>
 </body>
 </html>
