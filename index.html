@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0F0A05" />
   <title>Garbha Jyothi — Light from the Womb to the World</title>
-  <meta name="description" content="Garbha Jyothi™ is the world's first integrative Garbha Sanskar movement blending ancient womb wisdom with modern mind science to awaken light from the womb to the world." />
-  
+  <meta name="description"
+    content="Garbha Jyothi™ is the world's first integrative Garbha Sanskar movement blending ancient womb wisdom with modern mind science to awaken light from the womb to the world." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lato:wght@300;400;700&family=Noto+Serif+Kannada:wght@600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700;800&family=Noto+Serif+Kannada:wght@600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
       --bg: #0F0A05;
@@ -27,12 +30,17 @@
       --max-width: 1200px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      background: 
+      background:
         radial-gradient(circle at 10% 20%, rgba(138, 90, 18, 0.15), transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.12), transparent 50%),
         var(--bg);
@@ -46,16 +54,46 @@
     }
 
     /* Bilingual Font Overrides */
-    html[lang="kn"] body { font-family: 'Noto Sans Kannada', 'Lato', sans-serif; }
-    html[lang="kn"] h1, html[lang="kn"] h2, html[lang="kn"] h3, html[lang="kn"] .brand-title {
+    html[lang="kn"] body {
+      font-family: 'Noto Sans Kannada', 'Lato', sans-serif;
+    }
+
+    html[lang="kn"] h1,
+    html[lang="kn"] h2,
+    html[lang="kn"] h3 {
       font-family: 'Noto Serif Kannada', serif;
     }
 
-    h1, h2, h3, .brand-title {
-      font-family: 'Cinzel Decorative', serif;
+    html[lang="kn"] .brand-title {
+      font-family: 'Noto Sans Kannada', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Lato', -apple-system, "Segoe UI", Roboto, sans-serif;
       font-weight: 700;
       color: var(--gold-light);
       letter-spacing: 1px;
+    }
+
+    .brand-title {
+      font-family: 'Lato', -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 1.5px;
+    }
+
+    .brand-name {
+      font-family: 'Lato', -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    html[lang="kn"] .brand-name {
+      font-family: 'Lato', -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     .container {
@@ -67,16 +105,31 @@
     }
 
     /* Ambient Background Elements */
-    .bg-decor { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-    
+    .bg-decor {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
     .bg-flower {
-      position: absolute; opacity: 0.35;
-      filter: drop-shadow(0 0 8px rgba(212,175,55,0.2));
+      position: absolute;
+      opacity: 0.35;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
       animation: flowerSway 12s ease-in-out infinite;
     }
+
     @keyframes flowerSway {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(8deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(8deg);
+      }
     }
 
     /* Custom Cursor Light Tracker */
@@ -93,18 +146,20 @@
       transition: opacity 0.5s ease;
     } */
     .cursor-light {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    pointer-events: none;
-    background: radial-gradient(circle, gold 0%, transparent 70%);
-    mix-blend-mode: screen;
-    transform: translate(-50%, -50%);
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, gold 0%, transparent 70%);
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
     }
+
     .cursor-light.active {
       opacity: 1;
     }
+
     .cursor-light.active::after {
       content: "";
       position: absolute;
@@ -119,24 +174,28 @@
       pointer-events: none;
       transition: opacity 0.5s ease;
     }
+
     .sparkle {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: gold;
-    pointer-events: none;
-    opacity: 1;
-    animation: sparkleFade 0.4s forwards; /* faster fade */
-    mix-blend-mode: screen;
-    z-index: 9999;
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: gold;
+      pointer-events: none;
+      opacity: 1;
+      animation: sparkleFade 0.4s forwards;
+      /* faster fade */
+      mix-blend-mode: screen;
+      z-index: 9999;
     }
+
     @keyframes sparkleFade {
       0% {
         transform: scale(1) translateY(0);
         opacity: 1;
       }
-     100% {
+
+      100% {
         transform: scale(0.2) translateY(-10px);
         opacity: 0;
       }
@@ -144,74 +203,187 @@
 
     /* Header */
     header {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between; padding: 15px 30px;
-      background: rgba(15, 10, 5, 0.85); backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: rgba(15, 10, 5, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(212, 175, 55, 0.18);
       max-width: 100%;
     }
-    
-    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
     #logo {
-      width: 60px; height: 60px; object-fit: cover; border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
       border: 2px solid rgba(212, 175, 55, 0.6);
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .brand:hover #logo { transform: scale(1.08) rotate(5deg); box-shadow: 0 0 22px rgba(212,175,55,0.6); }
-    
-    .brand-title { font-size: 1.3rem; margin: 0; color: var(--gold-light); }
-    .brand-subtitle { font-size: 0.8rem; color: var(--muted); margin-top: 2px; font-weight: 300; }
 
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted); text-decoration: none; font-weight: 400; font-size: 0.95rem;
-      padding: 6px 0; position: relative; transition: color 0.3s;
+    .brand:hover #logo {
+      transform: scale(1.08) rotate(5deg);
+      box-shadow: 0 0 22px rgba(212, 175, 55, 0.6);
     }
+
+    .brand-title {
+      font-size: 1.3rem;
+      margin: 0;
+      color: var(--gold-light);
+    }
+
+    .brand-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+      font-weight: 300;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.95rem;
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.3s;
+    }
+
     nav a::after {
-      content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
       background: linear-gradient(90deg, var(--gold), var(--gold-light));
       transition: width 0.3s ease;
     }
-    nav a:hover { color: var(--gold-light); }
-    nav a:hover::after { width: 100%; }
 
-    .header-right { display: flex; align-items: center; gap: 20px; }
-    .lang-switch { display: flex; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; overflow: hidden; }
-    .lang-btn {
-      background: transparent; border: none; color: var(--muted); font-weight: 700; font-size: 0.8rem;
-      padding: 6px 14px; cursor: pointer; transition: background 0.3s, color 0.3s;
+    nav a:hover {
+      color: var(--gold-light);
     }
-    .lang-btn.active { background: linear-gradient(135deg, var(--gold-deep), var(--gold)); color: var(--bg-deep); }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-switch {
+      display: flex;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      color: var(--bg-deep);
+    }
 
     /* Hero Section */
     .hero {
-      position: relative; overflow: hidden; min-height: 80vh;
-      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: center;
-      padding: 60px 40px; border-radius: 24px; margin-bottom: 40px;
-      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(212,175,55,0.01));
+      position: relative;
+      overflow: hidden;
+      min-height: 80vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      padding: 60px 40px;
+      border-radius: 24px;
+      margin-bottom: 40px;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.01));
       border: 1px solid rgba(212, 175, 55, 0.08);
     }
-    .hero-content { display: flex; flex-direction: column; gap: 20px; z-index: 2; }
-    
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+
     .hero-pretitle {
-      font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
     }
-    .hero-title { font-size: 3.2rem; margin: 0; line-height: 1.2; color: var(--gold-shimmer); }
-    .hero-intro { font-size: 1.15rem; color: var(--muted); max-width: 600px; }
-    
-    .hero-buttons { display: flex; gap: 15px; margin-top: 10px; }
+
+    .hero-title {
+      font-size: 3.2rem;
+      margin: 0;
+      line-height: 1.2;
+      color: var(--gold-shimmer);
+    }
+
+    .hero-intro {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
     .btn {
-      padding: 12px 28px; border-radius: 30px; font-weight: 700; font-size: 1rem;
-      cursor: pointer; transition: all 0.3s ease; text-decoration: none; text-align: center;
-      display: inline-block; font-family: inherit;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      font-family: inherit;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, var(--gold-deep), var(--gold));
-      color: var(--bg-deep); border: none;
+      color: var(--bg-deep);
+      border: none;
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
@@ -227,247 +399,702 @@
     }
 
     .hero-image-wrap {
-      position: relative; display: flex; justify-content: center; align-items: center; z-index: 2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
     }
+
     .hero-logo-glow {
-      position: relative; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center;
+      position: relative;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .hero-logo-glow::before {
-      content: ""; position: absolute; inset: -15px;
-      background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, rgba(212,175,55,0.08) 50%, transparent 70%);
-      border-radius: 50%; filter: blur(10px);
-      animation: pulseGlow 5s ease-in-out infinite; z-index: 0;
+      content: "";
+      position: absolute;
+      inset: -15px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.08) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+      animation: pulseGlow 5s ease-in-out infinite;
+      z-index: 0;
     }
+
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.5; transform: scale(0.95); }
-      50% { opacity: 0.95; transform: scale(1.08); }
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+      }
+
+      50% {
+        opacity: 0.95;
+        transform: scale(1.08);
+      }
     }
-    
+
     .hero-main-img {
-      width: 280px; height: 280px; object-fit: cover; border-radius: 50%;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
       border: 3px solid rgba(212, 175, 55, 0.65);
       box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
       animation: floatingImage 6s ease-in-out infinite;
       z-index: 1;
     }
+
     @keyframes floatingImage {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-10px) rotate(2deg);
+      }
     }
 
     /* Section Styles */
-    section { padding: 80px 0; border-bottom: 1px solid rgba(212,175,55,0.08); position: relative; }
-    .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 15px; color: var(--gold-light); }
-    .section-subtitle { text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem; }
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--gold-light);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+    }
 
     /* Brand Story Section */
-    .story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
     .story-img-container {
-      position: relative; border-radius: 16px; overflow: hidden;
-      border: 1px solid rgba(212,175,55,0.3);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     }
-    .story-img { width: 100%; height: auto; display: block; object-fit: cover; }
-    
-    .story-content { display: flex; flex-direction: column; gap: 20px; }
+
+    .story-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .story-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .intro-quote {
-      font-size: 1.25rem; font-style: italic; border-left: 3px solid var(--gold);
-      padding-left: 20px; color: var(--gold-shimmer); font-weight: 300; line-height: 1.6;
+      font-size: 1.25rem;
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      color: var(--gold-shimmer);
+      font-weight: 300;
+      line-height: 1.6;
     }
-    .story-p { color: var(--muted); font-size: 1.05rem; }
-    
+
+    .story-p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
     .banner-quote {
       background: linear-gradient(135deg, rgba(138, 90, 18, 0.15), rgba(212, 175, 55, 0.03));
-      border: 1px solid var(--card-border); border-radius: 14px; padding: 25px; text-align: center;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
       margin-top: 20px;
     }
-    .banner-quote p { margin: 0; font-size: 1.3rem; font-family: 'Cinzel Decorative', serif; color: var(--gold-light); }
+
+    .banner-quote p {
+      margin: 0;
+      font-size: 1.3rem;
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold-light);
+    }
 
     /* Philosophy / Metaphor Section */
-    .philosophy-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
-    
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
     .metaphor-card {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 35px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
     }
+
     .metaphor-title {
-      font-size: 1.4rem; color: var(--gold-light); margin-top: 0; margin-bottom: 15px;
-      display: flex; align-items: center; gap: 10px;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-top: 0;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .metaphor-text { color: var(--muted); font-size: 1.05rem; margin-bottom: 25px; }
+
+    .metaphor-text {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+    }
 
     .glow-definition {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
     }
+
     .glow-item {
-      background: rgba(255, 255, 255, 0.02); padding: 12px 20px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px 20px;
+      border-radius: 8px;
       border-left: 2px solid var(--gold);
     }
-    .glow-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); }
-    .glow-desc { font-size: 1rem; color: var(--ink); margin-top: 2px; }
+
+    .glow-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+    }
+
+    .glow-desc {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-top: 2px;
+    }
 
     /* Vision & Mission cards */
-    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
     .vm-card {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
       transition: transform 0.3s, border-color 0.3s;
     }
-    .vm-card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.4); }
-    .vm-icon { font-size: 2.2rem; color: var(--gold); margin-bottom: 20px; }
-    .vm-card h3 { font-size: 1.6rem; color: var(--gold-light); margin-top: 0; margin-bottom: 15px; }
-    .vm-card p { color: var(--muted); font-size: 1.05rem; margin-bottom: 15px; }
+
+    .vm-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .vm-icon {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .vm-card h3 {
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .vm-card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 15px;
+    }
 
     /* Values Section */
-    .values-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
-    .values-table-wrap { overflow-x: auto; }
-    .values-table {
-      width: 100%; border-collapse: collapse; text-align: left; background: var(--card);
-      border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border);
+    .values-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
     }
-    .values-table th, .values-table td { padding: 18px 24px; border-bottom: 1px solid rgba(212,175,55,0.1); }
-    .values-table th { background: rgba(138, 90, 18, 0.15); color: var(--gold-light); font-weight: 700; }
-    .values-table tr:last-child td { border-bottom: none; }
-    .values-table td strong { color: var(--gold-light); font-size: 1.1rem; }
-    .values-table td { color: var(--muted); font-size: 1rem; }
+
+    .values-table-wrap {
+      overflow-x: auto;
+    }
+
+    .values-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    .values-table th,
+    .values-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .values-table th {
+      background: rgba(138, 90, 18, 0.15);
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .values-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .values-table td strong {
+      color: var(--gold-light);
+      font-size: 1.1rem;
+    }
+
+    .values-table td {
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
     /* Journey Section */
     .journey-display {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     }
+
     .journey-img-container {
-      border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,0.25);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
-    .journey-img { width: 100%; height: auto; display: block; }
-    
-    .journey-steps { display: flex; flex-direction: column; gap: 18px; }
+
+    .journey-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .journey-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     .step-item {
-      display: flex; gap: 15px; align-items: flex-start; padding: 12px 20px;
-      border-radius: 10px; background: rgba(255, 255, 255, 0.02);
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
       border-left: 3px solid rgba(212, 175, 55, 0.3);
       transition: all 0.3s;
     }
+
     .step-item:hover {
       background: rgba(212, 175, 55, 0.06);
       border-left-color: var(--gold);
       transform: translateX(5px);
     }
+
     .step-num {
       background: linear-gradient(135deg, var(--gold-deep), var(--gold));
-      color: var(--bg-deep); width: 28px; height: 28px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;
-      flex-shrink: 0; margin-top: 2px;
+      color: var(--bg-deep);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-    .step-text h4 { margin: 0; font-size: 1.15rem; color: var(--gold-light); }
-    .step-text p { margin: 4px 0 0 0; font-size: 0.95rem; color: var(--muted); }
+
+    .step-text h4 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+    }
+
+    .step-text p {
+      margin: 4px 0 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
 
     /* Programs Section */
-    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .program-card {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 30px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
-      display: flex; flex-direction: column; gap: 15px; transition: all 0.3s;
-      position: relative; overflow: hidden;
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
-    .program-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 12px 35px rgba(212,175,55,0.15); }
+
+    .program-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.15);
+    }
+
     .program-card::after {
-      content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
       background: linear-gradient(180deg, var(--gold), var(--gold-deep));
     }
-    
-    .program-title { font-size: 1.25rem; color: var(--gold-light); margin: 0; font-weight: 700; }
-    .program-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin: 0; }
-    .program-meta { font-size: 0.85rem; color: var(--gold); margin-top: auto; font-weight: 700; text-transform: uppercase; }
+
+    .program-title {
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .program-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .program-meta {
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-top: auto;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
 
     /* Testimonials Section */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testimonial-card {
-      background: linear-gradient(180deg, rgba(27,19,9,0.6) 0%, rgba(15,10,5,0.8) 100%);
-      border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 16px; padding: 35px;
-      position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.45);
-      transition: all 0.3s ease; display: flex; flex-direction: column; gap: 20px;
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
+
+    .testimonial-card {
+      background: linear-gradient(180deg, rgba(27, 19, 9, 0.6) 0%, rgba(15, 10, 5, 0.8) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 16px;
+      padding: 35px;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .testimonial-card:hover {
-      border-color: rgba(212,175,55,0.4);
-      box-shadow: 0 12px 35px rgba(212,175,55,0.12);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.12);
       transform: translateY(-4px);
     }
+
     .quote-icon {
-      font-size: 3rem; font-family: Georgia, serif; line-height: 1; color: rgba(212, 175, 55, 0.25);
-      position: absolute; top: 15px; left: 25px; pointer-events: none;
+      font-size: 3rem;
+      font-family: Georgia, serif;
+      line-height: 1;
+      color: rgba(212, 175, 55, 0.25);
+      position: absolute;
+      top: 15px;
+      left: 25px;
+      pointer-events: none;
     }
+
     .testimonial-body {
-      color: var(--muted); font-size: 0.98rem; font-style: italic; line-height: 1.6;
-      margin: 0; position: relative; z-index: 2; padding-top: 15px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      padding-top: 15px;
     }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; margin-top: auto; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 15px; }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      padding-top: 15px;
+    }
+
     .author-avatar {
-      width: 40px; height: 40px; border-radius: 50%; background: rgba(212, 175, 55, 0.2);
-      border: 1px solid rgba(212, 175, 55, 0.4); display: flex; align-items: center; justify-content: center;
-      font-weight: 700; color: var(--gold-light); font-size: 0.9rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--gold-light);
+      font-size: 0.9rem;
     }
-    .author-info h4 { margin: 0; font-size: 0.95rem; color: var(--gold-light); }
-    .author-info p { margin: 2px 0 0 0; font-size: 0.8rem; color: var(--muted); }
+
+    .author-info h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+    }
+
+    .author-info p {
+      margin: 2px 0 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
     /* Gallery Section */
-    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
     .gallery-item {
-      position: relative; border-radius: 12px; overflow: hidden; height: 200px;
-      border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      cursor: pointer; transition: transform 0.3s, border-color 0.3s;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 200px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s;
     }
-    .gallery-item:hover { transform: scale(1.03); border-color: var(--gold); }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
-    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      border-color: var(--gold);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
     .gallery-overlay {
-      position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,10,5,0.95) 0%, transparent 80%);
-      display: flex; align-items: flex-end; padding: 15px; opacity: 0; transition: opacity 0.3s;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(15, 10, 5, 0.95) 0%, transparent 80%);
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay-text { color: var(--gold-light); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-text {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
     /* Contact Section */
-    .contact-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+
     .info-card {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 24px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-    .info-title { font-size: 1.4rem; color: var(--gold-light); margin: 0; }
-    .info-item { display: flex; gap: 15px; align-items: flex-start; }
-    .info-icon { font-size: 1.4rem; color: var(--gold); margin-top: 2px; }
-    .info-text h4 { margin: 0; font-size: 1rem; color: var(--gold-light); }
-    .info-text p { margin: 4px 0 0 0; font-size: 1.05rem; color: var(--muted); }
-    
+
+    .info-title {
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin: 0;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .info-text h4 {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--gold-light);
+    }
+
+    .info-text p {
+      margin: 4px 0 0 0;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
     .contact-form-card {
-      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
-    form { display: flex; flex-direction: column; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { font-size: 0.9rem; font-weight: 700; color: var(--gold-light); }
-    
-    input, textarea {
-      padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.25);
-      background: rgba(255, 255, 255, 0.03); color: var(--ink); font-family: inherit; font-size: 0.98rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    input,
+    textarea {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.98rem;
       transition: border-color 0.3s, background-color 0.3s;
     }
-    input::placeholder, textarea::placeholder { color: rgba(201,169,110,0.4); }
-    input:focus, textarea:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.06); outline: none; }
-    
-    .form-submit-btn {
-      align-self: flex-start; margin-top: 10px; cursor: pointer;
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(201, 169, 110, 0.4);
     }
-    .form-msg { font-size: 0.95rem; margin-top: 10px; font-weight: 600; }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.06);
+      outline: none;
+    }
+
+    .form-submit-btn {
+      align-self: flex-start;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .form-msg {
+      font-size: 0.95rem;
+      margin-top: 10px;
+      font-weight: 600;
+    }
 
     /* Footer */
     footer {
-      margin-top: 80px; padding: 40px 0; border-top: 1px solid rgba(212,175,55,0.15);
-      text-align: center; color: var(--muted); font-size: 0.95rem;
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
-    footer strong { color: var(--gold-light); }
+
+    footer strong {
+      color: var(--gold-light);
+    }
 
     /* Social Links Styling */
     .social-links {
@@ -503,43 +1130,465 @@
     }
 
     /* Reveal animations */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @media (max-width: 992px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding: 40px 20px; }
-      .hero-content { align-items: center; }
-      .hero-intro { margin: 0 auto; }
-      .hero-image-wrap { margin-top: 20px; }
-      .hero-logo-glow { width: 240px; height: 240px; }
-      .hero-main-img { width: 220px; height: 220px; }
-      
-      .story-grid { grid-template-columns: 1fr; }
-      .philosophy-grid { grid-template-columns: 1fr; }
-      .values-layout { grid-template-columns: 1fr; }
-      .journey-display { grid-template-columns: 1fr; }
-      .programs-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-layout { grid-template-columns: 1fr; }
-      header { padding: 15px 20px; }
-      nav { display: none; } /* Simplifies mobile view, focus on content layout */
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-intro {
+        margin: 0 auto;
+      }
+
+      .hero-image-wrap {
+        margin-top: 20px;
+      }
+
+      .hero-logo-glow {
+        width: 240px;
+        height: 240px;
+      }
+
+      .hero-main-img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-display {
+        grid-template-columns: 1fr;
+      }
+
+      .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 15px 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      /* Simplifies mobile view, focus on content layout */
     }
 
     @media (max-width: 576px) {
-      .programs-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .vm-grid { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.2rem; }
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; }
-      .bg-flower, .hero-logo-glow::before, .hero-main-img { animation: none !important; }
-      .cursor-light { display: none !important; }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .bg-flower,
+      .hero-logo-glow::before,
+      .hero-main-img {
+        animation: none !important;
+      }
+
+      .cursor-light {
+        display: none !important;
+      }
+    }
+
+    /* Moving Logo Video Styling */
+    .hero-main-video {
+      object-fit: cover;
+      outline: none;
+    }
+
+    /* Divine Beginnings (Baby Video) Section */
+    .beginnings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .baby-video-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      background: var(--bg-deep);
+    }
+
+    .baby-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      outline: none;
+    }
+
+    /* Reviews Screenshot Grid */
+    .reviews-grid-title {
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .reviews-screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .review-screenshot-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 9 / 16;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .review-screenshot-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .review-screenshot-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.2);
+    }
+
+    .review-screenshot-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .review-screenshot-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(15, 10, 5, 0.8) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .review-screenshot-card:hover .review-screenshot-overlay {
+      opacity: 1;
+    }
+
+    .review-overlay-btn {
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      color: var(--bg-deep);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .reviews-hidden-card {
+      display: none;
+    }
+
+    .reviews-hidden-card.visible {
+      display: block;
+    }
+
+    .reviews-actions-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(7, 4, 2, 0.95);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 85%;
+      max-height: 85%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: var(--gold-light);
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+      z-index: 2002;
+    }
+
+    .lightbox-close:hover {
+      color: white;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(27, 19, 9, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 2002;
+      user-select: none;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: var(--gold);
+      color: var(--bg-deep);
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 600px;
+      background: rgba(15, 10, 5, 0.95);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      z-index: 2500;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
+    }
+
+    .cookie-banner.show {
+      bottom: 25px;
+    }
+
+    .cookie-banner-content {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .cookie-banner-content a {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
+    .cookie-banner-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .cookie-btn-accept {
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      color: var(--bg-deep);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cookie-btn-accept:hover {
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .cookie-btn-decline {
+      background: transparent;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cookie-btn-decline:hover {
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    @media (max-width: 992px) {
+      .beginnings-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-prev {
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .reviews-screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cookie-banner {
+        padding: 15px 20px;
+        width: 95%;
+      }
+
+      .cookie-banner-buttons {
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 8px;
+      }
+
+      .cookie-banner-buttons button {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Ambient Cursor Light overlay -->
@@ -550,31 +1599,39 @@
     <svg width="0" height="0" style="position:absolute">
       <defs>
         <linearGradient id="flowerGold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#8A5A12"/>
-          <stop offset="100%" stop-color="#F0D28A"/>
+          <stop offset="0%" stop-color="#8A5A12" />
+          <stop offset="100%" stop-color="#F0D28A" />
         </linearGradient>
         <radialGradient id="flowerCore" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFF3D6"/>
-          <stop offset="100%" stop-color="#D4AF37"/>
+          <stop offset="0%" stop-color="#FFF3D6" />
+          <stop offset="100%" stop-color="#D4AF37" />
         </radialGradient>
         <symbol id="goldFlower" viewBox="0 0 100 100">
           <g fill="url(#flowerGold)" fill-opacity="0.35" stroke="url(#flowerGold)" stroke-width="0.8">
-            <ellipse cx="50" cy="30" rx="10" ry="20"/>
-            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(60 50 50)"/>
-            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(120 50 50)"/>
-            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(180 50 50)"/>
-            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(240 50 50)"/>
-            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(300 50 50)"/>
+            <ellipse cx="50" cy="30" rx="10" ry="20" />
+            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(60 50 50)" />
+            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(120 50 50)" />
+            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(180 50 50)" />
+            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(240 50 50)" />
+            <ellipse cx="50" cy="30" rx="10" ry="20" transform="rotate(300 50 50)" />
           </g>
-          <circle cx="50" cy="50" r="6" fill="url(#flowerCore)"/>
+          <circle cx="50" cy="50" r="6" fill="url(#flowerCore)" />
         </symbol>
       </defs>
     </svg>
 
-    <svg class="bg-flower" style="top:5%; left:3%; width:50px; animation-duration:14s;"><use href="#goldFlower"/></svg>
-    <svg class="bg-flower" style="top:25%; right:4%; width:40px; animation-duration:18s; animation-delay:2s;"><use href="#goldFlower"/></svg>
-    <svg class="bg-flower" style="bottom:20%; left:5%; width:45px; animation-duration:16s; animation-delay:1s;"><use href="#goldFlower"/></svg>
-    <svg class="bg-flower" style="bottom:10%; right:3%; width:55px; animation-duration:15s;"><use href="#goldFlower"/></svg>
+    <svg class="bg-flower" style="top:5%; left:3%; width:50px; animation-duration:14s;">
+      <use href="#goldFlower" />
+    </svg>
+    <svg class="bg-flower" style="top:25%; right:4%; width:40px; animation-duration:18s; animation-delay:2s;">
+      <use href="#goldFlower" />
+    </svg>
+    <svg class="bg-flower" style="bottom:20%; left:5%; width:45px; animation-duration:16s; animation-delay:1s;">
+      <use href="#goldFlower" />
+    </svg>
+    <svg class="bg-flower" style="bottom:10%; right:3%; width:55px; animation-duration:15s;">
+      <use href="#goldFlower" />
+    </svg>
   </div>
 
   <!-- Header -->
@@ -582,7 +1639,7 @@
     <a href="#" class="brand">
       <img id="logo" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0031.jpg" alt="Garbha Jyothi logo">
       <div>
-        <div class="brand-title">GARBHA JYOTHI</div>
+        <div class="brand-title"><span class="brand-name">GARBHA JYOTHI</span></div>
         <div class="brand-subtitle" data-i18n="brand_subtitle">Light from the Womb to the World</div>
       </div>
     </a>
@@ -606,14 +1663,15 @@
 
   <div class="container">
     <main>
-      
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-content">
           <span class="hero-pretitle" data-i18n="hero_pretitle">A Sacred Brand Movement</span>
-          <h1 id="hero-heading" class="hero-title" data-i18n="hero_title">Garbha Jyothi™ — Light from the Womb to the World</h1>
+          <h1 id="hero-heading" class="hero-title" data-i18n="hero_title"><span class="brand-name">GARBHA JYOTHI</span>™
+            — Light from the Womb to the World</h1>
           <p class="hero-intro" data-i18n="hero_intro">
-            We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar wisdom with modern mind science — turning womb-light into world-light.
+            We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar
+            wisdom with modern mind science — turning womb-light into world-light.
           </p>
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary" data-i18n="hero_btn_primary">Book Free Webinar</a>
@@ -622,7 +1680,10 @@
         </div>
         <div class="hero-image-wrap">
           <div class="hero-logo-glow">
-            <img class="hero-main-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0031.jpg" alt="Garbha Jyothi gold logo">
+            <video class="hero-main-img hero-main-video" autoplay loop muted playsinline
+              poster="GarbhaJyothi/Icons and images/IMG-20260722-WA0031.jpg">
+              <source src="logovideos/logo_video.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </section>
@@ -630,31 +1691,42 @@
       <!-- About / Brand Story Section -->
       <section id="about" class="reveal" aria-labelledby="about-heading">
         <h2 id="about-heading" class="section-title" data-i18n="story_title">Brand Story</h2>
-        <p class="section-subtitle" data-i18n="story_subtitle">A personal journey from heartbreak to a global awakening of maternal light.</p>
-        
+        <p class="section-subtitle" data-i18n="story_subtitle">A personal journey from heartbreak to a global awakening
+          of maternal light.</p>
+
         <div class="story-grid">
           <div class="story-img-container">
-            <img class="story-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0046.jpg" alt="Mother meditating with golden womb light">
+            <img class="story-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0046.jpg"
+              alt="Mother meditating with golden womb light">
           </div>
           <div class="story-content">
             <p class="intro-quote" data-i18n="story_intro">
-              "I once lost a heartbeat — and found my life’s purpose. In the silence of loss, I discovered that creation begins long before birth — in the energy of the womb."
+              "I once lost a heartbeat — and found my life’s purpose. In the silence of loss, I discovered that creation
+              begins long before birth — in the energy of the womb."
             </p>
             <p class="story-p" data-i18n="story_body1">
-              Hi, I’m Anusha C G, founder of Garbha Jyothi™ — Light from the Womb to the World. My journey began not as a coach, but as a woman who once lost a heartbeat and found her life’s purpose in that heartbreak. Six months into my marriage, I saw two pink lines. Like every dreamy girl, I imagined tiny hands, lullabies, and laughter. But soon, the doctor said there was no heartbeat. That loss broke something in me — physically, mentally, emotionally.
+              Hi, I’m Anusha C G, founder of Garbha Jyothi™ — Light from the Womb to the World. My journey began not as
+              a coach, but as a woman who once lost a heartbeat and found her life’s purpose in that heartbreak. Six
+              months into my marriage, I saw two pink lines. Like every dreamy girl, I imagined tiny hands, lullabies,
+              and laughter. But soon, the doctor said there was no heartbeat. That loss broke something in me —
+              physically, mentally, emotionally.
             </p>
             <p class="story-p" data-i18n="story_body2">
-              Searching for answers, I discovered the ancient science of Garbha Sanskar — the wisdom of preparing the womb with awareness and love. I practiced it for three months — healing my body, mind, and emotions — and conceived again. This time I didn’t just carry a baby; I carried consciousness.
+              Searching for answers, I discovered the ancient science of Garbha Sanskar — the wisdom of preparing the
+              womb with awareness and love. I practiced it for three months — healing my body, mind, and emotions — and
+              conceived again. This time I didn’t just carry a baby; I carried consciousness.
             </p>
             <p class="story-p" data-i18n="story_body3">
-              Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby listened. That moment became my rebirth — and Garbha Jyothi™ was born.
+              Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby
+              listened. That moment became my rebirth — and Garbha Jyothi™ was born.
             </p>
             <p class="story-p" data-i18n="story_body4">
-              Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear to faith, from conception to creation — to awaken Light from the Womb to the World.
+              Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear
+              to faith, from conception to creation — to awaken Light from the Womb to the World.
             </p>
           </div>
         </div>
-        
+
         <div class="banner-quote reveal">
           <p data-i18n="story_banner_quote">Because when a woman heals herself, she heals generations.</p>
         </div>
@@ -663,8 +1735,9 @@
       <!-- Philosophy & Mantra Section -->
       <section id="philosophy" class="reveal" aria-labelledby="philosophy-heading">
         <h2 id="philosophy-heading" class="section-title" data-i18n="phil_title">Core Philosophy &amp; Metaphor</h2>
-        <p class="section-subtitle" data-i18n="phil_subtitle">Rooted in sacred energy, ancient Sanskrit mantras, and the golden lamp metaphor.</p>
-        
+        <p class="section-subtitle" data-i18n="phil_subtitle">Rooted in sacred energy, ancient Sanskrit mantras, and the
+          golden lamp metaphor.</p>
+
         <div class="philosophy-grid">
           <div class="story-content">
             <div class="metaphor-card">
@@ -672,34 +1745,40 @@
                 <span data-i18n="phil_metaphor_title">Visual Metaphor: The Golden Lamp</span>
               </h3>
               <p class="metaphor-text" data-i18n="phil_metaphor_desc">
-                The womb is a sacred lamp — its flame nourishes creation, and its glow shapes the world. It is a temple of transformation.
+                The womb is a sacred lamp — its flame nourishes creation, and its glow shapes the world. It is a temple
+                of transformation.
               </p>
-              
+
               <h3 class="metaphor-title" style="margin-top: 30px;">
                 <span data-i18n="phil_mantra_title">Brand Mantra: Aham Jyothi Swaroopini</span>
               </h3>
               <p class="intro-quote" style="font-size: 1.15rem;" data-i18n="phil_mantra_desc">
                 “Aham Jyothi Swaroopini — I am Light Incarnate.”<br>
-                <span style="font-size: 0.95rem; color: var(--muted); font-style: normal; display: block; margin-top: 6px;">
+                <span
+                  style="font-size: 0.95rem; color: var(--muted); font-style: normal; display: block; margin-top: 6px;">
                   Translation: “The light I nurture within, I offer to the world.”
                 </span>
               </p>
             </div>
-            
+
             <p class="story-p" style="margin-top: 10px;" data-i18n="phil_movement_desc">
-              Garbha Jyothi™ is more than a program — it’s a remembrance. A remembrance that creation is sacred. Through Garbha Sanskar, energy work, and mindfulness, every woman can awaken the light within — and through her, light flows into the world.
+              Garbha Jyothi™ is more than a program — it’s a remembrance. A remembrance that creation is sacred. Through
+              Garbha Sanskar, energy work, and mindfulness, every woman can awaken the light within — and through her,
+              light flows into the world.
             </p>
           </div>
-          
+
           <div class="story-img-container">
-            <img class="story-img" src="GarbhaJyothi/extras/IMG-20260722-WA0035.jpg" alt="Aham Jyothi Swaroopini visual & raga details">
+            <img class="story-img" src="GarbhaJyothi/extras/IMG-20260722-WA0035.jpg"
+              alt="Aham Jyothi Swaroopini visual & raga details">
           </div>
         </div>
-        
+
         <div class="glow-definition reveal">
           <div class="glow-item">
             <span class="glow-label" data-i18n="phil_glow1_label">“Jyothi” Meaning</span>
-            <div class="glow-desc" data-i18n="phil_glow1_desc">Light (illumination, awakening, consciousness, Awareness, Aura, Glow)</div>
+            <div class="glow-desc" data-i18n="phil_glow1_desc">Light (illumination, awakening, consciousness, Awareness,
+              Aura, Glow)</div>
           </div>
           <div class="glow-item">
             <span class="glow-label" data-i18n="phil_glow2_label">What is Garbha Jyothi</span>
@@ -707,11 +1786,48 @@
           </div>
           <div class="glow-item">
             <span class="glow-label" data-i18n="phil_glow3_label">Global Why</span>
-            <div class="glow-desc" data-i18n="phil_glow3_desc">To reignite the lost science of conscious creation, bringing womb-light into the world.</div>
+            <div class="glow-desc" data-i18n="phil_glow3_desc">To reignite the lost science of conscious creation,
+              bringing womb-light into the world.</div>
           </div>
           <div class="glow-item">
             <span class="glow-label" data-i18n="phil_glow4_label">For Webinars</span>
-            <div class="glow-desc" data-i18n="phil_glow4_desc">A movement of women remembering that creation begins with light flowing to the world.</div>
+            <div class="glow-desc" data-i18n="phil_glow4_desc">A movement of women remembering that creation begins with
+              light flowing to the world.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divine Beginnings Section -->
+      <section id="beginnings" class="reveal" aria-labelledby="beginnings-heading">
+        <h2 id="beginnings-heading" class="section-title" data-i18n="beg_title">Divine Beginnings</h2>
+        <p class="section-subtitle" data-i18n="beg_subtitle">Witness the radiant joy of a conscious birth — light
+          brought to the world.</p>
+
+        <div class="beginnings-grid">
+          <div class="baby-video-wrap">
+            <video id="babyVideo" class="baby-video" controls playsinline
+              poster="GarbhaJyothi/Icons and images/IMG-20260722-WA0046.jpg">
+              <source
+                src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c02cba3e430f8c6ebf8b65287e076a08&profile_id=139&oauth2_token_id=57447761"
+                type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="story-content">
+            <p class="intro-quote" data-i18n="beg_quote">
+              "A baby born in calmness and awareness carries a steady, luminous light. Maternal connection begins in the
+              womb."
+            </p>
+            <p class="story-p" data-i18n="beg_body1">
+              When we practice Garbha Sanskar, we prepare the womb to be a sacred sanctuary. Research in modern
+              neuroscience confirms that the emotional state of a mother influences the neural pathways of the
+              developing baby. Our programs are designed to clear stress, anxiety, and fear, laying the foundation for a
+              peaceful and joyful birth.
+            </p>
+            <p class="story-p" data-i18n="beg_body2">
+              This baby is a representation of the calm, smiling, conscious souls nurtured through active pre-natal
+              couple bonding, daily Garbh Samvaad, and emotional healing.
+            </p>
           </div>
         </div>
       </section>
@@ -719,23 +1835,31 @@
       <!-- Vision & Mission Section -->
       <section id="vision-mission" class="reveal" aria-labelledby="vm-heading">
         <h2 id="vm-heading" class="section-title" data-i18n="vm_title">Vision &amp; Mission</h2>
-        <p class="section-subtitle" data-i18n="vm_subtitle">Aligning hearts and minds to illuminate the path for future generations.</p>
-        
+        <p class="section-subtitle" data-i18n="vm_subtitle">Aligning hearts and minds to illuminate the path for future
+          generations.</p>
+
         <div class="vm-grid">
           <div class="vm-card">
             <div class="vm-icon">👁️</div>
             <h3 data-i18n="vision_card_title">Our Vision</h3>
-            <p data-i18n="vision_p1">To build a global movement where every woman experiences motherhood as a journey of awareness, not anxiety — where ancient Garbha Sanskar meets modern mind science to raise an enlightened generation of mothers, children, and families.</p>
-            <p data-i18n="vision_p2">To inspire a generation of mothers who birth not just children, but conscious human beings who change the world.</p>
-            <p data-i18n="vision_p3">A world where every child is conceived in love, carried in awareness, and born into light.</p>
+            <p data-i18n="vision_p1">To build a global movement where every woman experiences motherhood as a journey of
+              awareness, not anxiety — where ancient Garbha Sanskar meets modern mind science to raise an enlightened
+              generation of mothers, children, and families.</p>
+            <p data-i18n="vision_p2">To inspire a generation of mothers who birth not just children, but conscious human
+              beings who change the world.</p>
+            <p data-i18n="vision_p3">A world where every child is conceived in love, carried in awareness, and born into
+              light.</p>
           </div>
-          
+
           <div class="vm-card">
             <div class="vm-icon">🎯</div>
             <h3 data-i18n="mission_card_title">Our Mission</h3>
-            <p data-i18n="mission_p1">To nurture mothers who are physically healthy, emotionally free, and spiritually luminous — lighting the world from within.</p>
-            <p data-i18n="mission_p2">To create a ripple of transformation through mothers — because when one woman heals, generations evolve.</p>
-            <p data-i18n="mission_p3">To illuminate the path for the next generation — one womb, one woman, one awakening at a time.</p>
+            <p data-i18n="mission_p1">To nurture mothers who are physically healthy, emotionally free, and spiritually
+              luminous — lighting the world from within.</p>
+            <p data-i18n="mission_p2">To create a ripple of transformation through mothers — because when one woman
+              heals, generations evolve.</p>
+            <p data-i18n="mission_p3">To illuminate the path for the next generation — one womb, one woman, one
+              awakening at a time.</p>
           </div>
         </div>
       </section>
@@ -743,8 +1867,9 @@
       <!-- Brand Values Section -->
       <section id="values" class="reveal" aria-labelledby="values-heading">
         <h2 id="values-heading" class="section-title" data-i18n="val_title">Brand Values</h2>
-        <p class="section-subtitle" data-i18n="val_subtitle">The five pillars guiding our integrated approach to conscious creation.</p>
-        
+        <p class="section-subtitle" data-i18n="val_subtitle">The five pillars guiding our integrated approach to
+          conscious creation.</p>
+
         <div class="values-layout">
           <div class="values-table-wrap">
             <table class="values-table">
@@ -778,9 +1903,10 @@
               </tbody>
             </table>
           </div>
-          
+
           <div class="story-img-container">
-            <img class="story-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0044.jpg" alt="DNA, brain and lotus symbolising womb wisdom and mind science">
+            <img class="story-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0044.jpg"
+              alt="DNA, brain and lotus symbolising womb wisdom and mind science">
           </div>
         </div>
       </section>
@@ -788,46 +1914,53 @@
       <!-- Journey Section -->
       <section id="journey" class="reveal" aria-labelledby="journey-heading">
         <h2 id="journey-heading" class="section-title" data-i18n="jrn_title">The Journey to Garbha Jyothi</h2>
-        <p class="section-subtitle" data-i18n="jrn_subtitle">A progressive pathway from awareness to fully illuminated consciousness.</p>
-        
+        <p class="section-subtitle" data-i18n="jrn_subtitle">A progressive pathway from awareness to fully illuminated
+          consciousness.</p>
+
         <div class="journey-display">
           <div class="journey-img-container">
-            <img class="journey-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0040.jpg" alt="Journey steps flowchart graphic">
+            <img class="journey-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0040.jpg"
+              alt="Journey steps flowchart graphic">
           </div>
           <div class="journey-steps">
             <div class="step-item">
               <div class="step-num">1</div>
               <div class="step-text">
                 <h4 data-i18n="jrn_s1_title">GJ Awareness</h4>
-                <p data-i18n="jrn_s1_desc">Initiation into the movement. Awakening to the truth that creation starts long before birth.</p>
+                <p data-i18n="jrn_s1_desc">Initiation into the movement. Awakening to the truth that creation starts
+                  long before birth.</p>
               </div>
             </div>
             <div class="step-item">
               <div class="step-num">2</div>
               <div class="step-text">
                 <h4 data-i18n="jrn_s2_title">2x Conscious</h4>
-                <p data-i18n="jrn_s2_desc">Beginning practices. Developing womb awareness, clearing anxiety, and connecting with the breath.</p>
+                <p data-i18n="jrn_s2_desc">Beginning practices. Developing womb awareness, clearing anxiety, and
+                  connecting with the breath.</p>
               </div>
             </div>
             <div class="step-item">
               <div class="step-num">3</div>
               <div class="step-text">
                 <h4 data-i18n="jrn_s3_title">10x Conscious</h4>
-                <p data-i18n="jrn_s3_desc">Applying Garbha Sanskar rituals. Integrating diet, chanting, and active maternal couple bonding.</p>
+                <p data-i18n="jrn_s3_desc">Applying Garbha Sanskar rituals. Integrating diet, chanting, and active
+                  maternal couple bonding.</p>
               </div>
             </div>
             <div class="step-item">
               <div class="step-num">4</div>
               <div class="step-text">
                 <h4 data-i18n="jrn_s4_title">100x Conscious</h4>
-                <p data-i18n="jrn_s4_desc">Deepening communication. Daily Garbh Samvaad, letting go of generational patterns and trauma.</p>
+                <p data-i18n="jrn_s4_desc">Deepening communication. Daily Garbh Samvaad, letting go of generational
+                  patterns and trauma.</p>
               </div>
             </div>
             <div class="step-item">
               <div class="step-num">5</div>
               <div class="step-text">
                 <h4 data-i18n="jrn_s5_title">Garbha Jyothi</h4>
-                <p data-i18n="jrn_s5_desc">Enlightened motherhood. The golden flame in the womb shapes the generation and lights the world.</p>
+                <p data-i18n="jrn_s5_desc">Enlightened motherhood. The golden flame in the womb shapes the generation
+                  and lights the world.</p>
               </div>
             </div>
           </div>
@@ -837,42 +1970,49 @@
       <!-- Programs Section -->
       <section id="programs" class="reveal" aria-labelledby="programs-heading">
         <h2 id="programs-heading" class="section-title" data-i18n="prg_title">Our Programs</h2>
-        <p class="section-subtitle" data-i18n="prg_subtitle">Private consultations, group classes, and immersive multi-month support systems.</p>
-        
+        <p class="section-subtitle" data-i18n="prg_subtitle">Private consultations, group classes, and immersive
+          multi-month support systems.</p>
+
         <div class="programs-grid">
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p1_title">Garbha Jyothi® Personal Healing</h3>
-            <p class="program-desc" data-i18n="prg_p1_desc">A private, womb-centred session focused on releasing emotional blocks, clearing past trauma, and establishing deep inner calm.</p>
+            <p class="program-desc" data-i18n="prg_p1_desc">A private, womb-centred session focused on releasing
+              emotional blocks, clearing past trauma, and establishing deep inner calm.</p>
             <span class="program-meta" data-i18n="prg_meta_1on1">1:1 Session</span>
           </div>
-          
+
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p2_title">Garbha Jyothi® Chetana Immersion</h3>
-            <p class="program-desc" data-i18n="prg_p2_desc">Interactive group sessions designed to awaken womb awareness and achieve internal alignment for planning or pregnant couples.</p>
+            <p class="program-desc" data-i18n="prg_p2_desc">Interactive group sessions designed to awaken womb awareness
+              and achieve internal alignment for planning or pregnant couples.</p>
             <span class="program-meta" data-i18n="prg_meta_group">Group Program</span>
           </div>
-          
+
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p3_title">Garbha Jyothi® Pregnancy Planning</h3>
-            <p class="program-desc" data-i18n="prg_p3_desc">A structured three-month guidance system alignment program preparing body and mind for a conscious, healthy conception.</p>
+            <p class="program-desc" data-i18n="prg_p3_desc">A structured three-month guidance system alignment program
+              preparing body and mind for a conscious, healthy conception.</p>
             <span class="program-meta" data-i18n="prg_meta_3m">3-Month Program</span>
           </div>
-          
+
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p4_title">Garbha Jyothi® Early Pregnancy Care</h3>
-            <p class="program-desc" data-i18n="prg_p4_desc">Supporting physical and mental stability, stress reduction, and emotional confidence during the critical first trimester.</p>
+            <p class="program-desc" data-i18n="prg_p4_desc">Supporting physical and mental stability, stress reduction,
+              and emotional confidence during the critical first trimester.</p>
             <span class="program-meta" data-i18n="prg_meta_3m">3-Month Program</span>
           </div>
-          
+
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p5_title">Garbha Jyothi® Pregnancy Continuum</h3>
-            <p class="program-desc" data-i18n="prg_p5_desc">Ongoing support focusing on conscious communication with the baby, labor preparations, and early post-birth mother healing.</p>
+            <p class="program-desc" data-i18n="prg_p5_desc">Ongoing support focusing on conscious communication with the
+              baby, labor preparations, and early post-birth mother healing.</p>
             <span class="program-meta" data-i18n="prg_meta_full">Full Term Support</span>
           </div>
-          
+
           <div class="program-card">
             <h3 class="program-title" data-i18n="prg_p6_title">1:1 Private Consultation</h3>
-            <p class="program-desc" data-i18n="prg_p6_desc">Personalized call or video sessions with Anusha C G to provide clarity, address fears, and chart a custom path for your family.</p>
+            <p class="program-desc" data-i18n="prg_p6_desc">Personalized call or video sessions with Anusha C G to
+              provide clarity, address fears, and chart a custom path for your family.</p>
             <span class="program-meta" data-i18n="prg_meta_call">Personal Call</span>
           </div>
         </div>
@@ -881,13 +2021,16 @@
       <!-- Testimonials Columns -->
       <section id="testimonials" class="reveal" aria-labelledby="testimonials-heading">
         <h2 id="testimonials-heading" class="section-title" data-i18n="tst_title">Real Stories, Real Results</h2>
-        <p class="section-subtitle" data-i18n="tst_subtitle">Sisters sharing their journey of healing, awareness, and rebirth. Reserved for future testimonials.</p>
-        
+        <p class="section-subtitle" data-i18n="tst_subtitle">Sisters sharing their journey of healing, awareness, and
+          rebirth. Reserved for future testimonials.</p>
+
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <p class="testimonial-body" data-i18n="tst_placeholder_1">
-              "This space is reserved for a future mother's testimonial. Here you can write about how the Garbha Sanskar practices brought calm, strength, and light during your pregnancy journey."
+              "Before joining Garbha Jyothi, I carried fear from my previous miscarriage. Anusha's guidance and daily
+              meditations completely transformed my mindset. I went from anxious to peaceful, carrying a beautiful sense
+              of light. Today, my baby is calm, healthy, and a total joy!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">M</div>
@@ -897,11 +2040,13 @@
               </div>
             </div>
           </div>
-          
+
           <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <p class="testimonial-body" data-i18n="tst_placeholder_2">
-              "This space is reserved for a future father's testimonial. Here you can write about your involvement in couple bonding rituals, supporting your wife, and connecting with your unborn child."
+              "Participating in the Chetana Immersion was eye-opening. As a husband, I learned how to actively support
+              my wife and bond with our unborn child through couple rituals. It brought us closer and gave our baby a
+              loving, peaceful environment."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">F</div>
@@ -911,11 +2056,13 @@
               </div>
             </div>
           </div>
-          
+
           <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <p class="testimonial-body" data-i18n="tst_placeholder_3">
-              "This space is reserved for a future transformation log. Write about the journey from initial anxiety to illuminated consciousness and the birth of a healthy, luminous baby."
+              "The 3-month pregnancy planning program prepared us emotionally and physically. Moving away from stress
+              and understanding the science of womb energy healed my body. I conceived naturally and experienced a
+              pregnancy filled with pure consciousness."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">T</div>
@@ -926,13 +2073,158 @@
             </div>
           </div>
         </div>
+
+        <!-- WhatsApp Reviews Grid -->
+        <h3 class="reviews-grid-title" data-i18n="reviews_title">Real Conversations, Real Healing</h3>
+        <div class="reviews-screenshot-grid" id="reviewsGrid">
+          <!-- Review 1 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-22%20at%204%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-22%20at%204%20PM.jpeg" alt="Customer Review 1"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 2 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-22%20at%204.4PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-22%20at%204.4PM.jpeg" alt="Customer Review 2"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 3 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-22%20at%204.49.33%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-22%20at%204.49.33%20PM.jpeg" alt="Customer Review 3"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 4 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-22%20at%204.49.34%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-22%20at%204.49.34%20PM.jpeg" alt="Customer Review 4"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 5 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM.jpeg" alt="Customer Review 5"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 6 -->
+          <div class="review-screenshot-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM%20(1).jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM%20(1).jpeg"
+              alt="Customer Review 6" loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 7 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM%20(2).jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.20%20AM%20(2).jpeg"
+              alt="Customer Review 7" loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 8 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM.jpeg" alt="Customer Review 8"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 9 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(1).jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(1).jpeg"
+              alt="Customer Review 9" loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 10 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(2).jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(2).jpeg"
+              alt="Customer Review 10" loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 11 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(3).jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.21%20AM%20(3).jpeg"
+              alt="Customer Review 11" loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 12 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.22%20AM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-26%20at%2011.45.22%20AM.jpeg" alt="Customer Review 12"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 13 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-08-07%20at%203.46.10%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-08-07%20at%203.46.10%20PM.jpeg" alt="Customer Review 13"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 14 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-08-07%20at%203.46.11%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-08-07%20at%203.46.11%20PM.jpeg" alt="Customer Review 14"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+          <!-- Review 15 -->
+          <div class="review-screenshot-card reviews-hidden-card"
+            onclick="openLightbox('review_photos/WhatsApp%20Image%202026-07-22%20at%20%20PM.jpeg')">
+            <img src="review_photos/WhatsApp%20Image%202026-07-22%20at%20%20PM.jpeg" alt="Customer Review 15"
+              loading="lazy">
+            <div class="review-screenshot-overlay">
+              <button class="review-overlay-btn" data-i18n="review_view_btn">View Screenshot</button>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-actions-wrap">
+          <button class="btn btn-secondary reveal-reviews-btn" id="revealReviewsBtn" onclick="toggleReviews()"
+            data-i18n="reviews_btn_show">View All Reviews</button>
+        </div>
       </section>
 
       <!-- Gallery Section -->
       <section id="gallery" class="reveal" aria-labelledby="gallery-heading">
         <h2 id="gallery-heading" class="section-title" data-i18n="gal_title">Gallery</h2>
-        <p class="section-subtitle" data-i18n="gal_subtitle">Moments of connection, ancient motifs, and visual memories from our community.</p>
-        
+        <p class="section-subtitle" data-i18n="gal_subtitle">Moments of connection, ancient motifs, and visual memories
+          from our community.</p>
+
         <div class="gallery-grid">
           <div class="gallery-item">
             <img src="GarbhaJyothi/Icons and images/IMG-20260722-WA0031.jpg" alt="Brand Logo emblem">
@@ -964,12 +2256,13 @@
       <!-- Contact Section -->
       <section id="contact" class="reveal" aria-labelledby="contact-heading">
         <h2 id="contact-heading" class="section-title" data-i18n="con_title">Contact Us</h2>
-        <p class="section-subtitle" data-i18n="con_subtitle">Get in touch to enroll in our webinars, ask questions, or schedule a session.</p>
-        
+        <p class="section-subtitle" data-i18n="con_subtitle">Get in touch to enroll in our webinars, ask questions, or
+          schedule a session.</p>
+
         <div class="contact-layout">
           <div class="info-card">
             <h3 class="info-title" data-i18n="con_info_title">Contact Details</h3>
-            
+
             <div class="info-item">
               <div class="info-icon">📞</div>
               <div class="info-text">
@@ -977,7 +2270,6 @@
                 <p>+91 9035219915</p>
               </div>
             </div>
-            
             <div class="info-item">
               <div class="info-icon">✉️</div>
               <div class="info-text">
@@ -985,7 +2277,6 @@
                 <p>garbhajyothi1@gmail.com</p>
               </div>
             </div>
-            
             <div class="info-item">
               <div class="info-icon">📍</div>
               <div class="info-text">
@@ -994,45 +2285,56 @@
               </div>
             </div>
 
-            <div class="info-item" style="flex-direction: column; gap: 10px; margin-top: 10px; border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 20px; width: 100%;">
-              <h4 data-i18n="con_connect_label" style="margin: 0; font-size: 1rem; color: var(--gold-light);">Connect With Us</h4>
+            <div class="info-item"
+              style="flex-direction: column; gap: 10px; margin-top: 10px; border-top: 1px solid rgba(212, 175, 55, 0.1); padding-top: 20px; width: 100%;">
+              <h4 data-i18n="con_connect_label" style="margin: 0; font-size: 1rem; color: var(--gold-light);">Connect
+                With Us</h4>
               <div class="social-links" style="justify-content: flex-start; margin: 5px 0 0 0;">
-                <a href="https://www.instagram.com/reel/DbDfJKBTvek/?igsh=MWdsdG1oMDdlaW9yYw==" target="_blank" class="social-icon" aria-label="Instagram">
-                  <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                <a href="https://www.instagram.com/reel/DbDfJKBTvek/?igsh=MWdsdG1oMDdlaW9yYw==" target="_blank"
+                  class="social-icon" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
                 </a>
-                <a href="https://youtube.com/@garbha_jyothi?si=2vqdAgaOox5JAIaP" target="_blank" class="social-icon" aria-label="YouTube">
-                  <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <a href="https://youtube.com/@garbha_jyothi?si=2vqdAgaOox5JAIaP" target="_blank" class="social-icon"
+                  aria-label="YouTube">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/anusha-c-g-254566152?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <a href="https://www.linkedin.com/in/anusha-c-g-254566152?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank" class="social-icon" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
                 </a>
               </div>
             </div>
           </div>
-          
           <div class="contact-form-card">
             <form id="contactForm" onsubmit="return handleSubmit(event)" novalidate>
               <div class="form-group">
                 <label for="name" data-i18n="form_name_label">Name</label>
                 <input type="text" id="name" required placeholder="Your full name">
               </div>
-              
               <div class="form-group">
                 <label for="email" data-i18n="form_email_label">Email</label>
                 <input type="email" id="email" required placeholder="you@example.com">
               </div>
-              
               <div class="form-group">
                 <label for="phone" data-i18n="form_phone_label">Phone Number</label>
                 <input type="tel" id="phone" placeholder="Your phone number">
               </div>
-              
               <div class="form-group">
                 <label for="message" data-i18n="form_message_label">Message</label>
                 <textarea id="message" rows="4" placeholder="Tell us about your needs"></textarea>
               </div>
-              
-              <button type="submit" class="btn btn-primary form-submit-btn" data-i18n="form_button">Send Message</button>
+
+              <button type="submit" class="btn btn-primary form-submit-btn" data-i18n="form_button">Send
+                Message</button>
               <div id="formMsg" class="form-msg"></div>
             </form>
           </div>
@@ -1044,18 +2346,67 @@
     <!-- Footer -->
     <footer>
       <div class="social-links">
-        <a href="https://www.instagram.com/reel/DbDfJKBTvek/?igsh=MWdsdG1oMDdlaW9yYw==" target="_blank" class="social-icon" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <a href="https://www.instagram.com/reel/DbDfJKBTvek/?igsh=MWdsdG1oMDdlaW9yYw==" target="_blank"
+          class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 0 0 0 0-2.881z" />
+          </svg>
         </a>
-        <a href="https://youtube.com/@garbha_jyothi?si=2vqdAgaOox5JAIaP" target="_blank" class="social-icon" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <a href="https://youtube.com/@garbha_jyothi?si=2vqdAgaOox5JAIaP" target="_blank" class="social-icon"
+          aria-label="YouTube">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/anusha-c-g-254566152?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="https://www.linkedin.com/in/anusha-c-g-254566152?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          target="_blank" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
         </a>
       </div>
-      <p data-i18n="footer_text">© <strong>Garbha Jyothi</strong> — Light from the Womb to the World. Created by Arun C G.</p>
+      <p data-i18n="footer_text">© <strong><span class="brand-name">Garbha Jyothi</span></strong> — Light from the Womb
+        to the World. Created by Anusha C G.</p>
+      <div style="margin-top: 15px; font-size: 0.85rem; display: flex; gap: 15px; justify-content: center;">
+        <a href="privacy.html" style="color: var(--muted); text-decoration: none; transition: color 0.3s;"
+          onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--muted)'">Privacy
+          Policy</a>
+        <span style="color: rgba(212,175,55,0.3)">|</span>
+        <a href="terms.html" style="color: var(--muted); text-decoration: none; transition: color 0.3s;"
+          onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--muted)'">Terms &
+          Conditions</a>
+      </div>
+      <p
+        style="margin-top: 25px; font-size: 0.75rem; color: rgba(201,169,110,0.4); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+        Disclaimer: This website and its services are not affiliated with, endorsed by, or sponsored by Meta Platforms,
+        Inc., Google LLC, or LinkedIn Corporation. All trademark rights belong to their respective owners.
+      </p>
     </footer>
+  </div>
+
+  <!-- Custom Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <button class="lightbox-prev" onclick="prevLightbox(event)">&lt;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Customer Review Zoomed">
+    </div>
+    <button class="lightbox-next" onclick="nextLightbox(event)">&gt;</button>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <p class="cookie-banner-content">
+      We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to
+      our use of cookies. Read our <a href="privacy.html" target="_blank">Privacy Policy</a> to learn more.
+    </p>
+    <div class="cookie-banner-buttons">
+      <button class="cookie-btn-decline" onclick="declineCookies()">Decline</button>
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    </div>
   </div>
 
   <script>
@@ -1070,13 +2421,13 @@
         nav_programs: "Programs",
         nav_testimonials: "Testimonials",
         nav_contact: "Contact",
-        
+
         hero_pretitle: "A Sacred Brand Movement",
-        hero_title: "Garbha Jyothi™ — Light from the Womb to the World",
+        hero_title: "GARBHA JYOTHI™ — Light from the Womb to the World",
         hero_intro: "We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar wisdom with modern mind science — turning womb-light into world-light.",
         hero_btn_primary: "Book Free Webinar",
         hero_btn_secondary: "Our Story",
-        
+
         story_title: "Brand Story",
         story_subtitle: "A personal journey from heartbreak to a global awakening of maternal light.",
         story_intro: "\"I once lost a heartbeat — and found my life’s purpose. In the silence of loss, I discovered that creation begins long before birth — in the energy of the womb.\"",
@@ -1085,7 +2436,6 @@
         story_body3: "Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby listened. That moment became my rebirth — and Garbha Jyothi™ was born.",
         story_body4: "Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear to faith, from conception to creation — to awaken Light from the Womb to the World.",
         story_banner_quote: "Because when a woman heals herself, she heals generations.",
-        
         phil_title: "Core Philosophy & Metaphor",
         phil_subtitle: "Rooted in sacred energy, ancient Sanskrit mantras, and the golden lamp metaphor.",
         phil_metaphor_title: "Visual Metaphor: The Golden Lamp",
@@ -1101,7 +2451,6 @@
         phil_glow3_desc: "To reignite the lost science of conscious creation, bringing womb-light into the world.",
         phil_glow4_label: "For Webinars",
         phil_glow4_desc: "A movement of women remembering that creation begins with light flowing to the world.",
-        
         vm_title: "Vision & Mission",
         vm_subtitle: "Aligning hearts and minds to illuminate the path for future generations.",
         vision_card_title: "Our Vision",
@@ -1112,7 +2461,6 @@
         mission_p1: "To nurture mothers who are physically healthy, emotionally free, and spiritually luminous — lighting the world from within.",
         mission_p2: "To create a ripple of transformation through mothers — because when one woman heals, generations evolve.",
         mission_p3: "To illuminate the path for the next generation — one womb, one woman, one awakening at a time.",
-        
         val_title: "Brand Values",
         val_subtitle: "The five pillars guiding our integrated approach to conscious creation.",
         val_th_value: "Core Value",
@@ -1127,7 +2475,6 @@
         val_v4_desc: "Empowering mothers through collective energy.",
         val_v5_name: "Transformation",
         val_v5_desc: "Turning pain into power, and wisdom into light.",
-        
         jrn_title: "The Journey to Garbha Jyothi",
         jrn_subtitle: "A progressive pathway from awareness to fully illuminated consciousness.",
         jrn_s1_title: "GJ Awareness",
@@ -1140,7 +2487,6 @@
         jrn_s4_desc: "Deepening communication. Daily Garbh Samvaad, letting go of generational patterns and trauma.",
         jrn_s5_title: "Garbha Jyothi",
         jrn_s5_desc: "Enlightened motherhood. The golden flame in the womb shapes the generation and lights the world.",
-        
         prg_title: "Our Programs",
         prg_subtitle: "Private consultations, group classes, and immersive multi-month support systems.",
         prg_p1_title: "Garbha Jyothi® Personal Healing",
@@ -1160,7 +2506,6 @@
         prg_meta_3m: "3-Month Program",
         prg_meta_full: "Full Term Support",
         prg_meta_call: "Personal Call",
-        
         tst_title: "Real Stories, Real Results",
         tst_subtitle: "Sisters sharing their journey of healing, awareness, and rebirth. Reserved for future testimonials.",
         tst_placeholder_1: "\"This space is reserved for a future mother's testimonial. Here you can write about how the Garbha Sanskar practices brought calm, strength, and light during your pregnancy journey.\"",
@@ -1172,14 +2517,12 @@
         tst_a2_role: "Supportive Father",
         tst_a3_name: "Transformation Log",
         tst_a3_role: "Healing Milestones",
-        
         gal_title: "Gallery",
         gal_subtitle: "Moments of connection, ancient motifs, and visual memories from our community.",
         gal_item1: "Official Emblem",
         gal_item2: "Lotus Meditation",
         gal_item3: "Jeevam Lotus",
         gal_item4: "Womb Mandala",
-        
         con_title: "Contact Us",
         con_subtitle: "Get in touch to enroll in our webinars, ask questions, or schedule a session.",
         con_info_title: "Contact Details",
@@ -1188,7 +2531,6 @@
         con_loc_label: "Location",
         con_loc_val: "Bengaluru, Karnataka, India",
         con_connect_label: "Connect With Us",
-        
         form_name_label: "Name",
         form_email_label: "Email",
         form_phone_label: "Phone Number",
@@ -1208,13 +2550,11 @@
         nav_programs: "ಕಾರ್ಯಕ್ರಮಗಳು",
         nav_testimonials: "ಅಭಿಪ್ರಾಯಗಳು",
         nav_contact: "ಸಂಪರ್ಕ",
-        
         hero_pretitle: "ಒಂದು ಪವಿತ್ರ ಬ್ರ್ಯಾಂಡ್ ಆಂದೋಲನ",
         hero_title: "ಗರ್ಭ ಜ್ಯೋತಿ™ — ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು",
         hero_intro: "ನಾವು ಪುರಾತನ ಗರ್ಭ ಸಂಸ್ಕಾರ ಜ್ಞಾನವನ್ನು ಆಧುನಿಕ ಮನೋವಿಜ್ಞಾನದೊಂದಿಗೆ ಸಂಯೋಜಿಸುವ ಮೂಲಕ ಮಹಿಳೆಯರು ಭಾವನಾತ್ಮಕವಾಗಿ ಗುಣಮುಖರಾಗಲು ಮತ್ತು ಪ್ರಜ್ಞಾಪೂರ್ವಕವಾಗಿ ಮಾತೃತ್ವಕ್ಕೆ ಸಿದ್ಧರಾಗಲು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
         hero_btn_primary: "ಉಚಿತ ವೆಬಿನಾರ್ ಬುಕ್ ಮಾಡಿ",
         hero_btn_secondary: "ನಮ್ಮ ಕಥೆ",
-        
         story_title: "ಬ್ರ್ಯಾಂಡ್ ಕಥೆ",
         story_subtitle: "ಹೃದಯಾಘಾತದಿಂದ ಜಾಗತಿಕ ಮಾತೃತ್ವ ಬೆಳಕಿನ ಜಾಗೃತಿಯವರೆಗಿನ ವೈಯಕ್ತಿಕ ಪಯಣ.",
         story_intro: "\"ನಾನು ಒಮ್ಮೆ ಹೃದಯಬಡಿತವನ್ನು ಕಳೆದುಕೊಂಡೆ — ಮತ್ತು ನನ್ನ ಜೀವನದ ಉದ್ದೇಶವನ್ನು ಕಂಡುಕೊಂಡೆ. ನಷ್ಟದ ಮೌನದಲ್ಲಿ, ಸೃಷ್ಟಿಯು ಹುಟ್ಟುವ ಮುಂಚೆಯೇ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಎಂದು ನಾನು ಕಂಡುಕೊಂಡೆ — ಗರ್ಭದ ಶಕ್ತಿಯಲ್ಲಿ.\"",
@@ -1223,7 +2563,6 @@
         story_body3: "ಗರ್ಭ ಸಂವಾದದ ಮೂಲಕ ನಾನು ಪ್ರತಿದಿನ ನನ್ನ ಮಗುವಿನೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಿದ್ದೆ. ಹೆರಿಗೆಯ ಸಮಯದಲ್ಲಿ ನಾನು 'ನಾವು ಸುರಕ್ಷಿತವಾಗಿದ್ದೇವೆ' ಎಂದು ಪಿಸುಗುಟ್ಟಿದಾಗ ಮಗು ಸ್ಪಂದಿಸಿತು. ಆ ಕ್ಷಣ ನನ್ನ ಮರುಜನ್ಮವಾಯಿತು — ಮತ್ತು ಗರ್ಭ ಜ್ಯೋತಿ™ ಜನ್ಮತಾಳಿತು.",
         story_body4: "ಇಂದು, ಗರ್ಭ ಜ್ಯೋತಿ™ ಪುರಾತನ ಭಾರತೀಯ ಜ್ಞಾನ ಮತ್ತು ಆಧುನಿಕ ನರವಿಜ್ಞಾನವನ್ನು ಸಂಯೋಜಿಸಿ ಮಹಿಳೆಯರನ್ನು ಭಯದಿಂದ ನಂಬಿಕೆಯತ್ತ, ಗರ್ಭಧಾರಣೆಯಿಂದ ಸೃಷ್ಟಿಯತ್ತ ನಡೆಸುತ್ತದೆ — ಗರ್ಭದ ಜ್ಯೋತಿಯನ್ನು ಜಗತ್ತಿಗೆ ಬೆಳಗಿಸುತ್ತದೆ.",
         story_banner_quote: "ಏಕೆಂದರೆ ಮಹಿಳೆ ತನ್ನನ್ನು ತಾನು ಗುಣಪಡಿಸಿಕೊಂಡಾಗ, ಅವಳು ತಲೆಮಾರುಗಳನ್ನು ಗುಣಪಡಿಸುತ್ತಾಳೆ.",
-        
         phil_title: "ಮೂಲ ತತ್ವಶಾಸ್ತ್ರ ಮತ್ತು ರೂಪಕ",
         phil_subtitle: "ಪವಿತ್ರ ಶಕ್ತಿ, ಪ್ರಾಚೀನ ಸಂಸ್ಕೃತ ಮಂತ್ರಗಳು ಮತ್ತು ಸುವರ್ಣ ದೀಪದ ರೂಪಕದಲ್ಲಿ ಬೇರೂರಿದೆ.",
         phil_metaphor_title: "ದೃಶ್ಯ ರೂಪಕ: ಸುವರ್ಣ ದೀಪ",
@@ -1239,7 +2578,6 @@
         phil_glow3_desc: "ಪ್ರಜ್ಞಾಪೂರ್ವಕ ಸೃಷ್ಟಿಯ ಕಳೆದುಹೋದ ವಿಜ್ಞಾನವನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸುವುದು, ಗರ್ಭದ ಬೆಳಕನ್ನು ಜಗತ್ತಿಗೆ ತರುವುದು.",
         phil_glow4_label: "ವೆಬಿನಾರ್‌ಗಳಿಗಾಗಿ",
         phil_glow4_desc: "ಸೃಷ್ಟಿಯು ಬೆಳಕಿನಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಎಂದು ನೆನಪಿಸಿಕೊಳ್ಳುವ ಮಹಿಳೆಯರ ಒಂದು ಮಹಾ ಆಂದೋಲನ.",
-        
         vm_title: "ದೂರದೃಷ್ಟಿ ಮತ್ತು ಧ್ಯೇಯ",
         vm_subtitle: "ಮುಂದಿನ ಪೀಳಿಗೆಯ ಹಾದಿಯನ್ನು ಬೆಳಗಿಸಲು ಹೃದಯ ಮತ್ತು ಮನಸ್ಸುಗಳನ್ನು ಒಂದುಗೂಡಿಸುವುದು.",
         vision_card_title: "ನಮ್ಮ ದೂರದೃಷ್ಟಿ",
@@ -1250,7 +2588,6 @@
         mission_p1: "ದೈಹಿಕವಾಗಿ ಆರೋಗ್ಯವಂತ, ಭಾವನಾತ್ಮಕವಾಗಿ ಮುಕ್ತ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕವಾಗಿ ತೇಜಸ್ವಿ ತಾಯಂದಿರನ್ನು ಪೋಷಿಸುವುದು — ಒಳಗಿನಿಂದ ಜಗತ್ತನ್ನು ಬೆಳಗಿಸುವುದು.",
         mission_p2: "ತಾಯಂದಿರ ಮೂಲಕ ತಲೆಮಾರುಗಳ ಪರಿವರ್ತನೆಯ ಅಲೆಯನ್ನು ಸೃಷ್ಟಿಸುವುದು — ಏಕೆಂದರೆ ಒಬ್ಬ ಮಹಿಳೆ ಗುಣಮುಖಳಾದಾಗ, ತಲೆಮಾರುಗಳು ವಿಕಸನಗೊಳ್ಳುತ್ತವೆ.",
         mission_p3: "ಮುಂದಿನ ಪೀಳಿಗೆಯ ಹಾದಿಯನ್ನು ಬೆಳಗಿಸುವುದು — ಒಂದು ಗರ್ಭ, ಒಬ್ಬ ಮಹಿಳೆ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಜಾಗೃತಿ.",
-        
         val_title: "ಬ್ರ್ಯಾಂಡ್ ಮೌಲ್ಯಗಳು",
         val_subtitle: "ಪ್ರಜ್ಞಾಪೂರ್ವಕ ಸೃಷ್ಟಿಗೆ ನಮ್ಮ ಸಮಗ್ರ ವಿಧಾನವನ್ನು ಮಾರ್ಗದರ್ಶಿಸುವ ಐದು ಸ್ತಂಭಗಳು.",
         val_th_value: "ಮೂಲ ಮೌಲ್ಯ",
@@ -1265,7 +2602,6 @@
         val_v4_desc: "ಸಾಮೂಹಿಕ ಶಕ್ತಿಯ ಮೂಲಕ ತಾಯಂದಿರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.",
         val_v5_name: "ಪರಿವರ್ತನೆ (Transformation)",
         val_v5_desc: "ನೋವನ್ನು ಶಕ್ತಿಯನ್ನಾಗಿ ಮತ್ತು ಜ್ಞಾನವನ್ನು ಬೆಳಕನ್ನಾಗಿ ಪರಿವರ್ತಿಸುವುದು.",
-        
         jrn_title: "ಗರ್ಭ ಜ್ಯೋತಿಯ ಪಯಣ",
         jrn_subtitle: "ಅರಿವಿನಿಂದ ಸಂಪೂರ್ಣ ಜಾಗೃತ ಪ್ರಜ್ಞೆಯತ್ತ ಪ್ರಗತಿಪರ ಮಾರ್ಗ.",
         jrn_s1_title: "GJ ಜಾಗೃತಿ",
@@ -1278,7 +2614,6 @@
         jrn_s4_desc: "ಸಂಪರ್ಕವನ್ನು ಗಾಢವಾಗಿಸುವುದು. ದೈನಂದಿನ ಗರ್ಭ ಸಂವಾದ, ತಲೆಮಾರುಗಳ ಆಘಾತ ಮತ್ತು ನಂಬಿಕೆಗಳನ್ನು ಬಿಡುವುದು.",
         jrn_s5_title: "ಗರ್ಭ ಜ್ಯೋತಿ",
         jrn_s5_desc: "ಪ್ರಬುದ್ಧ ಮಾತೃತ್ವ. ಗರ್ಭದಲ್ಲಿರುವ ಸುವರ್ಣ ಜ್ವಾಲೆಯು ಪೀಳಿಗೆಯನ್ನು ರೂಪಿಸುತ್ತದೆ ಮತ್ತು ಜಗತ್ತನ್ನು ಬೆಳಗಿಸುತ್ತದೆ.",
-        
         prg_title: "ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು",
         prg_subtitle: "ವೈಯಕ್ತಿಕ ಸಮಾಲೋಚನೆಗಳು, ಗುಂಪು ತರಗತಿಗಳು ಮತ್ತು ಅಖಂಡ ಬಹು-ತಿಂಗಳ ಬೆಂಬಲ ವ್ಯವಸ್ಥೆಗಳು.",
         prg_p1_title: "ಗರ್ಭ ಜ್ಯೋತಿ® ವೈಯಕ್ತಿಕ ಹೀಲಿಂಗ್",
@@ -1298,7 +2633,6 @@
         prg_meta_3m: "3-ತಿಂಗಳ ಪ್ರೋಗ್ರಾಂ",
         prg_meta_full: "ಸಂಪೂರ್ಣ ಬೆಂಬಲ",
         prg_meta_call: "ವೈಯಕ್ತಿಕ ಕರೆ",
-        
         tst_title: "ನಿಜವಾದ ಕಥೆಗಳು, ನಿಜವಾದ ಫಲಿತಾಂಶಗಳು",
         tst_subtitle: "ಗುಣಪಡಿಸುವಿಕೆ, ಅರಿವು ಮತ್ತು ಮರುಜನ್ಮದ ಪಯಣವನ್ನು ಹಂಚಿಕೊಳ್ಳುವ ಸಹೋದರಿಯರು. ಭವಿಷ್ಯದ ಅಭಿಪ್ರಾಯಗಳಿಗಾಗಿ ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
         tst_placeholder_1: "\"ಈ ಸ್ಥಳವನ್ನು ಭವಿಷ್ಯದ ತಾಯಿಯ ಅಭಿಪ್ರಾಯಕ್ಕಾಗಿ ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ. ಗರ್ಭ ಸಂಸ್ಕಾರದ ಅಭ್ಯಾಸಗಳು ನಿಮ್ಮ ಗರ್ಭಾವಸ್ಥೆಯ ಪ್ರಯಾಣದಲ್ಲಿ ಹೇಗೆ ಶಾಂತಿ, ಶಕ್ತಿ ಮತ್ತು ಬೆಳಕನ್ನು ತಂದವು ಎಂಬುದರ ಕುರಿತು ಇಲ್ಲಿ ಬರೆಯಬಹುದು.\"",
@@ -1310,14 +2644,12 @@
         tst_a2_role: "ಬೆಂಬಲಿಸುವ ತಂದೆ",
         tst_a3_name: "ಪರಿವರ್ತನೆಯ ಲಾಗ್",
         tst_a3_role: "ಹೀಲಿಂಗ್ ಮೈಲಿಗಲ್ಲುಗಳು",
-        
         gal_title: "ಗ್ಯಾಲರಿ",
         gal_subtitle: "ನಮ್ಮ ಸಮುದಾಯದ ಬಾಂಧವ್ಯದ ಕ್ಷಣಗಳು, ಪುರಾತನ ಲಾಂಛನಗಳು ಮತ್ತು ದೃಶ್ಯ ನೆನಪುಗಳು.",
         gal_item1: "ಅಧಿಕೃತ ಲಾಂಛನ",
         gal_item2: "ಕಮಲ ಧ್ಯಾನ",
         gal_item3: "ಜೀವಂ ಕಮಲ",
         gal_item4: "ಗರ್ಭ ಮಂಡಲ",
-        
         con_title: "ಸಂಪರ್ಕಿಸಿ",
         con_subtitle: "ನಮ್ಮ ವೆಬಿನಾರ್‌ಗಳಿಗೆ ದಾಖಲಾಗಲು, ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಲು ಅಥವಾ ಸೆಷನ್ ನಿಗದಿಪಡಿಸಲು ಸಂಪರ್ಕಿಸಿ.",
         con_info_title: "ಸಂಪರ್ಕ ವಿವರಗಳು",
@@ -1326,7 +2658,6 @@
         con_loc_label: "ಸ್ಥಳ",
         con_loc_val: "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ",
         con_connect_label: "ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ",
-        
         form_name_label: "ಹೆಸರು",
         form_email_label: "ಇಮೇಲ್",
         form_phone_label: "ದೂರವಾಣಿ ಸಂಖ್ಯೆ",
@@ -1344,30 +2675,31 @@
       currentLang = lang;
       document.documentElement.setAttribute('lang', lang);
       var dict = translations[lang];
-      
+
       // Update normal elements
-      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
         var key = el.getAttribute('data-i18n');
         if (dict[key] !== undefined) {
-          if (key === 'footer_text' || key === 'phil_mantra_desc') { 
-            el.innerHTML = dict[key].replace(/\n/g, '<br>'); 
-          } else { 
-            el.textContent = dict[key]; 
+          // If translation contains HTML tags (like span or strong) or is specific multiline, render as HTML
+          if (dict[key].indexOf('<') !== -1 || key === 'phil_mantra_desc' || key === 'footer_text') {
+            el.innerHTML = dict[key].replace(/\n/g, '<br>');
+          } else {
+            el.textContent = dict[key];
           }
         }
       });
 
       // Update placeholders
-      document.querySelectorAll('input, textarea').forEach(function(el) {
+      document.querySelectorAll('input, textarea').forEach(function (el) {
         var id = el.getAttribute('id');
         var placeholderKey = 'form_' + id + '_placeholder';
         if (dict[placeholderKey] !== undefined) {
           el.setAttribute('placeholder', dict[placeholderKey]);
         }
       });
-      
+
       // Toggle button active states
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       });
     }
@@ -1378,13 +2710,11 @@
       var email = document.getElementById('email').value.trim();
       var formMsg = document.getElementById('formMsg');
       var dict = translations[currentLang];
-      
       if (!name || !email) {
         formMsg.style.color = '#D4AF37';
         formMsg.textContent = dict.form_error;
         return false;
       }
-      
       formMsg.style.color = '#8FCB8F';
       formMsg.textContent = dict.form_success;
       document.getElementById('contactForm').reset();
@@ -1392,22 +2722,22 @@
     }
 
     // Scroll reveal logic
-    (function() {
+    (function () {
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var els = document.querySelectorAll('.reveal');
       if (reduce || !('IntersectionObserver' in window)) {
-        els.forEach(function(el) { el.classList.add('is-visible'); });
+        els.forEach(function (el) { el.classList.add('is-visible'); });
         return;
       }
-      var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             io.unobserve(entry.target);
           }
         });
       }, { threshold: 0.15 });
-      els.forEach(function(el) { io.observe(el); });
+      els.forEach(function (el) { io.observe(el); });
     })();
 
     // // Custom Cursor Glow effect listener
@@ -1415,7 +2745,6 @@
     //   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     //   if (reduce) return;
     //   var glow = document.querySelector('.cursor-light');
-      
     //   document.addEventListener('mousemove', function(e) {
     //     if (glow) {
     //       glow.style.opacity = '200';
@@ -1423,45 +2752,164 @@
     //       glow.style.top = e.clientY + 'px';
     //     }
     //   });
-      
     //   document.addEventListener('mouseleave', function() {
     //     if (glow) {
     //       glow.style.opacity = '200';
     //     }
     //   });
     // })();
-    (function() {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
 
-  var glow = document.querySelector('.cursor-light');
+      var glow = document.querySelector('.cursor-light');
 
-  document.addEventListener('mousemove', function(e) {
-    if (glow) {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-      glow.style.opacity = '1';
+      document.addEventListener('mousemove', function (e) {
+        if (glow) {
+          glow.style.left = e.clientX + 'px';
+          glow.style.top = e.clientY + 'px';
+          glow.style.opacity = '1';
+        }
+
+        // Create sparkle
+        var sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
+        document.body.appendChild(sparkle);
+
+        // Remove after animation
+        sparkle.addEventListener('animationend', function () {
+          sparkle.remove();
+        });
+      });
+
+      document.addEventListener('mouseleave', function () {
+        if (glow) {
+          glow.style.opacity = '0';
+        }
+      });
+    })();
+
+    // Reviews Toggling & Lightbox Modal Logic
+    var reviewImages = [
+      "review_photos/WhatsApp Image 2026-07-22 at 4 PM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-22 at 4.4PM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-22 at 4.49.33 PM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-22 at 4.49.34 PM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.20 AM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.20 AM (1).jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.20 AM (2).jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.21 AM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.21 AM (1).jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.21 AM (2).jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.21 AM (3).jpeg",
+      "review_photos/WhatsApp Image 2026-07-26 at 11.45.22 AM.jpeg",
+      "review_photos/WhatsApp Image 2026-08-07 at 3.46.10 PM.jpeg",
+      "review_photos/WhatsApp Image 2026-08-07 at 3.46.11 PM.jpeg",
+      "review_photos/WhatsApp Image 2026-07-22 at  PM.jpeg"
+    ];
+
+    var currentReviewIndex = 0;
+    var reviewsExpanded = false;
+
+    function toggleReviews() {
+      var hiddenCards = document.querySelectorAll('.reviews-hidden-card');
+      var btn = document.getElementById('revealReviewsBtn');
+      var dict = translations[currentLang];
+
+      reviewsExpanded = !reviewsExpanded;
+
+      hiddenCards.forEach(function (card) {
+        card.classList.toggle('visible', reviewsExpanded);
+      });
+
+      if (reviewsExpanded) {
+        btn.textContent = dict.reviews_btn_hide || "Show Less";
+      } else {
+        btn.textContent = dict.reviews_btn_show || "View All Reviews";
+        document.querySelector('.reviews-grid-title').scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
-    // Create sparkle
-    var sparkle = document.createElement('div');
-    sparkle.className = 'sparkle';
-    sparkle.style.left = e.clientX + 'px';
-    sparkle.style.top = e.clientY + 'px';
-    document.body.appendChild(sparkle);
+    function openLightbox(src) {
+      // Find the index of the image in our array based on the source path
+      // Decode the URL encoded space characters (%20) if any
+      var decodedSrc = decodeURIComponent(src);
 
-    // Remove after animation
-    sparkle.addEventListener('animationend', function() {
-      sparkle.remove();
+      // Try to find the exact match or relative match in our array
+      var index = reviewImages.findIndex(function (img) {
+        return decodedSrc.indexOf(img) !== -1 || img.indexOf(decodedSrc) !== -1;
+      });
+
+      if (index !== -1) {
+        currentReviewIndex = index;
+      }
+
+      var modal = document.getElementById('lightboxModal');
+      var img = document.getElementById('lightboxImg');
+      img.src = src;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // prevent background scrolling
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close')) {
+        var modal = document.getElementById('lightboxModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function prevLightbox(e) {
+      e.stopPropagation();
+      currentReviewIndex = (currentReviewIndex - 1 + reviewImages.length) % reviewImages.length;
+      document.getElementById('lightboxImg').src = reviewImages[currentReviewIndex];
+    }
+
+    function nextLightbox(e) {
+      e.stopPropagation();
+      currentReviewIndex = (currentReviewIndex + 1) % reviewImages.length;
+      document.getElementById('lightboxImg').src = reviewImages[currentReviewIndex];
+    }
+
+    // Keyboard support for Lightbox
+    document.addEventListener('keydown', function (e) {
+      var modal = document.getElementById('lightboxModal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        } else if (e.key === 'ArrowLeft') {
+          prevLightbox(e);
+        } else if (e.key === 'ArrowRight') {
+          nextLightbox(e);
+        }
+      }
     });
-  });
 
-  document.addEventListener('mouseleave', function() {
-    if (glow) {
-      glow.style.opacity = '0';
+    // Cookie Consent Banner Logic
+    function showCookieBanner() {
+      if (!localStorage.getItem('cookiesAccepted') && !localStorage.getItem('cookiesDeclined')) {
+        setTimeout(function () {
+          document.getElementById('cookieBanner').classList.add('show');
+        }, 1500);
+      }
     }
-  });
-})();
+
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookiesDeclined', 'true');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+
+    // Run cookie check on load
+    window.addEventListener('DOMContentLoaded', showCookieBanner);
   </script>
 </body>
+
 </html>
