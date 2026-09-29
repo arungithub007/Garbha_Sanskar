@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
 
-<head> 
-  
-<!-- this is to add Add brand metadata and logo -->
+<head>
+
+  <!-- this is to add Add brand metadata and logo -->
   <link rel="icon" href="/GarbhaJyothi/Icons_and_images/icon.png" type="image/png">
   <meta name="application-name" content="Garbha Jyothi">
   <meta name="apple-mobile-web-app-title" content="Garbha Jyothi">
@@ -20,7 +20,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0F0A05" />
-  <title>Garbha Jyothi — Light from the Womb to the World</title>
+  <title>Garbha Jyothi - Light from the Womb to the World</title>
   <meta name="description"
     content="Garbha Jyothi™ is the world's first integrative Garbha Sanskar movement blending ancient womb wisdom with modern mind science to awaken light from the womb to the world." />
 
@@ -503,12 +503,22 @@
       font-size: 1.1rem;
     }
 
-    /* Brand Story Section */
-    .story-grid {
+    /* Visual Imagery Showcase */
+    .visual-imagery-section {
+      padding: 40px 0 60px;
+    }
+
+    .visuals-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
       align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .visuals-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .story-img-container {
@@ -1607,6 +1617,513 @@
         text-align: center;
       }
     }
+    /* Top Announcement Bar */
+    .top-announcement-bar {
+      background: linear-gradient(90deg, #5c3b06, #8A5A12, #D4AF37, #8A5A12, #5c3b06);
+      background-size: 200% auto;
+      animation: shimmerBg 6s linear infinite;
+      color: #070402;
+      padding: 10px 15px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+      z-index: 101;
+      border-bottom: 1px solid rgba(255, 243, 214, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @keyframes shimmerBg {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .top-announcement-badge {
+      background: #070402;
+      color: #F0D28A;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      display: inline-block;
+    }
+
+    .top-announcement-link {
+      color: #070402;
+      text-decoration: underline;
+      font-weight: 800;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-announcement-link:hover {
+      color: #FFF3D6;
+      transform: translateX(3px);
+    }
+
+    /* Hero Milestone Pill */
+    .hero-milestone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      width: fit-content;
+      margin-bottom: -5px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+    }
+
+    .hero-milestone-pill a {
+      color: var(--gold-shimmer);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .btn-gold-glow {
+      background: linear-gradient(135deg, #A8761E, #F0D28A, #D4AF37);
+      color: #070402 !important;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-gold-glow:hover {
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+      transform: translateY(-2px);
+    }
+
+    nav a.nav-book-link {
+      color: var(--gold-shimmer);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a.nav-book-link::before {
+      content: "✨";
+      font-size: 0.8rem;
+    }
+
+    /* Dedicated Book Showcase Section */
+    .book-section {
+      background: radial-gradient(circle at 50% 20%, rgba(138, 90, 18, 0.25), rgba(15, 10, 5, 0.85) 60%),
+                  linear-gradient(180deg, rgba(27, 19, 9, 0.7) 0%, rgba(7, 4, 2, 0.98) 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
+      border-radius: 24px;
+      padding: 60px 40px;
+      margin: 30px 0 70px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 175, 55, 0.12);
+      overflow: hidden;
+    }
+
+    .book-section::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .book-milestone-ribbon {
+      background: linear-gradient(90deg, rgba(138, 90, 18, 0.5), rgba(212, 175, 55, 0.3), rgba(138, 90, 18, 0.5));
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 50px;
+      padding: 10px 24px;
+      max-width: fit-content;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold-shimmer);
+      font-weight: 700;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+      text-align: center;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Book Presentation Image Card */
+    .book-card-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      perspective: 1000px;
+    }
+
+    .book-img-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 320px;
+      border-radius: 14px;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .book-img-container:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .book-cover-image {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      filter: drop-shadow(-10px 15px 28px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 25px rgba(212, 175, 55, 0.25));
+      transition: filter 0.4s ease;
+    }
+
+    .book-img-container:hover .book-cover-image {
+      filter: drop-shadow(-14px 20px 35px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.45));
+    }
+
+    .book-cover-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, #C2185B, #E91E63);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4);
+      z-index: 5;
+    }
+
+    .book-rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+    }
+
+    .book-rating-stars {
+      color: #FFD700;
+      letter-spacing: 2px;
+    }
+
+    /* Right Column: Book Details & Offers */
+    .book-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .book-main-title {
+      font-size: 2.2rem;
+      line-height: 1.25;
+      color: var(--gold-shimmer);
+      margin: 0;
+    }
+
+    .book-author-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .book-author-tag strong {
+      color: var(--gold-light);
+    }
+
+    .book-quote-banner {
+      background: linear-gradient(135deg, rgba(138, 90, 18, 0.3), rgba(212, 175, 55, 0.08));
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      font-size: 1.15rem;
+      color: var(--gold-shimmer);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .book-desc-p {
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Price & Coupon Box */
+    .book-offer-box {
+      background: linear-gradient(135deg, rgba(27, 19, 9, 0.95), rgba(46, 31, 14, 0.85));
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .book-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .book-mrp {
+      font-size: 1.2rem;
+      color: rgba(201, 169, 110, 0.6);
+      text-decoration: line-through;
+    }
+
+    .book-price-current {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFF3D6;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+    }
+
+    .book-savings-pill {
+      background: linear-gradient(135deg, #2E7D32, #4CAF50);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    .book-offer-urgency {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #FFB74D;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .coupon-box {
+      background: rgba(15, 10, 5, 0.7);
+      border: 1px dashed var(--gold);
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .coupon-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .coupon-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .coupon-code {
+      font-family: 'Courier New', monospace;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+    }
+
+    .coupon-copy-btn {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .coupon-copy-btn:hover {
+      background: var(--gold);
+      color: var(--bg-deep);
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    }
+
+    .coupon-copy-btn.copied {
+      background: #4CAF50;
+      color: #FFFFFF;
+      border-color: #4CAF50;
+    }
+
+    /* Book CTAs */
+    .book-actions-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-notionpress {
+      background: linear-gradient(135deg, #8A5A12, #D4AF37);
+      color: #070402;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-notionpress:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
+      color: #000;
+    }
+
+    .btn-amazon {
+      background: linear-gradient(135deg, #FF9900, #FFB84D);
+      color: #111111;
+      font-weight: 800;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-amazon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
+      color: #000;
+    }
+
+    .btn-ask-questions {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-ask-questions:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold);
+      color: var(--gold-shimmer);
+      transform: translateY(-2px);
+    }
+
+    /* Feature Pillars inside Book section */
+    .book-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .book-feature-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .book-feature-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      background: rgba(212, 175, 55, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .book-feature-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .book-feature-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 0 0 4px 0;
+    }
+
+    .book-feature-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 992px) {
+      .book-grid {
+        grid-template-columns: 1fr;
+      }
+      .book-features-grid {
+        grid-template-columns: 1fr;
+      }
+      .book-section {
+        padding: 40px 20px;
+      }
+    }
   </style>
 </head>
 
@@ -1655,6 +2172,13 @@
     </svg>
   </div>
 
+  <!-- Top Launch Announcement Bar -->
+  <div class="top-announcement-bar">
+    <span class="top-announcement-badge" data-i18n="top_bar_badge">✨ Special Launch Offer</span>
+    <span data-i18n="top_bar_text">🎉 “Garbhajyothi” Kannada Book Release Offer @ ₹568 Only (MRP: ₹799) | Use Code: <strong>GJANU111</strong></span>
+    <a href="#book" class="top-announcement-link" data-i18n="top_bar_link">Order Your Copy Now &rarr;</a>
+  </div>
+
   <!-- Header -->
   <header>
     <a href="#" class="brand">
@@ -1666,10 +2190,9 @@
     </a>
     <div class="header-right">
       <nav aria-label="Main navigation">
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+        <a href="#book" class="nav-book-link" data-i18n="nav_book">Book</a>
+        <a href="#beginnings" data-i18n="nav_beginnings">Beginnings</a>
         <a href="#vision-mission" data-i18n="nav_vision">Vision &amp; Mission</a>
-        <a href="#values" data-i18n="nav_values">Values</a>
         <a href="#journey" data-i18n="nav_journey">Journey</a>
         <a href="#programs" data-i18n="nav_programs">Programs</a>
         <a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a>
@@ -1687,16 +2210,22 @@
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-content">
+          <div class="hero-milestone-pill">
+            <span style="font-size:1.1rem;">🪔</span>
+            <span data-i18n="hero_pill_text">✨ <strong>New Book Launch:</strong> 40+ Pre-orders on Day 1!</span>
+            <a href="#book" data-i18n="hero_pill_link">Order Now &rarr;</a>
+          </div>
           <span class="hero-pretitle" data-i18n="hero_pretitle">A Sacred Brand Movement</span>
           <h1 id="hero-heading" class="hero-title" data-i18n="hero_title"><span class="brand-name">GARBHA JYOTHI</span>™
-            — Light from the Womb to the World</h1>
+            - Light from the Womb to the World</h1>
           <p class="hero-intro" data-i18n="hero_intro">
             We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar
-            wisdom with modern mind science — turning womb-light into world-light.
+            wisdom with modern mind science - turning womb-light into world-light.
           </p>
           <div class="hero-buttons">
+            <a href="#book" class="btn btn-gold-glow" data-i18n="hero_btn_book">📖 Garbhajyothi Book</a>
             <a href="#contact" class="btn btn-primary" data-i18n="hero_btn_primary">Book Free Webinar</a>
-            <a href="#about" class="btn btn-secondary" data-i18n="hero_btn_secondary">Our Story</a>
+            <a href="#beginnings" class="btn btn-secondary" data-i18n="hero_btn_secondary">Divine Beginnings</a>
           </div>
         </div>
         <div class="hero-image-wrap">
@@ -1709,111 +2238,136 @@
         </div>
       </section>
 
-      <!-- About / Brand Story Section -->
-      <section id="about" class="reveal" aria-labelledby="about-heading">
-        <h2 id="about-heading" class="section-title" data-i18n="story_title">Brand Story</h2>
-        <p class="section-subtitle" data-i18n="story_subtitle">A personal journey from heartbreak to a global awakening
-          of maternal light.</p>
+      <!-- Featured Book Showcase Section -->
+      <section id="book" class="reveal book-section" aria-labelledby="book-heading">
+        <div class="book-milestone-ribbon">
+          <span>✨</span>
+          <span data-i18n="book_milestone_badge">40+ COPIES SOLD BEFORE OFFICIAL LAUNCH • RELEASE OFFER ₹568 ONLY</span>
+          <span>🪔</span>
+        </div>
 
-        <div class="story-grid">
+        <div class="book-grid">
+          <!-- Left Column: Book Image & Rating -->
+          <div class="book-card-wrap">
+            <div class="book-img-container">
+              <span class="book-cover-badge" data-i18n="book_card_badge">Release Offer</span>
+              <img src="GarbhaJyothi/Icons_and_images/book.png" alt="Garbhajyothi Book Cover" class="book-cover-image">
+            </div>
+
+            <div class="book-rating-badge">
+              <span class="book-rating-stars">★★★★★</span>
+              <span data-i18n="book_rating_text">40+ Early Copies Booked • 100% Love</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Glorified Description, Offer & Buy Links -->
+          <div class="book-details">
+            <div>
+              <span class="hero-pretitle" data-i18n="book_pretitle">✨ A Sacred Milestone in Kannada ✨</span>
+              <h2 id="book-heading" class="book-main-title" data-i18n="book_title">ಗರ್ಭಜ್ಯೋತಿ — ಒಂದು ಹೊಸ ಮೈಲಿಗಲ್ಲು!</h2>
+              <div class="book-author-tag">
+                <span data-i18n="book_written_by">Written with Love & Devotion by</span>
+                <strong>Anusha C G</strong>
+              </div>
+            </div>
+
+            <div class="book-quote-banner">
+              <p style="margin: 0;" data-i18n="book_highlight_quote">
+                “ಗರ್ಭಜ್ಯೋತಿ — ಭಯದಿಂದ ನಂಬಿಕೆಯೆಡೆಗೆ ನಿಮ್ಮ ಗರ್ಭಯಾತ್ರೆಯ ಸಂಗಾತಿ.” 🪔✨
+              </p>
+            </div>
+
+            <p class="book-desc-p" data-i18n="book_body1">
+              ನನ್ನ ಕನ್ನಡ ಪುಸ್ತಕ <strong>“ಗರ್ಭಜ್ಯೋತಿ”</strong> ಲೋಕಾರ್ಪಣೆಯಾಗುವ ಮೊದಲೇ <strong>40+ ಪ್ರತಿಗಳು ಮಾರಾಟವಾಗಿವೆ!</strong> ನಿಮ್ಮ ಪ್ರೀತಿ, ನಂಬಿಕೆ ಮತ್ತು ವಿಶ್ವಾಸಕ್ಕೆ ನಾನು ಚಿರಋಣಿ. ❤️🙏
+            </p>
+
+            <p class="book-desc-p" data-i18n="book_body2">
+              ಕನ್ನಡದಲ್ಲಿ ಮೊದಲ ಬಾರಿಗೆ, <em>ಗರ್ಭಧಾರಣೆಗೆ ಪ್ರಯತ್ನಿಸುವವರಿಗೆ ಮಾತ್ರ</em> ಸಮರ್ಪಿತವಾದ ಈ ಪುಸ್ತಕವು ಕೇವಲ ದೇಹವನ್ನಷ್ಟೇ ಅಲ್ಲ — <strong>ಮನಸ್ಸು ಮತ್ತು ಆತ್ಮವನ್ನೂ ಗರ್ಭಧಾರಣೆಗೆ ಸಿದ್ಧಪಡಿಸುವ ಸಂಕ್ಷಿಪ್ತ ಮಾರ್ಗದರ್ಶಿ.</strong>
+            </p>
+
+            <!-- Price & Coupon Box -->
+            <div class="book-offer-box">
+              <div class="book-price-row">
+                <span class="book-mrp" data-i18n="book_mrp_text">MRP: ₹799</span>
+                <span class="book-price-current" data-i18n="book_price_text">₹568</span>
+                <span class="book-savings-pill" data-i18n="book_save_text">Release Offer: ₹231 OFF</span>
+              </div>
+
+              <div class="book-offer-urgency">
+                <span>⚡</span>
+                <span data-i18n="book_urgency_text">ಮೊದಲ 20 ನೋಂದಣಿಗಳಿಗೆ ಮಾತ್ರ ಈ ವಿಶೇಷ ಕೊಡುಗೆ! (Limited to First 20 Orders)</span>
+              </div>
+
+              <div class="coupon-box">
+                <div class="coupon-info">
+                  <span class="coupon-label" data-i18n="coupon_label">NotionPress Coupon Code</span>
+                  <span class="coupon-code">GJANU111</span>
+                </div>
+                <button type="button" id="couponCopyBtn" class="coupon-copy-btn" onclick="copyCouponCode()">
+                  <span>📋</span> <span data-i18n="coupon_copy_btn">Copy Code</span>
+                </button>
+              </div>
+
+              <!-- Action Links -->
+              <div class="book-actions-group">
+                <a href="https://notionpress.com/read/garbhajyothi" target="_blank" rel="noopener noreferrer" class="btn btn-notionpress">
+                  <span>🛒</span> <span data-i18n="btn_notionpress">Order on NotionPress (Code: GJANU111)</span>
+                </a>
+                <a href="https://amzn.in/d/0aCG8naq" target="_blank" rel="noopener noreferrer" class="btn btn-amazon">
+                  <span>📦</span> <span data-i18n="btn_amazon">Shop on Amazon</span>
+                </a>
+                <a href="https://amzn.in/d/04LjwriC" target="_blank" rel="noopener noreferrer" class="btn-ask-questions">
+                  <span>💬</span> <span data-i18n="btn_questions">Product Questions? Ask on Amazon</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="book-features-grid">
+              <div class="book-feature-card">
+                <div class="book-feature-icon">🪔</div>
+                <div>
+                  <h4 class="book-feature-title" data-i18n="feat_f1_title">ಮನಸ್ಸು ಮತ್ತು ದೇಹದ ಸಿದ್ಧತೆ</h4>
+                  <p class="book-feature-desc" data-i18n="feat_f1_desc">ಗರ್ಭಧಾರಣೆಗೆ ಮುನ್ನ ದೇಹ, ಭಾವನೆ ಮತ್ತು ಶಕ್ತಿ ಕ್ಷೇತ್ರವನ್ನು ಶುದ್ಧೀಕರಿಸುವ ಮಾರ್ಗ.</p>
+                </div>
+              </div>
+              <div class="book-feature-card">
+                <div class="book-feature-icon">🌸</div>
+                <div>
+                  <h4 class="book-feature-title" data-i18n="feat_f2_title">ಪ್ರಾಚೀನ ಗರ್ಭ ಸಂಸ್ಕಾರ + ವಿಜ್ಞಾನ</h4>
+                  <p class="book-feature-desc" data-i18n="feat_f2_desc">ಸಾವಿರಾರು ವರ್ಷಗಳ ವೈದಿಕ ಜ್ಞಾನ ಮತ್ತು ಆಧುನಿಕ ನರವಿಜ್ಞಾನದ ಅಪೂರ್ವ ಸಂಗಮ.</p>
+                </div>
+              </div>
+              <div class="book-feature-card">
+                <div class="book-feature-icon">💖</div>
+                <div>
+                  <h4 class="book-feature-title" data-i18n="feat_f3_title">ಭಯದಿಂದ ನಂಬಿಕೆಯೆಡೆಗೆ</h4>
+                  <p class="book-feature-desc" data-i18n="feat_f3_desc">ಹಿಂದಿನ ನಷ್ಟದ ನೋವು, ಗರ್ಭಧಾರಣೆಯ ಆತಂಕ ಕಳೆದು ಸಕಾರಾತ್ಮಕ ವಿಶ್ವಾಸ ಮೂಡಿಸುತ್ತದೆ.</p>
+                </div>
+              </div>
+              <div class="book-feature-card">
+                <div class="book-feature-icon">📖</div>
+                <div>
+                  <h4 class="book-feature-title" data-i18n="feat_f4_title">ಸ್ಪಷ್ಟ ಕನ್ನಡ ಕೈಪಿಡಿ</h4>
+                  <p class="book-feature-desc" data-i18n="feat_f4_desc">ದಂಪತಿಗಳಿಗೆ ಸುಲಭವಾಗಿ ಅಳವಡಿಸಿಕೊಳ್ಳಬಹುದಾದ ಸಂಕ್ಷಿಪ್ತ ಹಾಗೂ ಪ್ರಾಯೋಗಿಕ ಪುಸ್ತಕ.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Imagery Showcase -->
+      <section id="imagery" class="reveal visual-imagery-section" aria-label="Sacred Gallery">
+        <div class="visuals-grid">
           <div class="story-img-container">
             <img class="story-img" src="GarbhaJyothi/Icons_and_images/IMG-20260722-WA0046.jpg"
               alt="Mother meditating with golden womb light">
           </div>
-          <div class="story-content">
-            <p class="intro-quote" data-i18n="story_intro">
-              "I once lost a heartbeat — and found my life’s purpose. In the silence of loss, I discovered that creation
-              begins long before birth — in the energy of the womb."
-            </p>
-            <p class="story-p" data-i18n="story_body1">
-              Hi, I’m Anusha C G, founder of Garbha Jyothi™ — Light from the Womb to the World. My journey began not as
-              a coach, but as a woman who once lost a heartbeat and found her life’s purpose in that heartbreak. Six
-              months into my marriage, I saw two pink lines. Like every dreamy girl, I imagined tiny hands, lullabies,
-              and laughter. But soon, the doctor said there was no heartbeat. That loss broke something in me —
-              physically, mentally, emotionally.
-            </p>
-            <p class="story-p" data-i18n="story_body2">
-              Searching for answers, I discovered the ancient science of Garbha Sanskar — the wisdom of preparing the
-              womb with awareness and love. I practiced it for three months — healing my body, mind, and emotions — and
-              conceived again. This time I didn’t just carry a baby; I carried consciousness.
-            </p>
-            <p class="story-p" data-i18n="story_body3">
-              Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby
-              listened. That moment became my rebirth — and Garbha Jyothi™ was born.
-            </p>
-            <p class="story-p" data-i18n="story_body4">
-              Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear
-              to faith, from conception to creation — to awaken Light from the Womb to the World.
-            </p>
-          </div>
-        </div>
-
-        <div class="banner-quote reveal">
-          <p data-i18n="story_banner_quote">Because when a woman heals herself, she heals generations.</p>
-        </div>
-      </section>
-
-      <!-- Philosophy & Mantra Section -->
-      <section id="philosophy" class="reveal" aria-labelledby="philosophy-heading">
-        <h2 id="philosophy-heading" class="section-title" data-i18n="phil_title">Core Philosophy &amp; Metaphor</h2>
-        <p class="section-subtitle" data-i18n="phil_subtitle">Rooted in sacred energy, ancient Sanskrit mantras, and the
-          golden lamp metaphor.</p>
-
-        <div class="philosophy-grid">
-          <div class="story-content">
-            <div class="metaphor-card">
-              <h3 class="metaphor-title">
-                <span data-i18n="phil_metaphor_title">Visual Metaphor: The Golden Lamp</span>
-              </h3>
-              <p class="metaphor-text" data-i18n="phil_metaphor_desc">
-                The womb is a sacred lamp — its flame nourishes creation, and its glow shapes the world. It is a temple
-                of transformation.
-              </p>
-
-              <h3 class="metaphor-title" style="margin-top: 30px;">
-                <span data-i18n="phil_mantra_title">Brand Mantra: Aham Jyothi Swaroopini</span>
-              </h3>
-              <p class="intro-quote" style="font-size: 1.15rem;" data-i18n="phil_mantra_desc">
-                “Aham Jyothi Swaroopini — I am Light Incarnate.”<br>
-                <span
-                  style="font-size: 0.95rem; color: var(--muted); font-style: normal; display: block; margin-top: 6px;">
-                  Translation: “The light I nurture within, I offer to the world.”
-                </span>
-              </p>
-            </div>
-
-            <p class="story-p" style="margin-top: 10px;" data-i18n="phil_movement_desc">
-              Garbha Jyothi™ is more than a program — it’s a remembrance. A remembrance that creation is sacred. Through
-              Garbha Sanskar, energy work, and mindfulness, every woman can awaken the light within — and through her,
-              light flows into the world.
-            </p>
-          </div>
-
           <div class="story-img-container">
             <img class="story-img" src="GarbhaJyothi/extras/IMG-20260722-WA0035.jpg"
               alt="Aham Jyothi Swaroopini visual & raga details">
-          </div>
-        </div>
-
-        <div class="glow-definition reveal">
-          <div class="glow-item">
-            <span class="glow-label" data-i18n="phil_glow1_label">“Jyothi” Meaning</span>
-            <div class="glow-desc" data-i18n="phil_glow1_desc">Light (illumination, awakening, consciousness, Awareness,
-              Aura, Glow)</div>
-          </div>
-          <div class="glow-item">
-            <span class="glow-label" data-i18n="phil_glow2_label">What is Garbha Jyothi</span>
-            <div class="glow-desc" data-i18n="phil_glow2_desc">Reels, Posts, Networking events, Podcasts, Webinars</div>
-          </div>
-          <div class="glow-item">
-            <span class="glow-label" data-i18n="phil_glow3_label">Global Why</span>
-            <div class="glow-desc" data-i18n="phil_glow3_desc">To reignite the lost science of conscious creation,
-              bringing womb-light into the world.</div>
-          </div>
-          <div class="glow-item">
-            <span class="glow-label" data-i18n="phil_glow4_label">For Webinars</span>
-            <div class="glow-desc" data-i18n="phil_glow4_desc">A movement of women remembering that creation begins with
-              light flowing to the world.</div>
           </div>
         </div>
       </section>
@@ -1821,13 +2375,13 @@
       <!-- Divine Beginnings Section -->
       <section id="beginnings" class="reveal" aria-labelledby="beginnings-heading">
         <h2 id="beginnings-heading" class="section-title" data-i18n="beg_title">Divine Beginnings</h2>
-        <p class="section-subtitle" data-i18n="beg_subtitle">Witness the radiant joy of a conscious birth — light
+        <p class="section-subtitle" data-i18n="beg_subtitle">Witness the radiant joy of a conscious birth - light
           brought to the world.</p>
 
         <div class="beginnings-grid">
           <div class="baby-video-wrap">
             <video id="babyVideo" class="baby-video" controls playsinline
-              poster="GarbhaJyothi/Icons_and_images/IMG-20260722-WA0046.jpg">
+              poster="GarbhaJyothi/Icons_and_images/IMG-20260722-WA0030.jpg">
               <source
                 src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c02cba3e430f8c6ebf8b65287e076a08&profile_id=139&oauth2_token_id=57447761"
                 type="video/mp4">
@@ -1864,7 +2418,7 @@
             <div class="vm-icon">👁️</div>
             <h3 data-i18n="vision_card_title">Our Vision</h3>
             <p data-i18n="vision_p1">To build a global movement where every woman experiences motherhood as a journey of
-              awareness, not anxiety — where ancient Garbha Sanskar meets modern mind science to raise an enlightened
+              awareness, not anxiety - where ancient Garbha Sanskar meets modern mind science to raise an enlightened
               generation of mothers, children, and families.</p>
             <p data-i18n="vision_p2">To inspire a generation of mothers who birth not just children, but conscious human
               beings who change the world.</p>
@@ -1876,58 +2430,11 @@
             <div class="vm-icon">🎯</div>
             <h3 data-i18n="mission_card_title">Our Mission</h3>
             <p data-i18n="mission_p1">To nurture mothers who are physically healthy, emotionally free, and spiritually
-              luminous — lighting the world from within.</p>
-            <p data-i18n="mission_p2">To create a ripple of transformation through mothers — because when one woman
+              luminous - lighting the world from within.</p>
+            <p data-i18n="mission_p2">To create a ripple of transformation through mothers - because when one woman
               heals, generations evolve.</p>
-            <p data-i18n="mission_p3">To illuminate the path for the next generation — one womb, one woman, one
+            <p data-i18n="mission_p3">To illuminate the path for the next generation - one womb, one woman, one
               awakening at a time.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Brand Values Section -->
-      <section id="values" class="reveal" aria-labelledby="values-heading">
-        <h2 id="values-heading" class="section-title" data-i18n="val_title">Brand Values</h2>
-        <p class="section-subtitle" data-i18n="val_subtitle">The five pillars guiding our integrated approach to
-          conscious creation.</p>
-
-        <div class="values-layout">
-          <div class="values-table-wrap">
-            <table class="values-table">
-              <thead>
-                <tr>
-                  <th data-i18n="val_th_value">Core Value</th>
-                  <th data-i18n="val_th_desc">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong data-i18n="val_v1_name">Consciousness</strong></td>
-                  <td data-i18n="val_v1_desc">Every act of creation begins in awareness.</td>
-                </tr>
-                <tr>
-                  <td><strong data-i18n="val_v2_name">Compassion</strong></td>
-                  <td data-i18n="val_v2_desc">Healing begins with empathy and emotional safety.</td>
-                </tr>
-                <tr>
-                  <td><strong data-i18n="val_v3_name">Integrity</strong></td>
-                  <td data-i18n="val_v3_desc">Honoring both ancient truth and modern science.</td>
-                </tr>
-                <tr>
-                  <td><strong data-i18n="val_v4_name">Community</strong></td>
-                  <td data-i18n="val_v4_desc">Empowering mothers through collective energy.</td>
-                </tr>
-                <tr>
-                  <td><strong data-i18n="val_v5_name">Transformation</strong></td>
-                  <td data-i18n="val_v5_desc">Turning pain into power, and wisdom into light.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="story-img-container">
-            <img class="story-img" src="GarbhaJyothi/Icons_and_images/IMG-20260722-WA0044.jpg"
-              alt="DNA, brain and lotus symbolising womb wisdom and mind science">
           </div>
         </div>
       </section>
@@ -1940,7 +2447,6 @@
 
         <div class="journey-display">
           <div class="journey-img-container">
-            <img class="journey-img" src="GarbhaJyothi/Icons and images/IMG-20260722-WA0040.jpg"
             <img class="journey-img" src="GarbhaJyothi/Icons_and_images/IMG-20260722-WA0040.jpg"
               alt="Journey steps flowchart graphic">
           </div>
@@ -2390,7 +2896,7 @@
           </svg>
         </a>
       </div>
-      <p data-i18n="footer_text">© <strong><span class="brand-name">Garbha Jyothi</span></strong> — Light from the Womb
+      <p data-i18n="footer_text">© <strong><span class="brand-name">Garbha Jyothi</span></strong> - Light from the Womb
         to the World. Created by Anusha C G.</p>
       <div style="margin-top: 15px; font-size: 0.85rem; display: flex; gap: 15px; justify-content: center;">
         <a href="privacy.html" style="color: var(--muted); text-decoration: none; transition: color 0.3s;"
@@ -2434,9 +2940,44 @@
   <script>
     var translations = {
       en: {
+        top_bar_badge: "✨ Special Launch Offer",
+        top_bar_text: "🎉 “Garbhajyothi” Kannada Book Release Offer @ ₹568 Only (MRP: ₹799) | Use Code: <strong>GJANU111</strong>",
+        top_bar_link: "Order Your Copy Now &rarr;",
+        nav_book: "Book",
+        hero_pill_text: "✨ <strong>New Book Launch:</strong> 40+ Pre-orders on Day 1!",
+        hero_pill_link: "Order Now &rarr;",
+        hero_btn_book: "📖 Garbhajyothi Book",
+        book_milestone_badge: "40+ COPIES SOLD BEFORE OFFICIAL LAUNCH • RELEASE OFFER ₹568 ONLY",
+        book_card_badge: "Release Offer",
+        book_card_tagline: "“From Fear to Faith, Your Conscious Preconception Companion”",
+        book_card_author: "Anusha C G (Founder, Garbha Jyothi™)",
+        book_rating_text: "40+ Early Copies Booked • 100% Love & Trust",
+        book_pretitle: "✨ A Historic Milestone in Conscious Motherhood ✨",
+        book_title: "“Garbhajyothi” — A New Sacred Milestone!",
+        book_written_by: "Written with Love & Devotion by",
+        book_highlight_quote: "“Garbhajyothi — From fear to faith, your sacred companion on the journey to conscious conception.” 🪔✨",
+        book_body1: "My Kannada book <strong>“Garbhajyothi”</strong> crossed <strong>40+ copies sold even before official launch!</strong> Immense gratitude for your pure love, belief, and trust. ❤️🙏",
+        book_body2: "For the very first time in Kannada, a guide <em>dedicated exclusively to couples planning pregnancy</em> — preparing not just the body, but the <strong>mind and soul for conscious conception. 🪔</strong>",
+        book_mrp_text: "MRP: ₹799",
+        book_price_text: "₹568",
+        book_save_text: "Release Offer: ₹231 OFF",
+        book_urgency_text: "⚡ Special Launch Offer for the First 20 Registrations Only! (Overwhelming 40+ orders on Day 1)",
+        coupon_label: "NotionPress Coupon Code",
+        coupon_copy_btn: "Copy Code",
+        btn_notionpress: "Order on NotionPress (Code: GJANU111)",
+        btn_amazon: "Shop on Amazon",
+        btn_questions: "Product Questions? Ask on Amazon",
+        feat_f1_title: "Mind & Body Preparation",
+        feat_f1_desc: "Holistic purification of body, reproductive health, and emotional energy before conception.",
+        feat_f2_title: "Ancient Wisdom + Science",
+        feat_f2_desc: "Timeless Vedic Garbha Sanskar traditions harmoniously merged with modern neuroscience.",
+        feat_f3_title: "From Fear to Faith",
+        feat_f3_desc: "Healing past heartbreak, anxiety, and fear into radiant maternal confidence.",
+        feat_f4_title: "Concise & Practical Guide",
+        feat_f4_desc: "Easy, step-by-step actionable practices in lucid Kannada for every hopeful parent.",
+
         brand_subtitle: "Light from the Womb to the World",
-        nav_about: "About",
-        nav_philosophy: "Philosophy",
+        nav_beginnings: "Beginnings",
         nav_vision: "Vision & Mission",
         nav_values: "Values",
         nav_journey: "Journey",
@@ -2445,26 +2986,26 @@
         nav_contact: "Contact",
 
         hero_pretitle: "A Sacred Brand Movement",
-        hero_title: "GARBHA JYOTHI™ — Light from the Womb to the World",
-        hero_intro: "We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar wisdom with modern mind science — turning womb-light into world-light.",
+        hero_title: "GARBHA JYOTHI™ - Light from the Womb to the World",
+        hero_intro: "We help women heal emotionally and prepare consciously for motherhood by blending ancient Garbha Sanskar wisdom with modern mind science - turning womb-light into world-light.",
         hero_btn_primary: "Book Free Webinar",
-        hero_btn_secondary: "Our Story",
+        hero_btn_secondary: "Divine Beginnings",
 
         story_title: "Brand Story",
         story_subtitle: "A personal journey from heartbreak to a global awakening of maternal light.",
-        story_intro: "\"I once lost a heartbeat — and found my life’s purpose. In the silence of loss, I discovered that creation begins long before birth — in the energy of the womb.\"",
-        story_body1: "Hi, I’m Anusha C G, founder of Garbha Jyothi™ — Light from the Womb to the World. My journey began not as a coach, but as a woman who once lost a heartbeat and found her life’s purpose in that heartbreak. Six months into my marriage, I saw two pink lines. Like every dreamy girl, I imagined tiny hands, lullabies, and laughter. But soon, the doctor said there was no heartbeat. That loss broke something in me — physically, mentally, emotionally.",
-        story_body2: "Searching for answers, I discovered the ancient science of Garbha Sanskar — the wisdom of preparing the womb with awareness and love. I practiced it for three months — healing my body, mind, and emotions — and conceived again. This time I didn’t just carry a baby; I carried consciousness.",
-        story_body3: "Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby listened. That moment became my rebirth — and Garbha Jyothi™ was born.",
-        story_body4: "Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear to faith, from conception to creation — to awaken Light from the Womb to the World.",
+        story_intro: "\"I once lost a heartbeat - and found my life’s purpose. In the silence of loss, I discovered that creation begins long before birth - in the energy of the womb.\"",
+        story_body1: "Hi, I’m Anusha C G, founder of Garbha Jyothi™ - Light from the Womb to the World. My journey began not as a coach, but as a woman who once lost a heartbeat and found her life’s purpose in that heartbreak. Six months into my marriage, I saw two pink lines. Like every dreamy girl, I imagined tiny hands, lullabies, and laughter. But soon, the doctor said there was no heartbeat. That loss broke something in me - physically, mentally, emotionally.",
+        story_body2: "Searching for answers, I discovered the ancient science of Garbha Sanskar - the wisdom of preparing the womb with awareness and love. I practiced it for three months - healing my body, mind, and emotions - and conceived again. This time I didn’t just carry a baby; I carried consciousness.",
+        story_body3: "Through Garbh Samvaad, I spoke to my child daily. During labour, when I whispered, “We are safe,” my baby listened. That moment became my rebirth - and Garbha Jyothi™ was born.",
+        story_body4: "Today, Garbha Jyothi™ bridges ancient Indian wisdom and modern neuroscience to help women move from fear to faith, from conception to creation - to awaken Light from the Womb to the World.",
         story_banner_quote: "Because when a woman heals herself, she heals generations.",
         phil_title: "Core Philosophy & Metaphor",
         phil_subtitle: "Rooted in sacred energy, ancient Sanskrit mantras, and the golden lamp metaphor.",
         phil_metaphor_title: "Visual Metaphor: The Golden Lamp",
-        phil_metaphor_desc: "The womb is a sacred lamp — its flame nourishes creation, and its glow shapes the world. It is a temple of transformation.",
+        phil_metaphor_desc: "The womb is a sacred lamp - its flame nourishes creation, and its glow shapes the world. It is a temple of transformation.",
         phil_mantra_title: "Brand Mantra: Aham Jyothi Swaroopini",
-        phil_mantra_desc: "“Aham Jyothi Swaroopini — I am Light Incarnate.”\nTranslation: “The light I nurture within, I offer to the world.”",
-        phil_movement_desc: "Garbha Jyothi™ is more than a program — it’s a remembrance. A remembrance that creation is sacred. Through Garbha Sanskar, energy work, and mindfulness, every woman can awaken the light within — and through her, light flows into the world.",
+        phil_mantra_desc: "“Aham Jyothi Swaroopini - I am Light Incarnate.”\nTranslation: “The light I nurture within, I offer to the world.”",
+        phil_movement_desc: "Garbha Jyothi™ is more than a program - it’s a remembrance. A remembrance that creation is sacred. Through Garbha Sanskar, energy work, and mindfulness, every woman can awaken the light within - and through her, light flows into the world.",
         phil_glow1_label: "“Jyothi” Meaning",
         phil_glow1_desc: "Light (illumination, awakening, consciousness, Awareness, Aura, Glow)",
         phil_glow2_label: "What is Garbha Jyothi",
@@ -2473,16 +3014,21 @@
         phil_glow3_desc: "To reignite the lost science of conscious creation, bringing womb-light into the world.",
         phil_glow4_label: "For Webinars",
         phil_glow4_desc: "A movement of women remembering that creation begins with light flowing to the world.",
+        beg_title: "Divine Beginnings",
+        beg_subtitle: "Witness the radiant joy of a conscious birth - light brought to the world.",
+        beg_quote: "\"A baby born in calmness and awareness carries a steady, luminous light. Maternal connection begins in the womb.\"",
+        beg_body1: "When we practice Garbha Sanskar, we prepare the womb to be a sacred sanctuary. Research in modern neuroscience confirms that the emotional state of a mother influences the neural pathways of the developing baby. Our programs are designed to clear stress, anxiety, and fear, laying the foundation for a peaceful and joyful birth.",
+        beg_body2: "This baby is a representation of the calm, smiling, conscious souls nurtured through active pre-natal couple bonding, daily Garbh Samvaad, and emotional healing.",
         vm_title: "Vision & Mission",
         vm_subtitle: "Aligning hearts and minds to illuminate the path for future generations.",
         vision_card_title: "Our Vision",
-        vision_p1: "To build a global movement where every woman experiences motherhood as a journey of awareness, not anxiety — where ancient Garbha Sanskar meets modern mind science to raise an enlightened generation of mothers, children, and families.",
+        vision_p1: "To build a global movement where every woman experiences motherhood as a journey of awareness, not anxiety - where ancient Garbha Sanskar meets modern mind science to raise an enlightened generation of mothers, children, and families.",
         vision_p2: "To inspire a generation of mothers who birth not just children, but conscious human beings who change the world.",
         vision_p3: "A world where every child is conceived in love, carried in awareness, and born into light.",
         mission_card_title: "Our Mission",
-        mission_p1: "To nurture mothers who are physically healthy, emotionally free, and spiritually luminous — lighting the world from within.",
-        mission_p2: "To create a ripple of transformation through mothers — because when one woman heals, generations evolve.",
-        mission_p3: "To illuminate the path for the next generation — one womb, one woman, one awakening at a time.",
+        mission_p1: "To nurture mothers who are physically healthy, emotionally free, and spiritually luminous - lighting the world from within.",
+        mission_p2: "To create a ripple of transformation through mothers - because when one woman heals, generations evolve.",
+        mission_p3: "To illuminate the path for the next generation - one womb, one woman, one awakening at a time.",
         val_title: "Brand Values",
         val_subtitle: "The five pillars guiding our integrated approach to conscious creation.",
         val_th_value: "Core Value",
@@ -2560,12 +3106,49 @@
         form_button: "Send Message",
         form_error: "Please provide both name and email.",
         form_success: "Thank you! Your message has been sent successfully. We will connect with you soon.",
-        footer_text: "© <strong>Garbha Jyothi</strong> — Light from the Womb to the World. Created by Anusha C G."
+        reviews_btn_show: "View All Reviews",
+        reviews_btn_hide: "Show Less",
+        footer_text: "© <strong>Garbha Jyothi</strong> - Light from the Womb to the World. Created by Anusha C G."
       },
       kn: {
+        top_bar_badge: "✨ ವಿಶೇಷ ಬಿಡುಗಡೆ ಕೊಡುಗೆ",
+        top_bar_text: "🎉 “ಗರ್ಭಜ್ಯೋತಿ” ಕನ್ನಡ ಪುಸ್ತಕ ಬಿಡುಗಡೆ ಕೊಡುಗೆ ₹568 ಮಾತ್ರ (ಮೂಲ ಬೆಲೆ: ₹799) | ಕೂಪನ್ ಕೋಡ್: <strong>GJANU111</strong>",
+        top_bar_link: "ಈಗಲೇ ನಿಮ್ಮ ಪ್ರತಿಯನ್ನು ಕಾಯ್ದಿರಿಸಿ &rarr;",
+        nav_book: "ಪುಸ್ತಕ",
+        hero_pill_text: "✨ <strong>ಹೊಸ ಪುಸ್ತಕ ಬಿಡುಗಡೆ:</strong> ಒಂದೇ ದಿನದಲ್ಲಿ 40+ ಪ್ರತಿಗಳಿಗೆ ಬೇಡಿಕೆ!",
+        hero_pill_link: "ಈಗಲೇ ಆರ್ಡರ್ ಮಾಡಿ &rarr;",
+        hero_btn_book: "📖 ಗರ್ಭಜ್ಯೋತಿ ಪುಸ್ತಕ",
+        book_milestone_badge: "ಲೋಕಾರ್ಪಣೆಯಾಗುವ ಮೊದಲೇ 40+ ಪ್ರತಿಗಳು ಮಾರಾಟ • ವಿಶೇಷ ಕೊಡುಗೆ ₹568 ಮಾತ್ರ",
+        book_card_badge: "ವಿಶೇಷ ಕೊಡುಗೆ",
+        book_card_tagline: "“ಭಯದಿಂದ ನಂಬಿಕೆಯೆಡೆಗೆ ನಿಮ್ಮ ಗರ್ಭಯಾತ್ರೆಯ ಸಂಗಾತಿ”",
+        book_card_author: "ಅನುಷಾ ಸಿ ಜಿ (ಗರ್ಭ ಜ್ಯೋತಿ™ ಸಂಸ್ಥಾಪಕರು)",
+        book_rating_text: "40+ ಮುಂಗಡ ಪ್ರತಿಗಳು • ಅಪಾರ ಪ್ರೀತಿ ಮತ್ತು ವಿಶ್ವಾಸ",
+        book_pretitle: "✨ ಗರ್ಭ ಸಂಸ್ಕಾರ ಕ್ಷೇತ್ರದಲ್ಲಿ ಒಂದು ಹೊಸ ಮೈಲಿಗಲ್ಲು ✨",
+        book_title: "ಗರ್ಭಜ್ಯೋತಿ — ಒಂದು ಹೊಸ ಮೈಲಿಗಲ್ಲು!",
+        book_written_by: "ಅಪಾರ ಪ್ರೀತಿ ಮತ್ತು ಸಮರ್ಪಣೆಯೊಂದಿಗೆ ರಚಿಸಿದವರು",
+        book_highlight_quote: "“ಗರ್ಭಜ್ಯೋತಿ — ಭಯದಿಂದ ನಂಬಿಕೆಯೆಡೆಗೆ ನಿಮ್ಮ ಗರ್ಭಯಾತ್ರೆಯ ಸಂಗಾತಿ.” 🪔✨",
+        book_body1: "ನನ್ನ ಕನ್ನಡ ಪುಸ್ತಕ <strong>“ಗರ್ಭಜ್ಯೋತಿ”</strong> ಲೋಕಾರ್ಪಣೆಯಾಗುವ ಮೊದಲೇ <strong>40+ ಪ್ರತಿಗಳು ಮಾರಾಟವಾಗಿವೆ!</strong> ನಿಮ್ಮ ಪ್ರೀತಿ, ನಂಬಿಕೆ ಮತ್ತು ವಿಶ್ವಾಸಕ್ಕೆ ನಾನು ಚಿರಋಣಿ. ❤️🙏",
+        book_body2: "ಕನ್ನಡದಲ್ಲಿ ಮೊದಲ ಬಾರಿಗೆ, <em>ಗರ್ಭಧಾರಣೆಗೆ ಪ್ರಯತ್ನಿಸುವವರಿಗೆ ಮಾತ್ರ</em> ಸಮರ್ಪಿತವಾದ ಈ ಪುಸ್ತಕವು ಕೇವಲ ದೇಹವನ್ನಷ್ಟೇ ಅಲ್ಲ — <strong>ಮನಸ್ಸು ಮತ್ತು ಆತ್ಮವನ್ನೂ ಗರ್ಭಧಾರಣೆಗೆ ಸಿದ್ಧಪಡಿಸುವ ಸಂಕ್ಷಿಪ್ತ ಮಾರ್ಗದರ್ಶಿ. 🪔</strong>",
+        book_mrp_text: "ಮೂಲ ಬೆಲೆ: ₹799",
+        book_price_text: "₹568",
+        book_save_text: "ವಿಶೇಷ ಕೊಡುಗೆ: ₹231 ಉಳಿತಾಯ",
+        book_urgency_text: "⚡ ಮೊದಲ 20 ನೋಂದಣಿಗಳಿಗೆ ಮಾತ್ರ ಈ ವಿಶೇಷ ಕೊಡುಗೆ! (ಒಂದೇ ದಿನದಲ್ಲಿ 40+ ಬೇಡಿಕೆ)",
+        coupon_label: "NotionPress ಕೂಪನ್ ಕೋಡ್",
+        coupon_copy_btn: "ಕೋಡ್ ನಕಲಿಸಿ",
+        btn_notionpress: "NotionPress ನಲ್ಲಿ ಆರ್ಡರ್ ಮಾಡಿ (Code: GJANU111)",
+        btn_amazon: "Amazon ನಲ್ಲಿ ಖರೀದಿಸಿ",
+        btn_questions: "ಪುಸ್ತಕದ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? Amazon ನಲ್ಲಿ ಕೇಳಿ",
+        feat_f1_title: "ಮನಸ್ಸು ಮತ್ತು ದೇಹದ ಸಿದ್ಧತೆ",
+        feat_f1_desc: "ಗರ್ಭಧಾರಣೆಗೆ ಮುನ್ನ ದೇಹ, ಭಾವನೆ ಮತ್ತು ಶಕ್ತಿ ಕ್ಷೇತ್ರವನ್ನು ಸಮಗ್ರವಾಗಿ ಸಿದ್ಧಪಡಿಸುವ ಮಾರ್ಗ.",
+        feat_f2_title: "ಪ್ರಾಚೀನ ಗರ್ಭ ಸಂಸ್ಕಾರ + ವಿಜ್ಞಾನ",
+        feat_f2_desc: "ಸಾವಿರಾರು ವರ್ಷಗಳ ವೈದಿಕ ಗರ್ಭ ಸಂಸ್ಕಾರ ಮತ್ತು ಆಧುನಿಕ ಮನೋವಿಜ್ಞಾನದ ಅಪೂರ್ವ ಸಂಗಮ.",
+        feat_f3_title: "ಭಯದಿಂದ ನಂಬಿಕೆಯೆಡೆಗೆ",
+        feat_f3_desc: "ಹಿಂದಿನ ನೋವು, ಆತಂಕಗಳನ್ನು ಕಳೆದು ಗರ್ಭಧಾರಣೆಯ ವಿಶ್ವಾಸ ಮತ್ತು ಆನಂದವನ್ನು ಜಾಗೃತಗೊಳಿಸುತ್ತದೆ.",
+        feat_f4_title: "ಸ್ಪಷ್ಟ ಕನ್ನಡ ಸಂಕ್ಷಿಪ್ತ ಕೈಪಿಡಿ",
+        feat_f4_desc: "ಪ್ರತಿ ದಂಪತಿಗಳೂ ಸುಲಭವಾಗಿ ಅಳವಡಿಸಿಕೊಳ್ಳಬಹುದಾದ ಸರಳ ಹಾಗೂ ಪ್ರಾಯೋಗಿಕ ಮಾರ್ಗದರ್ಶಿ.",
+
         brand_subtitle: "ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು",
-        nav_about: "ನಮ್ಮ ಕಥೆ",
-        nav_philosophy: "ತತ್ವಶಾಸ್ತ್ರ",
+        nav_beginnings: "ದಿವ್ಯ ಆರಂಭ",
         nav_vision: "ದೂರದೃಷ್ಟಿ ಮತ್ತು ಧ್ಯೇಯ",
         nav_values: "ಮೌಲ್ಯಗಳು",
         nav_journey: "ಪಯಣ",
@@ -2573,25 +3156,25 @@
         nav_testimonials: "ಅಭಿಪ್ರಾಯಗಳು",
         nav_contact: "ಸಂಪರ್ಕ",
         hero_pretitle: "ಒಂದು ಪವಿತ್ರ ಬ್ರ್ಯಾಂಡ್ ಆಂದೋಲನ",
-        hero_title: "ಗರ್ಭ ಜ್ಯೋತಿ™ — ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು",
+        hero_title: "ಗರ್ಭ ಜ್ಯೋತಿ™ - ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು",
         hero_intro: "ನಾವು ಪುರಾತನ ಗರ್ಭ ಸಂಸ್ಕಾರ ಜ್ಞಾನವನ್ನು ಆಧುನಿಕ ಮನೋವಿಜ್ಞಾನದೊಂದಿಗೆ ಸಂಯೋಜಿಸುವ ಮೂಲಕ ಮಹಿಳೆಯರು ಭಾವನಾತ್ಮಕವಾಗಿ ಗುಣಮುಖರಾಗಲು ಮತ್ತು ಪ್ರಜ್ಞಾಪೂರ್ವಕವಾಗಿ ಮಾತೃತ್ವಕ್ಕೆ ಸಿದ್ಧರಾಗಲು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
         hero_btn_primary: "ಉಚಿತ ವೆಬಿನಾರ್ ಬುಕ್ ಮಾಡಿ",
-        hero_btn_secondary: "ನಮ್ಮ ಕಥೆ",
+        hero_btn_secondary: "ದಿವ್ಯ ಆರಂಭ",
         story_title: "ಬ್ರ್ಯಾಂಡ್ ಕಥೆ",
         story_subtitle: "ಹೃದಯಾಘಾತದಿಂದ ಜಾಗತಿಕ ಮಾತೃತ್ವ ಬೆಳಕಿನ ಜಾಗೃತಿಯವರೆಗಿನ ವೈಯಕ್ತಿಕ ಪಯಣ.",
-        story_intro: "\"ನಾನು ಒಮ್ಮೆ ಹೃದಯಬಡಿತವನ್ನು ಕಳೆದುಕೊಂಡೆ — ಮತ್ತು ನನ್ನ ಜೀವನದ ಉದ್ದೇಶವನ್ನು ಕಂಡುಕೊಂಡೆ. ನಷ್ಟದ ಮೌನದಲ್ಲಿ, ಸೃಷ್ಟಿಯು ಹುಟ್ಟುವ ಮುಂಚೆಯೇ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಎಂದು ನಾನು ಕಂಡುಕೊಂಡೆ — ಗರ್ಭದ ಶಕ್ತಿಯಲ್ಲಿ.\"",
+        story_intro: "\"ನಾನು ಒಮ್ಮೆ ಹೃದಯಬಡಿತವನ್ನು ಕಳೆದುಕೊಂಡೆ - ಮತ್ತು ನನ್ನ ಜೀವನದ ಉದ್ದೇಶವನ್ನು ಕಂಡುಕೊಂಡೆ. ನಷ್ಟದ ಮೌನದಲ್ಲಿ, ಸೃಷ್ಟಿಯು ಹುಟ್ಟುವ ಮುಂಚೆಯೇ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಎಂದು ನಾನು ಕಂಡುಕೊಂಡೆ - ಗರ್ಭದ ಶಕ್ತಿಯಲ್ಲಿ.\"",
         story_body1: "ನಮಸ್ಕಾರ, ನಾನು ಅನುಷಾ ಸಿ ಜಿ, ಗರ್ಭ ಜ್ಯೋತಿ™ ಸಂಸ್ಥಾಪಕರು. ನನ್ನ ಪಯಣವು ತರಬೇತುದಾರಳಾಗಿ ಅಲ್ಲ, ಬದಲಿಗೆ ಮದುವೆಯಾದ ಆರು ತಿಂಗಳಲ್ಲಿ ಗರ್ಭ ಧರಿಸಿ ನಂತರ ಮಗುವಿನ ಹೃದಯಬಡಿತ ನಿಂತಿದೆ ಎಂದು ವೈದ್ಯರು ಹೇಳಿದಾಗ ತೀವ್ರ ಆಘಾತ ಅನುಭವಿಸಿದ ಒಬ್ಬ ಸಾಮಾನ್ಯ ಹೆಣ್ಣಾಗಿ ಆರಂಭವಾಯಿತು. ಆ ನೋವು ನನ್ನನ್ನು ದೈಹಿಕವಾಗಿ, ಮಾನಸಿಕವಾಗಿ ಮತ್ತು ಭಾವನಾತ್ಮಕವಾಗಿ ಕುಗ್ಗಿಸಿತು.",
         story_body2: "ನನ್ನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಗಳನ್ನು ಹುಡುಕುತ್ತಾ, ನಾನು ಪುರಾತನ 'ಗರ್ಭ ಸಂಸ್ಕಾರ' ವಿಜ್ಞಾನವನ್ನು ಕಂಡುಕೊಂಡೆ. ಮೂರು ತಿಂಗಳ ಕಾಲ ನನ್ನ ದೇಹ, ಮನಸ್ಸು ಮತ್ತು ಭಾವನೆಗಳನ್ನು ಗುಣಪಡಿಸಿಕೊಂಡು ಮತ್ತೆ ಗರ್ಭಧರಿಸಿದೆ. ಈ ಬಾರಿ ನಾನು ಕೇವಲ ಮಗುವನ್ನು ಹೊರಲಿಲ್ಲ; ಬದಲಿಗೆ ಪ್ರಜ್ಞೆಯನ್ನು ಹೊತ್ತಿದ್ದೆ.",
-        story_body3: "ಗರ್ಭ ಸಂವಾದದ ಮೂಲಕ ನಾನು ಪ್ರತಿದಿನ ನನ್ನ ಮಗುವಿನೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಿದ್ದೆ. ಹೆರಿಗೆಯ ಸಮಯದಲ್ಲಿ ನಾನು 'ನಾವು ಸುರಕ್ಷಿತವಾಗಿದ್ದೇವೆ' ಎಂದು ಪಿಸುಗುಟ್ಟಿದಾಗ ಮಗು ಸ್ಪಂದಿಸಿತು. ಆ ಕ್ಷಣ ನನ್ನ ಮರುಜನ್ಮವಾಯಿತು — ಮತ್ತು ಗರ್ಭ ಜ್ಯೋತಿ™ ಜನ್ಮತಾಳಿತು.",
-        story_body4: "ಇಂದು, ಗರ್ಭ ಜ್ಯೋತಿ™ ಪುರಾತನ ಭಾರತೀಯ ಜ್ಞಾನ ಮತ್ತು ಆಧುನಿಕ ನರವಿಜ್ಞಾನವನ್ನು ಸಂಯೋಜಿಸಿ ಮಹಿಳೆಯರನ್ನು ಭಯದಿಂದ ನಂಬಿಕೆಯತ್ತ, ಗರ್ಭಧಾರಣೆಯಿಂದ ಸೃಷ್ಟಿಯತ್ತ ನಡೆಸುತ್ತದೆ — ಗರ್ಭದ ಜ್ಯೋತಿಯನ್ನು ಜಗತ್ತಿಗೆ ಬೆಳಗಿಸುತ್ತದೆ.",
+        story_body3: "ಗರ್ಭ ಸಂವಾದದ ಮೂಲಕ ನಾನು ಪ್ರತಿದಿನ ನನ್ನ ಮಗುವಿನೊಂದಿಗೆ ಮಾತನಾಡುತ್ತಿದ್ದೆ. ಹೆರಿಗೆಯ ಸಮಯದಲ್ಲಿ ನಾನು 'ನಾವು ಸುರಕ್ಷಿತವಾಗಿದ್ದೇವೆ' ಎಂದು ಪಿಸುಗುಟ್ಟಿದಾಗ ಮಗು ಸ್ಪಂದಿಸಿತು. ಆ ಕ್ಷಣ ನನ್ನ ಮರುಜನ್ಮವಾಯಿತು - ಮತ್ತು ಗರ್ಭ ಜ್ಯೋತಿ™ ಜನ್ಮತಾಳಿತು.",
+        story_body4: "ಇಂದು, ಗರ್ಭ ಜ್ಯೋತಿ™ ಪುರಾತನ ಭಾರತೀಯ ಜ್ಞಾನ ಮತ್ತು ಆಧುನಿಕ ನರವಿಜ್ಞಾನವನ್ನು ಸಂಯೋಜಿಸಿ ಮಹಿಳೆಯರನ್ನು ಭಯದಿಂದ ನಂಬಿಕೆಯತ್ತ, ಗರ್ಭಧಾರಣೆಯಿಂದ ಸೃಷ್ಟಿಯತ್ತ ನಡೆಸುತ್ತದೆ - ಗರ್ಭದ ಜ್ಯೋತಿಯನ್ನು ಜಗತ್ತಿಗೆ ಬೆಳಗಿಸುತ್ತದೆ.",
         story_banner_quote: "ಏಕೆಂದರೆ ಮಹಿಳೆ ತನ್ನನ್ನು ತಾನು ಗುಣಪಡಿಸಿಕೊಂಡಾಗ, ಅವಳು ತಲೆಮಾರುಗಳನ್ನು ಗುಣಪಡಿಸುತ್ತಾಳೆ.",
         phil_title: "ಮೂಲ ತತ್ವಶಾಸ್ತ್ರ ಮತ್ತು ರೂಪಕ",
         phil_subtitle: "ಪವಿತ್ರ ಶಕ್ತಿ, ಪ್ರಾಚೀನ ಸಂಸ್ಕೃತ ಮಂತ್ರಗಳು ಮತ್ತು ಸುವರ್ಣ ದೀಪದ ರೂಪಕದಲ್ಲಿ ಬೇರೂರಿದೆ.",
         phil_metaphor_title: "ದೃಶ್ಯ ರೂಪಕ: ಸುವರ್ಣ ದೀಪ",
-        phil_metaphor_desc: "ಗರ್ಭವು ಒಂದು ಪವಿತ್ರ ದೀಪ — ಅದರ ಜ್ವಾಲೆಯು ಸೃಷ್ಟಿಯನ್ನು ಪೋಷಿಸುತ್ತದೆ ಮತ್ತು ಅದರ ಹೊಳಪು ಜಗತ್ತನ್ನು ರೂಪಿಸುತ್ತದೆ. ಇದು ರೂಪಾಂತರದ ದೇವಾಲಯವಾಗಿದೆ.",
-        phil_mantra_title: "ಬ್ರ್ಯಾಂಡ್ ಮಂತ್ರ: ಅಹIMG-20260722-WA0026ಂ ಜ್ಯೋತಿ ಸ್ವರೂಪಿಣಿ",
-        phil_mantra_desc: "“ಅಹಂ ಜ್ಯೋತಿ ಸ್ವರೂಪಿಣಿ — ನಾನು ಪ್ರಕಾಶ ಸ್ವರೂಪಿ.”\nಅನುವಾದ: “ನನ್ನೊಳಗೆ ನಾನು ಪೋಷಿಸುವ ಬೆಳಕನ್ನು, ನಾನು ಜಗತ್ತಿಗೆ ಅರ್ಪಿಸುತ್ತೇನೆ.”",
-        phil_movement_desc: "ಗರ್ಭ ಜ್ಯೋತಿ™ ಕೇವಲ ಒಂದು ಕಾರ್ಯಕ್ರಮವಲ್ಲ — ಇದು ಒಂದು ನೆನಪು. ಸೃಷ್ಟಿಯು ಪವಿತ್ರವಾಗಿದೆ ಎಂಬ ನೆನಪು. ಗರ್ಭ ಸಂಸ್ಕಾರ, ಶಕ್ತಿ ಕೆಲಸ ಮತ್ತು ಸಾವಧಾನತೆಯ ಮೂಲಕ, ಪ್ರತಿ ಮಹಿಳೆಯೂ ತನ್ನೊಳಗಿನ ಬೆಳಕನ್ನು ಜಾಗೃತಗೊಳಿಸಬಹುದು — ಮತ್ತು ಅವಳ ಮೂಲಕ ಬೆಳಕು ಜಗತ್ತಿಗೆ ಹರಿಯುತ್ತದೆ.",
+        phil_metaphor_desc: "ಗರ್ಭವು ಒಂದು ಪವಿತ್ರ ದೀಪ - ಅದರ ಜ್ವಾಲೆಯು ಸೃಷ್ಟಿಯನ್ನು ಪೋಷಿಸುತ್ತದೆ ಮತ್ತು ಅದರ ಹೊಳಪು ಜಗತ್ತನ್ನು ರೂಪಿಸುತ್ತದೆ. ಇದು ರೂಪಾಂತರದ ದೇವಾಲಯವಾಗಿದೆ.",
+        phil_mantra_title: "ಬ್ರ್ಯಾಂಡ್ ಮಂತ್ರ: ಅಹಂ ಜ್ಯೋತಿ ಸ್ವರೂಪಿಣಿ",
+        phil_mantra_desc: "“ಅಹಂ ಜ್ಯೋತಿ ಸ್ವರೂಪಿಣಿ - ನಾನು ಪ್ರಕಾಶ ಸ್ವರೂಪಿ.”\nಅನುವಾದ: “ನನ್ನೊಳಗೆ ನಾನು ಪೋಷಿಸುವ ಬೆಳಕನ್ನು, ನಾನು ಜಗತ್ತಿಗೆ ಅರ್ಪಿಸುತ್ತೇನೆ.”",
+        phil_movement_desc: "ಗರ್ಭ ಜ್ಯೋತಿ™ ಕೇವಲ ಒಂದು ಕಾರ್ಯಕ್ರಮವಲ್ಲ - ಇದು ಒಂದು ನೆನಪು. ಸೃಷ್ಟಿಯು ಪವಿತ್ರವಾಗಿದೆ ಎಂಬ ನೆನಪು. ಗರ್ಭ ಸಂಸ್ಕಾರ, ಶಕ್ತಿ ಕೆಲಸ ಮತ್ತು ಸಾವಧಾನತೆಯ ಮೂಲಕ, ಪ್ರತಿ ಮಹಿಳೆಯೂ ತನ್ನೊಳಗಿನ ಬೆಳಕನ್ನು ಜಾಗೃತಗೊಳಿಸಬಹುದು - ಮತ್ತು ಅವಳ ಮೂಲಕ ಬೆಳಕು ಜಗತ್ತಿಗೆ ಹರಿಯುತ್ತದೆ.",
         phil_glow1_label: "“ಜ್ಯೋತಿ” ಅರ್ಥ",
         phil_glow1_desc: "ಬೆಳಕು (ಪ್ರಕಾಶ, ಜಾಗೃತಿ, ಪ್ರಜ್ಞೆ, ಅರಿವು, ತೇಜಸ್ಸು, ಕಾಂತಿ)",
         phil_glow2_label: "ಗರ್ಭ ಜ್ಯೋತಿ ಎಂದರೇನು",
@@ -2600,16 +3183,21 @@
         phil_glow3_desc: "ಪ್ರಜ್ಞಾಪೂರ್ವಕ ಸೃಷ್ಟಿಯ ಕಳೆದುಹೋದ ವಿಜ್ಞಾನವನ್ನು ಪುನರುಜ್ಜೀವನಗೊಳಿಸುವುದು, ಗರ್ಭದ ಬೆಳಕನ್ನು ಜಗತ್ತಿಗೆ ತರುವುದು.",
         phil_glow4_label: "ವೆಬಿನಾರ್‌ಗಳಿಗಾಗಿ",
         phil_glow4_desc: "ಸೃಷ್ಟಿಯು ಬೆಳಕಿನಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಎಂದು ನೆನಪಿಸಿಕೊಳ್ಳುವ ಮಹಿಳೆಯರ ಒಂದು ಮಹಾ ಆಂದೋಲನ.",
+        beg_title: "ದಿವ್ಯ ಆರಂಭ",
+        beg_subtitle: "ಪ್ರಜ್ಞಾಪೂರ್ವಕ ಜನನದ ತೇಜಸ್ವಿ ಆನಂದಕ್ಕೆ ಸಾಕ್ಷಿಯಾಗಿರಿ - ಜಗತ್ತಿಗೆ ತಂದ ಬೆಳಕು.",
+        beg_quote: "\"ಶಾಂತತೆ ಮತ್ತು ಜಾಗೃತಿಯಲ್ಲಿ ಜನಿಸಿದ ಮಗು ಸ್ಥಿರವಾದ, ಪ್ರಕಾಶಮಾನವಾದ ಬೆಳಕನ್ನು ಹೊತ್ತಿರುತ್ತದೆ. ಮಾತೃತ್ವದ ಸಂಪರ್ಕವು ಗರ್ಭದಲ್ಲೇ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ.\"",
+        beg_body1: "ನಾವು ಗರ್ಭ ಸಂಸ್ಕಾರವನ್ನು ಅಭ್ಯಾಸ ಮಾಡುವಾಗ, ಗರ್ಭವನ್ನು ಪವಿತ್ರ ಧಾಮವಾಗಿ ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ. ತಾಯಿಯ ಭಾವನಾತ್ಮಕ ಸ್ಥಿತಿಯು ಬೆಳೆಯುತ್ತಿರುವ ಮಗುವಿನ ನರ ಮಾರ್ಗಗಳ ಮೇಲೆ ಪ್ರಭಾವ ಬೀರುತ್ತದೆ ಎಂದು ಆಧುನಿಕ ನರವಿಜ್ಞಾನದ ಸಂಶೋಧನೆಗಳು ದೃಢಪಡಿಸುತ್ತವೆ. ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು ಒತ್ತಡ ಮತ್ತು ಆತಂಕವನ್ನು ನಿವಾರಿಸಿ, ಶಾಂತಿಯುತ ಮತ್ತು ಆನಂದದಾಯಕ ಜನನಕ್ಕೆ ಅಡಿಪಾಯ ಹಾಕುತ್ತವೆ.",
+        beg_body2: "ಈ ಮಗು ಸಕ್ರಿಯ ಪ್ರಸವಪೂರ್ವ ದಂಪತಿಗಳ ಬಾಂಧವ್ಯ, ದೈನಂದಿನ ಗರ್ಭ ಸಂವಾದ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಚಿಕಿತ್ಸೆಯ ಮೂಲಕ ಪೋಷಿಸಲ್ಪಟ್ಟ ಶಾಂತ, ನಗುಮುಖದ, ಪ್ರಜ್ಞಾವಂತ ಜೀವಿಗಳ ಸಂಕೇತವಾಗಿದೆ.",
         vm_title: "ದೂರದೃಷ್ಟಿ ಮತ್ತು ಧ್ಯೇಯ",
         vm_subtitle: "ಮುಂದಿನ ಪೀಳಿಗೆಯ ಹಾದಿಯನ್ನು ಬೆಳಗಿಸಲು ಹೃದಯ ಮತ್ತು ಮನಸ್ಸುಗಳನ್ನು ಒಂದುಗೂಡಿಸುವುದು.",
         vision_card_title: "ನಮ್ಮ ದೂರದೃಷ್ಟಿ",
-        vision_p1: "ಪ್ರತಿ ಮಹಿಳೆಯೂ ಮಾತೃತ್ವವನ್ನು ಆತಂಕವಾಗಿ ಅಲ್ಲದೆ ಅರಿವಿನ ಪ್ರಯಾಣವಾಗಿ ಅನುಭವಿಸುವ ಜಾಗತಿಕ ಆಂದೋಲನವನ್ನು ನಿರ್ಮಿಸುವುದು — ಅಲ್ಲಿ ಪುರಾತನ ಗರ್ಭ ಸಂಸ್ಕಾರವು ಆಧುನಿಕ ಮನೋವಿಜ್ಞಾನವನ್ನು ಭೇಟಿಯಾಗಿ ಪ್ರಜ್ಞಾವಂತ ತಾಯಂದಿರು, ಮಕ್ಕಳು ಮತ್ತು ಕುಟುಂಬಗಳನ್ನು ಬೆಳೆಸುತ್ತದೆ.",
+        vision_p1: "ಪ್ರತಿ ಮಹಿಳೆಯೂ ಮಾತೃತ್ವವನ್ನು ಆತಂಕವಾಗಿ ಅಲ್ಲದೆ ಅರಿವಿನ ಪ್ರಯಾಣವಾಗಿ ಅನುಭವಿಸುವ ಜಾಗತಿಕ ಆಂದೋಲನವನ್ನು ನಿರ್ಮಿಸುವುದು - ಅಲ್ಲಿ ಪುರಾತನ ಗರ್ಭ ಸಂಸ್ಕಾರವು ಆಧುನಿಕ ಮನೋವಿಜ್ಞಾನವನ್ನು ಭೇಟಿಯಾಗಿ ಪ್ರಜ್ಞಾವಂತ ತಾಯಂದಿರು, ಮಕ್ಕಳು ಮತ್ತು ಕುಟುಂಬಗಳನ್ನು ಬೆಳೆಸುತ್ತದೆ.",
         vision_p2: "ಕೇವಲ ಮಕ್ಕಳನ್ನು ಮಾತ್ರವಲ್ಲದೆ ಜಗತ್ತನ್ನು ಬದಲಾಯಿಸುವ ಪ್ರಜ್ಞಾವಂತ ಮಾನವರನ್ನು ಹೆರುವ ತಾಯಂದಿರ ಪೀಳಿಗೆಯನ್ನು ಪ್ರೇರೇಬಿಸುವುದು.",
         vision_p3: "ಪ್ರತಿ ಮಗುವೂ ಪ್ರೀತಿಯಲ್ಲಿ ಕಲ್ಪಿಸಲ್ಪಟ್ಟು, ಅರಿವಿನಲ್ಲಿ ಹೊತ್ತುಕೊಂಡು, ಬೆಳಕಿನಲ್ಲಿ ಜನಿಸುವ ಜಗತ್ತು.",
         mission_card_title: "ನಮ್ಮ ಧ್ಯೇಯ",
-        mission_p1: "ದೈಹಿಕವಾಗಿ ಆರೋಗ್ಯವಂತ, ಭಾವನಾತ್ಮಕವಾಗಿ ಮುಕ್ತ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕವಾಗಿ ತೇಜಸ್ವಿ ತಾಯಂದಿರನ್ನು ಪೋಷಿಸುವುದು — ಒಳಗಿನಿಂದ ಜಗತ್ತನ್ನು ಬೆಳಗಿಸುವುದು.",
-        mission_p2: "ತಾಯಂದಿರ ಮೂಲಕ ತಲೆಮಾರುಗಳ ಪರಿವರ್ತನೆಯ ಅಲೆಯನ್ನು ಸೃಷ್ಟಿಸುವುದು — ಏಕೆಂದರೆ ಒಬ್ಬ ಮಹಿಳೆ ಗುಣಮುಖಳಾದಾಗ, ತಲೆಮಾರುಗಳು ವಿಕಸನಗೊಳ್ಳುತ್ತವೆ.",
-        mission_p3: "ಮುಂದಿನ ಪೀಳಿಗೆಯ ಹಾದಿಯನ್ನು ಬೆಳಗಿಸುವುದು — ಒಂದು ಗರ್ಭ, ಒಬ್ಬ ಮಹಿಳೆ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಜಾಗೃತಿ.",
+        mission_p1: "ದೈಹಿಕವಾಗಿ ಆರೋಗ್ಯವಂತ, ಭಾವನಾತ್ಮಕವಾಗಿ ಮುಕ್ತ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕವಾಗಿ ತೇಜಸ್ವಿ ತಾಯಂದಿರನ್ನು ಪೋಷಿಸುವುದು - ಒಳಗಿನಿಂದ ಜಗತ್ತನ್ನು ಬೆಳಗಿಸುವುದು.",
+        mission_p2: "ತಾಯಂದಿರ ಮೂಲಕ ತಲೆಮಾರುಗಳ ಪರಿವರ್ತನೆಯ ಅಲೆಯನ್ನು ಸೃಷ್ಟಿಸುವುದು - ಏಕೆಂದರೆ ಒಬ್ಬ ಮಹಿಳೆ ಗುಣಮುಖಳಾದಾಗ, ತಲೆಮಾರುಗಳು ವಿಕಸನಗೊಳ್ಳುತ್ತವೆ.",
+        mission_p3: "ಮುಂದಿನ ಪೀಳಿಗೆಯ ಹಾದಿಯನ್ನು ಬೆಳಗಿಸುವುದು - ಒಂದು ಗರ್ಭ, ಒಬ್ಬ ಮಹಿಳೆ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಜಾಗೃತಿ.",
         val_title: "ಬ್ರ್ಯಾಂಡ್ ಮೌಲ್ಯಗಳು",
         val_subtitle: "ಪ್ರಜ್ಞಾಪೂರ್ವಕ ಸೃಷ್ಟಿಗೆ ನಮ್ಮ ಸಮಗ್ರ ವಿಧಾನವನ್ನು ಮಾರ್ಗದರ್ಶಿಸುವ ಐದು ಸ್ತಂಭಗಳು.",
         val_th_value: "ಮೂಲ ಮೌಲ್ಯ",
@@ -2687,7 +3275,7 @@
         form_button: "ಸಂದೇಶ ಕಳುಹಿಸಿ",
         form_error: "ಹೆಸರು ಮತ್ತು ಇಮೇಲ್ ಎರಡನ್ನೂ ನಮೂದಿಸಿ.",
         form_success: "ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಂದೇಶ ಯಶಸ್ವಿಯಾಗಿ ತಲುಪಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.",
-        footer_text: "© <strong>ಗರ್ಭ ಜ್ಯೋತಿ</strong> — ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು. ಅನುಷಾ ಸಿ ಜಿ ಅವರಿಂದ ಸೃಷ್ಟಿಸಲ್ಪಟ್ಟಿದೆ."
+        footer_text: "© <strong>ಗರ್ಭ ಜ್ಯೋತಿ</strong> - ಗರ್ಭದಿಂದ ಜಗತ್ತಿಗೆ ಬೆಳಕು. ಅನುಷಾ ಸಿ ಜಿ ಅವರಿಂದ ಸೃಷ್ಟಿಸಲ್ಪಟ್ಟಿದೆ."
       }
     };
 
@@ -2741,6 +3329,49 @@
       formMsg.textContent = dict.form_success;
       document.getElementById('contactForm').reset();
       return false;
+    }
+
+    function copyCouponCode() {
+      var code = 'GJANU111';
+      var btn = document.getElementById('couponCopyBtn');
+      var originalHTML = btn ? btn.innerHTML : '';
+
+      function showCopiedFeedback() {
+        if (btn) {
+          btn.classList.add('copied');
+          btn.innerHTML = '<span>✓</span> <span>Copied!</span>';
+          setTimeout(function () {
+            btn.classList.remove('copied');
+            btn.innerHTML = originalHTML;
+          }, 2500);
+        }
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(showCopiedFeedback).catch(function () {
+          fallbackCopy(code);
+        });
+      } else {
+        fallbackCopy(code);
+      }
+
+      function fallbackCopy(text) {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          showCopiedFeedback();
+        } catch (err) {
+          console.error('Copy failed', err);
+        }
+        document.body.removeChild(textArea);
+      }
     }
 
     // Scroll reveal logic
